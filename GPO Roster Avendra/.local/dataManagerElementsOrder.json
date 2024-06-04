@@ -1,0 +1,627 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&StateMachine_1",
+        "str_EnrolledPropertyFilePath&StateMachine_1",
+        "str_PendingEnrollFilePath&StateMachine_1",
+        "dt_PendingEnrollment&StateMachine_1",
+        "str_StartIndexOfPendingEnrollment&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Login HSM Portal.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Password&Sequence_2",
+        "Username&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_HSMInputFilePath&Sequence_9",
+        "str_HSMPropertyFilePath&Sequence_9"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_EnrolledPropertyFilePath",
+        "out_PendingEnrollFilePath",
+        "out_DT_PendingEnrollment",
+        "out_StartIndexRefencePendingEnroll",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Export HSM Property.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DownloadedFilePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_HSMPropertListPath",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Export Pending Enrollment Property.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DownloadedFilePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_PendingEnrollmentPropertiesPath",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Prepare_HSM Input.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_HSMInput_CSV&Sequence_1",
+        "StartEndexPendingEnrollment&Sequence_1",
+        "DT_HSMProperty&Sequence_1",
+        "Config&Sequence_1",
+        "EndRowIndex&Sequence_1",
+        "Index&Sequence_1",
+        "StartRowIndex&Sequence_1",
+        "DT_PendingEnrollment&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_HSMInputPath",
+        "out_DT_PendingEnrollment",
+        "out_StartIndexPendingEnrollExcel",
+        "in_DestinationPath",
+        "in_HSMPropertyPath",
+        "in_PendingEnrollmentPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Sequence.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_filt&Sequence_1",
+        "dt_bot&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_PendingEnrollmentPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Check_MatchingFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MatchingFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Out_ProceedNext",
+        "in_MatchingFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Add Hospitality Accounts.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Str_HospitalityPG&Sequence_1",
+        "DT_HositalityPG&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_PriceGroupHopitality_Path"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_MultipleSelection.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_str_MultipleSelectionValues"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Format_SAPFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "firstRowValue&Sequence_3",
+        "colList&Sequence_1",
+        "DT_HospAccActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_HospitalAccActivePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Format_MatchingFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MatchingFile&Sequence_1",
+        "Index&Sequence_1",
+        "DT_HospAccActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Out_DT_MatchingFile",
+        "in_MatchingFilePath",
+        "in_HospitalAccActivePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_PendingEnrollment.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_HospAccActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_PendingEnrollmentPath",
+        "in_DT_MatchingFile",
+        "in_DT_PendingEnrollment",
+        "in_StartIndexPendingEnrollExcel",
+        "in_HospitalAccActivePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Flag_PendingEnrollment.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_DTpendingEnrollment"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Delete_Files.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_FolderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Export Enrolled Properties.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DownloadedFilePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_EnrolledtPropertiesPath",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Logout_HSM Portal.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_SAP_Login&Flowchart_1",
+        "bool_LoginCheck&Flowchart_1",
+        "int_SAP_Logon_Check&Flowchart_1",
+        "int_SAP_Logon_Check_Ref&Flowchart_1",
+        "str_Increment_Counter&Flowchart_1",
+        "str_Increment_Counter_Ref&Flowchart_1",
+        "bool_SAPserver_Exist&Flowchart_1",
+        "bool_LoginScreenElement_Exists&Flowchart_1",
+        "bool_SAPLogon_750&Flowchart_1",
+        "str_UserName&Flowchart_1",
+        "str_Password&Flowchart_1",
+        "var_SAPWindow_Maximise&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_Config",
+        "out_Incorrect_Credentilas"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Portal Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Var_Username&Sequence_2",
+        "Var_password&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Navigate to upload page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Download_Processed Output.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Timer11&Sequence_1",
+        "NewFilePath&Sequence_1",
+        "ExtractDataTable1&Sequence_1",
+        "bool_FileCompleted&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_rowIndex",
+        "in_Status",
+        "in_DestinationPath",
+        "in_Config",
+        "In_FileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Status_Check.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_RecordsExist&Sequence_1",
+        "ExtractDataTable1&Sequence_1",
+        "str_status&Sequence_1",
+        "bool_FileFound&Sequence_1",
+        "RowIndex&Sequence_1",
+        "Counter&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_FileName",
+        "in_DestinationPath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Data Manipulation.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_BotCsvInput&Sequence_1",
+        "DT_BotCsvDataBasic&Sequence_1",
+        "Index&Sequence_20"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ZipFolderPath",
+        "in_DestinationPath",
+        "in_SAP_Tcode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "int_BotCustomersCount&Sequence_1",
+        "DT_MatchingFile&Sequence_1",
+        "Bool_MatchingNotEmpty&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config",
+        "in_StartIndexRefencePendingEnroll",
+        "in_DT_PendingEnrollment",
+        "in_PendingEnrollFilePath",
+        "in_EnrolledPropertyFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Data Manipulation.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_Matching&Sequence_1",
+        "DT_BotCsvInput&Sequence_1",
+        "DT_BotCsvDataBasic&Sequence_1",
+        "Index&Sequence_20"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ZipFolderPath",
+        "in_DestinationPath",
+        "in_SAP_Tcode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel workflows/Prepare_BotCsv.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_BotCsvBasic&Sequence_1",
+        "Index&Sequence_1",
+        "DT_FilteredDataFinal&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPathBotFiles",
+        "Out_DT_BotCsvFile",
+        "in_BotCsvBasic"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Upload File To SAP.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_FedexScreenExist&Sequence_1",
+        "bool_Transfered&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_SAP_Tcode",
+        "in_BotInputPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel workflows/Lookup ZFEDEX File.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_ZfedexMain&Sequence_1",
+        "Index&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ZfedexFilePath",
+        "in_DT_BotCSVInputFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_LogoutORBack.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_logutExist&Sequence_5",
+        "bool_var_ScriptFail_Exists&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Operationtype"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Tcode SQ01 and select variant.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SAP_StatusBar&Sequence_1",
+        "bool_Download_Page&Sequence_1",
+        "Var_Query&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_ExcelFileExport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_ExportPage&Sequence_2",
+        "bool_ExportPopup&Sequence_2",
+        "download&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPath",
+        "in_FileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_EnrolledProperty.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "List_ExcelSheets&Sequence_1",
+        "dt_MasterData&Sequence_1",
+        "dt_FilteredMasterData&Sequence_1",
+        "dt_EnrolledProperty&Sequence_1",
+        "RowIndex&Sequence_1",
+        "StartReadCellAddress&Sequence_3",
+        "StopReadCellAddress&Sequence_3",
+        "Var_Customer&Sequence_4",
+        "HiltonCellAddress&Sequence_4",
+        "CustomerCellAddress&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_MasterFilePath",
+        "in_EnrolledPropertyFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Format_BotExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_BotCustomerCol&Sequence_1",
+        "fileName&Sequence_1",
+        "dt_Bot&Sequence_1",
+        "dt_PendingEnrollment&Sequence_1",
+        "dt_Master&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_CustomerColRowCount",
+        "in_BotFilepath",
+        "in_PendingEnrollmentFilepath",
+        "in_MasterFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Tcode SQ01 and select variant_Activeshiptos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "SAP_StatusBar&Sequence_1",
+        "bool_Download_Page&Sequence_1",
+        "Var_Query&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_botFilePath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Execute_SHIPTOCOMPTO.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Bot&Sequence_1",
+        "Var_CustomerNumbers&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_ActiveShipData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Bot&Sequence_1",
+        "dt_ActiveShipTo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath",
+        "in_ActiveShipFilepath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_FinishedPendingEnrollment.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_PendinfEnrollmentProperty&Sequence_1",
+        "dt_bot&Sequence_1",
+        "StartReadCellAddress&Sequence_2",
+        "StopReadCellAddress&Sequence_2",
+        "List_ExcelSheets&Sequence_2",
+        "rowIndex&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPath",
+        "in_PendingEnrollmentPropertyPath",
+        "in_BotFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Add_BlankAcctoGPOMasterFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MasterGoogleRuns&Sequence_1",
+        "DT_BotFile&Sequence_1",
+        "DT1_start5columns&Sequence_1",
+        "DT2_HiltonColumn&Sequence_1",
+        "Dict_ColumnIndex&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_MasterGoogleRunsFile",
+        "in_BotFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

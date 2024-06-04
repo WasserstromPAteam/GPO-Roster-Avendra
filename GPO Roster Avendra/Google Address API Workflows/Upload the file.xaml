@@ -1,0 +1,295 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Upload_the_file" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Upload_File_Path" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>889,3053</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Upload_the_file_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Upload_the_file" sap:VirtualizedContainerService.HintSize="642,2988" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: WebSphere Commerce Accelerator - sapaddressbot" sap:VirtualizedContainerService.HintSize="580,2877" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="9f1acd85-fe85-4342-99ed-91a8850a546f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,2660" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="uploadPage" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f1acd85-fe85-4342-99ed-91a8850a546f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/wcs/tools/common/Button.html" CvElementArea="1708, 450, 203, 33" CvTextArea="1725, 461, 39, 16" CvTextArgument="New" CvType="Button" DesignTimeRectangle="1708, 452, 203, 33" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'New'" FullSelectorArgument="&lt;webctrl name='newButtonButton' tableCol='1' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl name='newButtonButton' type='button' class='enabled' tag='BUTTON' aaname='New' check:innerText='New' /&gt;" Guid="c6e003b8-387b-4611-9534-599e560b03cf" InformativeScreenshot="16bc134d1b64f39b3b26b5f8f6ac702b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="1708, 450, 203, 33" CvTextArea="1725, 461, 39, 16" CvTextArgument="New" CvType="Button" DesignTimeRectangle="1713, 459, 51, 20" ElementType="Text" FriendlyName="'New'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='buttonText' tag='SPAN' aaname='New' check:innerText='New' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NSelectItem DisplayName="Select Item 'Upload Type'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Validate the address using google geolocation api" ScopeIdentifier="9f1acd85-fe85-4342-99ed-91a8850a546f" Version="V3">
+              <uix:NSelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>Select One</x:String>
+                  <x:String>Deactivate user accounts</x:String>
+                  <x:String>Fetch Out of Stock SKUs</x:String>
+                  <x:String>Validate the address using google geolocation api</x:String>
+                </scg:List>
+              </uix:NSelectItem.Items>
+              <uix:NSelectItem.Target>
+                <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/webapp/wcs/tools/servlet/NewFileUploadView" CvTextArea="183, 600, 111, 19" CvTextArgument="Select One" CvType="Text" DesignTimeRectangle="179, 594, 527, 33" DesignTimeScaleFactor="1.5" ElementType="DropDown" FriendlyName="'Select One'" FullSelectorArgument="&lt;webctrl tableCol='2' tableRow='1' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='select-one' class='' tag='SELECT' aaname='Upload Type' /&gt;" Guid="6cc67949-f79d-4658-9894-e7da6b6c17a3" InformativeScreenshot="84de07116f83cafa6dd580d31ead04dd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="48, 599, 125, 25" CvTextArgument="Upload Type" CvType="Text" DesignTimeRectangle="50, 599, 122, 24" ElementType="Text" FriendlyName="'Upload Type'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='LABEL' aaname='Upload Type' check:innerText='Upload Type' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NSelectItem.Target>
+            </uix:NSelectItem>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'button Select file'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f1acd85-fe85-4342-99ed-91a8850a546f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CvElementArea="712, 647, 139, 34" CvTextArea="732, 653, 93, 21" CvTextArgument="Browse..." CvType="Button" DesignTimeRectangle="759, 649, 90, 30" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'button Select file'" FullSelectorArgument="&lt;uia automationid='FileUploadPanel_Table_1' role='table' /&gt;&lt;uia automationid='FileUploadPanel_TableCell_2' role='item' tableCol='1' tableRow='1' /&gt;&lt;uia automationid='fileName' name='Select file' role='button' /&gt;" FuzzySelectorArgument="&lt;uia automationid='FileUploadPanel_Table_1' role='table' /&gt;&lt;uia automationid='FileUploadPanel_TableCell_2' role='item' /&gt;&lt;uia automationid='fileName' name='Select file' role='button' /&gt;" Guid="9e37e3c4-10ac-4ddd-8bb6-e68b79b483d3" InformativeScreenshot="dc00a5df94e583c33f5ef01d39e355d9.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='WebSphere Commerce Accelerator - sapaddressbot - Work - Microsof*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" SelectionStrategy="UIA" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="48, 653, 99, 21" CvTextArgument="Select file" CvType="Text" DesignTimeRectangle="51, 652, 95, 24" ElementType="Text" FriendlyName="'Select file'" FullSelectorArgument="&lt;uia automationid='FileUploadPanel_Table_1' role='table' /&gt;&lt;uia automationid='FileUploadPanel_TableCell_2_Label' role='item' tableCol='0' tableRow='1' /&gt;&lt;uia idx='2' name='Select file' role='text' /&gt;" FuzzySelectorArgument="&lt;uia automationid='FileUploadPanel_Table_1' role='table' /&gt;&lt;uia automationid='FileUploadPanel_TableCell_2_Label' role='item' /&gt;&lt;uia automationid='' name='Select file' role='text' check:fulltext='Select file' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;selecting file for upload&quot;]" />
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'iexplore.exe Choose'" sap:VirtualizedContainerService.HintSize="484,560" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="95340b47eaa814a5cd4f34c6e6e40579" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Choose File to Upload' /&gt;">
+              <ui:WindowScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="388,155" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_Upload_File_Path]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="18349b37-940c-4897-848a-87a15c583164" InformativeScreenshot="655bca3edfae373145ff4fce318ed43b" Selector="&lt;wnd ctrlid='1090' title='File &amp;amp;name:' /&gt;&lt;nav up='1' /&gt;&lt;wnd ctrlid='1148' idx='1' /&gt;&lt;wnd ctrlid='1148' /&gt;&lt;wnd ctrlid='1148' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84943243-8cf4-471c-8afb-60db8a8899ea" InformativeScreenshot="e613e9ce6102dbfe22e940ae425052f3" Selector="&lt;wnd ctrlid='2' title='Cancel' /&gt;&lt;nav up='1' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Open' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </ActivityAction>
+              </ui:WindowScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:WindowScope>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Upload'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9f1acd85-fe85-4342-99ed-91a8850a546f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/webapp/wcs/tools/servlet/DialogNavigation?XMLFile=wasserstrom.NewFileUpload" CvElementArea="1611, 310, 152, 36" CvTextArea="1656, 320, 60, 19" CvTextArgument="Upload" CvType="Button" DesignTimeRectangle="1612, 312, 150, 33" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Upload'" FullSelectorArgument="&lt;webctrl id='dialog' tableCol='1' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dialog' type='button' class='' tag='BUTTON' aaname='Upload' check:innerText='Upload' /&gt;" Guid="171f8918-67a8-4849-a9ec-2a1c63086470" InformativeScreenshot="86d24180b16b82d4139c50922e13866e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvElementArea="1767, 310, 153, 36" CvTextArea="1814, 320, 57, 18" CvTextArgument="Cancel" CvType="Button" DesignTimeRectangle="1768, 312, 150, 33" ElementType="Button" FriendlyName="'Cancel'" FullSelectorArgument="&lt;webctrl tableCol='2' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl type='button' class='' tag='BUTTON' aaname='Cancel' check:innerText='Cancel' /&gt;" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Checking File is Uploaded or Not...&quot;]" />
+            <ui:UiElementExists DisplayName="Element Exists 'BODY'" Exists="[uploadPage]" sap:VirtualizedContainerService.HintSize="484,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c7e37415-ea87-4834-9a02-8a4dc1c13d7d" InformativeScreenshot="fb8de2caa37d49504193f19feef443bd" Selector="&lt;webctrl idx='9' tag='BODY' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not uploadPage]" DisplayName="While upload " sap:VirtualizedContainerService.HintSize="484,461" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,325" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                  <ui:UiElementExists DisplayName="Element Exists 'BODY'" Exists="[uploadPage]" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c7e37415-ea87-4834-9a02-8a4dc1c13d7d" InformativeScreenshot="fb8de2caa37d49504193f19feef443bd" Selector="&lt;webctrl idx='9' tag='BODY' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;item uploaded APi Portal. the file name is &quot;+in_Upload_File_Path.Split(&quot;\&quot;)(in_Upload_File_Path.Split(&quot;\&quot;).Count-1)]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAALkSURBVDhPrZJ9LNRxHMc/h3tiHjrUeaguMy50Fsqla56i1aVMorpYbpiyPKQlD6GcNiWtZVPMPO6khS3ZKYZkQ3fk4db0o6h5KDaMrZ1Nv0+H30prq7X12j7b9/t9f1+fzx/fL/wr+kzQp+sCndr+BRqNxuRY8ry8dnrlJdnkEdVbCKIEiK586EoJhRTq1u8wORY8h0hZUcRT1Vw/kY+aV3aoVPiT0XezVCxza97qHd/d4GtiACZrwkY2OfuEHJKr58reKXFRfQJnm22wQNWIMaoFDOuYIf2rhzUcN3G4kA9CUyMwpbR1mGbWvIPyYc0TogWXuwX4sdUNEx/XvJFUPW9PJr6ScYOL2iaz6Fs9Su4SOodT2k8cLpe9lA804HLHDlTX8pe2Odh7UhGYWG/nne8YmbjQt0AGNU2R/CuV7VS0Dp1jbRvf1IWaTnscb9uLByLj7lDRD5xORiUkqJfwdOsXdC8lkMG1c6UiACsXUeB4TzBOvODjDfUIGVHbqQwtqlOcKq5ThGor5GGt4kxlS1eitoGkbQb3lY+gvkuAlNIBMuPs7803cjCurQ/jh5bw2pgGZVMrmDO9gjc/f8PsyRVMe6/BiwOLGNI8TboWD5Nst+DYNZnLNeGOVbE/5cmT8dizCTL69RzaiSUxeobmvD+VDkN//Rkl3iAZegBqbnr7/P6K0dUJ6JP7qHUt3IB9UFS8IPZW6dazslKjw8kl1DFAfQbUS/1AyhJJs7bn9qOoahQDGyfR7VJ+qamju5eZwPO4IEZWGNAwgcIyAq1yepHlHXub0gFU90HlYgsuoKOrZxRW1GMh60VB4du1Rr41Y+hT8wE9KkbQsUBNbr6uQkNpxSBNl86idACFDBQiJxCtrnXobEO2X1KhcWoPmmcp0VLbzCK7F80ylWic2o1scXo5jWnw6xdenS6/CvLoIxAt3gNiBh0YOsYWPJYwLI19NLOSLc4oZ3qcy2Bw+R6U8r8A+A6z10H+wryhaQAAAABJRU5ErkJggg==" InformativeScreenshot="9b3c3498cc5b925f9793526156c6af84.png" Selector="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" Title="WebSphere Commerce Accelerator - sapaddressbot" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
