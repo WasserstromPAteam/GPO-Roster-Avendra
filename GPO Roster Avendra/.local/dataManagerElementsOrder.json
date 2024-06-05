@@ -135,7 +135,9 @@
       "Path": "Sequence.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_filt&Sequence_1",
+        "Conts&Sequence_1",
+        "Sheets&Sequence_1",
+        "DT_AvendraCustomer&Sequence_1",
         "dt_bot&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -620,6 +622,60 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Create InputFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_AvendraInput_CSV&Sequence_1",
+        "colList&Sequence_1",
+        "firstRowValue&Sequence_20",
+        "Sheets&Sequence_1",
+        "DT_AvendraCustomer&Sequence_1",
+        "Index&Sequence_1",
+        "StartEndexPendingEnrollment&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_AvendraInputPath",
+        "in_GoogleRunsMasterFilePath",
+        "in_AvendraFilePath",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/WriteAvendra_AccountsToGPOMasterFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "rowIndex2&Sequence_5",
+        "rowIndex&Sequence_5",
+        "DT_MasterFileFiltered&Sequence_1",
+        "DT_MasterGoogleRuns&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DT_AvendraCustomer",
+        "in_MasterGoogleRunsFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_FinishedCustomerAvendra.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Avendra&Sequence_1",
+        "dt_bot&Sequence_1",
+        "List_ExcelSheets&Sequence_2",
+        "rowIndex&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilePath",
+        "in_DestinationPath",
+        "in_AvendraPath"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
