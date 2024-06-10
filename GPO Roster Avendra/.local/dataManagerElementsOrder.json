@@ -12,11 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_AvendraFilePath&StateMachine_1",
         "Screenshot&StateMachine_1",
-        "str_EnrolledPropertyFilePath&StateMachine_1",
-        "str_PendingEnrollFilePath&StateMachine_1",
-        "dt_PendingEnrollment&StateMachine_1",
-        "str_StartIndexOfPendingEnrollment&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -36,44 +33,15 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Edge Workflows/Login HSM Portal.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Password&Sequence_2",
-        "Username&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Framework/InitAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "str_HSMInputFilePath&Sequence_9",
-        "str_HSMPropertyFilePath&Sequence_9"
+        "str_AvendraInputFilePath&Sequence_9",
+        "str_AvendraFilePath&Sequence_9"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_EnrolledPropertyFilePath",
-        "out_PendingEnrollFilePath",
-        "out_DT_PendingEnrollment",
-        "out_StartIndexRefencePendingEnroll",
+        "out_AvendraFilePath",
         "in_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Edge Workflows/Export HSM Property.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DownloadedFilePath&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "out_HSMPropertListPath",
-        "in_DestinationPath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -90,43 +58,6 @@
         "in_ConfigFile",
         "in_ConfigSheets",
         "out_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Edge Workflows/Export Pending Enrollment Property.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DownloadedFilePath&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "out_PendingEnrollmentPropertiesPath",
-        "in_DestinationPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Prepare_HSM Input.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_HSMInput_CSV&Sequence_1",
-        "StartEndexPendingEnrollment&Sequence_1",
-        "DT_HSMProperty&Sequence_1",
-        "Config&Sequence_1",
-        "EndRowIndex&Sequence_1",
-        "Index&Sequence_1",
-        "StartRowIndex&Sequence_1",
-        "DT_PendingEnrollment&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "out_HSMInputPath",
-        "out_DT_PendingEnrollment",
-        "out_StartIndexPendingEnrollExcel",
-        "in_DestinationPath",
-        "in_HSMPropertyPath",
-        "in_PendingEnrollmentPath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -213,27 +144,11 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Excel Workflows/Lookup_PendingEnrollment.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_HospAccActive&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_PendingEnrollmentPath",
-        "in_DT_MatchingFile",
-        "in_DT_PendingEnrollment",
-        "in_StartIndexPendingEnrollExcel",
-        "in_HospitalAccActivePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Flag_PendingEnrollment.xaml",
+      "Path": "Excel Workflows/Flag_AvendraCustomer.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [
-        "io_DTpendingEnrollment"
+        "io_DT_AvendraCustomer"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -245,27 +160,6 @@
       "ArgumentsSectionElementsOrder": [
         "in_FolderPath"
       ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Edge Workflows/Export Enrolled Properties.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DownloadedFilePath&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "out_EnrolledtPropertiesPath",
-        "in_DestinationPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Edge Workflows/Logout_HSM Portal.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -377,12 +271,8 @@
         "Bool_MatchingNotEmpty&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_TransactionItem",
-        "in_Config",
-        "in_StartIndexRefencePendingEnroll",
-        "in_DT_PendingEnrollment",
-        "in_PendingEnrollFilePath",
-        "in_EnrolledPropertyFilePath"
+        "in_AvendraFilePath",
+        "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -491,28 +381,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Excel Workflows/Lookup_EnrolledProperty.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "List_ExcelSheets&Sequence_1",
-        "dt_MasterData&Sequence_1",
-        "dt_FilteredMasterData&Sequence_1",
-        "dt_EnrolledProperty&Sequence_1",
-        "RowIndex&Sequence_1",
-        "StartReadCellAddress&Sequence_3",
-        "StopReadCellAddress&Sequence_3",
-        "Var_Customer&Sequence_4",
-        "HiltonCellAddress&Sequence_4",
-        "CustomerCellAddress&Sequence_4"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_MasterFilePath",
-        "in_EnrolledPropertyFilePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Excel Workflows/Format_BotExcel.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
@@ -523,9 +391,9 @@
         "dt_Master&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_AvendraFilePath",
         "out_CustomerColRowCount",
         "in_BotFilepath",
-        "in_PendingEnrollmentFilepath",
         "in_MasterFilePath"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -555,20 +423,6 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_BotFilepath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Lookup_ActiveShipData.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_Bot&Sequence_1",
-        "dt_ActiveShipTo&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_BotFilepath",
-        "in_ActiveShipFilepath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -604,10 +458,14 @@
       "Path": "Excel Workflows/Add_BlankAcctoGPOMasterFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "DT2_AvendraColumn&Sequence_1",
+        "Index_dt_Avendra&Sequence_2",
+        "AvendraIndex&Sequence_5",
+        "DT1_bot&Sequence_1",
+        "DT2_bot&Sequence_1",
         "DT_MasterGoogleRuns&Sequence_1",
         "DT_BotFile&Sequence_1",
         "DT1_start5columns&Sequence_1",
-        "DT2_HiltonColumn&Sequence_1",
         "Dict_ColumnIndex&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -629,6 +487,7 @@
       "Path": "Avendra/Create InputFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "List_Countries&Sequence_1",
         "DT_AvendraInput_CSV&Sequence_1",
         "colList&Sequence_1",
         "firstRowValue&Sequence_20",
@@ -638,6 +497,8 @@
         "StartEndexPendingEnrollment&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "Out_AvendraFilePathExcel",
+        "in_CountriesToFilter",
         "out_AvendraInputPath",
         "in_GoogleRunsMasterFilePath",
         "in_AvendraFilePath",
@@ -675,6 +536,81 @@
         "in_BotFilePath",
         "in_DestinationPath",
         "in_AvendraPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Avendra login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Bool_HomePage&Sequence_1",
+        "Bool_LoginPage&Sequence_1",
+        "Var_CurrentTime&Sequence_1",
+        "Var_UserName&Sequence_1",
+        "Var_password&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Navigate and download customer list.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DownloadedFilePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_config",
+        "Out_AvendraCustomerFilePath",
+        "in_DestinationPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_CustomerAvendra.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_AvendraCustomers&Sequence_1",
+        "DT_HospAccActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_AvendraFilePath",
+        "in_HospitalAccActivePath",
+        "in_DT_MatchingFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/RemoveDuplicate_HiltonNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_AvendraCustomer&Sequence_1",
+        "Var_CustomerID&Sequence_2",
+        "IndexList&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_AvendraFilePath",
+        "in_dt_bot",
+        "in_BotFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_ActiveShipData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Bot&Sequence_1",
+        "dt_ActiveShipTo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath",
+        "in_ActiveShipFilepath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

@@ -1,15 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_HSM_Input" this:Prepare_HSM_Input.in_DestinationPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\060424" this:Prepare_HSM_Input.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\060424\Avendra Customers Real.csv" this:Prepare_HSM_Input.in_GoogleRunsMasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_HSM_Input" this:Prepare_HSM_Input.in_DestinationPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\060424" this:Prepare_HSM_Input.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\060424\Avendra Customers Real.csv" this:Prepare_HSM_Input.in_GoogleRunsMasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Prepare_HSM_Input.in_CountriesToFilter="USA,CANADA,ARUBA,DOMINICAN REPUBLIC,BAHAMAS,JAMAICA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
     <x:Property Name="in_DestinationPath" Type="InArgument(x:String)" />
     <x:Property Name="in_AvendraFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_GoogleRunsMasterFilePath" Type="InArgument(x:String)" />
     <x:Property Name="out_AvendraInputPath" Type="OutArgument(x:String)" />
+    <x:Property Name="in_CountriesToFilter" Type="InArgument(x:String)" />
+    <x:Property Name="Out_AvendraFilePathExcel" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,5701</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,7004</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_HSM_Input_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +122,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_HSM_Input" sap:VirtualizedContainerService.HintSize="617,5396" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="617,6939" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraCustomer" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -128,13 +130,14 @@
       <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraInput_CSV" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="Sheets" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="colList" />
+      <Variable x:TypeArguments="s:String[]" Name="List_Countries" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Pending enrollment File- &quot;+in_AvendraFilePath+&quot; For preapring HSM Input file for Google API&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Avendra Customer File- &quot;+in_AvendraFilePath+&quot; For preapring Avendra Input file for Google API&quot;]" />
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
@@ -168,7 +171,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="555,635" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, DT_AvendraCustomer.Columns.Count)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Renaming Duplicate Column name at 1st row in datatable" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="555,666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, DT_AvendraCustomer.Columns.Count)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -279,11 +282,9 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <InArgument x:TypeArguments="x:Int32">
-        <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="DT_AvendraCustomer.Columns(&quot;Zip&quot;).Ordinal" />
-      </InArgument>
+      <InArgument x:TypeArguments="x:Int32">[DT_AvendraCustomer.Columns("Zip").Ordinal]</InArgument>
     </InvokeMethod>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Performing Vlookup of Pending Enrollment file with HSM Input file&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Creating Full address values for each row in Avendra Customer file&quot;]" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Concating- wrinting Full address Cell for Each Row in DT_AvendraCustomer" DataTable="[DT_AvendraCustomer]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,483" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
@@ -337,7 +338,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,349" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath.Replace(&quot;csv&quot;,&quot;xlsx&quot;)]">
+    <Assign sap:VirtualizedContainerService.HintSize="555,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Out_AvendraFilePathExcel]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_AvendraFilePath.Replace("csv","xlsx")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="write range to excel file with .xlsx extension" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,340" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath.Replace(&quot;csv&quot;,&quot;xlsx&quot;)]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -357,22 +366,19 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WriteAvendra_AccountsToGPOMasterFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Avendra\WriteAvendra_AccountsToGPOMasterFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_MasterGoogleRunsFile">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_GoogleRunsMasterFilePath" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_AvendraCustomer">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_AvendraCustomer" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_MasterGoogleRunsFile">[in_GoogleRunsMasterFilePath]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_AvendraCustomer">[DT_AvendraCustomer]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:FilterDataTable DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="555,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_AvendraInput_CSV]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filter Customer status= Active Customer and account = empty" DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="555,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_AvendraInput_CSV]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
-        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
             <ui:FilterOperationArgument.Column>
               <InArgument x:TypeArguments="x:String">["Customer Status"]</InArgument>
@@ -386,54 +392,6 @@
               <InArgument x:TypeArguments="x:String">["Account Number"]</InArgument>
             </ui:FilterOperationArgument.Column>
           </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["Aruba"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["Bahamas"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["CANADA"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["Dominican Republic"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["Jamaica"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:String">["USA"]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
         </scg:List>
       </ui:FilterDataTable.Filters>
       <ui:FilterDataTable.SelectColumns>
@@ -446,12 +404,97 @@
           <InArgument x:TypeArguments="x:String">["Country"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Column1" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
-    <InvokeMethod DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="555,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding Extra column for Countries names in Uppercase to apply filter" ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,228" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:AddDataColumn>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="assigning countries for Countries names in Uppercase to apply filter" DataTable="[DT_AvendraInput_CSV]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,387" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[CurrentRow("Country UpperCase")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CurrentRow("Country").ToString.ToUpper.Trim]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <Assign sap2010:Annotation.AnnotationText="split Countires with comma to create in List form" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[List_Countries]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_CountriesToFilter.ToUpper.Split(",")]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="Filter datatable with refrence of uppercase country names available in List" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[DT_AvendraInput_CSV]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[(From d In DT_AvendraInput_CSV.AsEnumerable() Let v= d("Country UpperCase").toString.Trim Where List_Countries.Contains(v)Select r=d).CopyToDataTable]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove Uppercase Cpuntry column. because filteration is completed. " ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="555,228" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RemoveDataColumn>
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding blank column1" ColumnName="Column1" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,217" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:AddDataColumn>
+    <InvokeMethod sap2010:Annotation.AnnotationText="change position blank column1 at 3rd position as per rule in design flow" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="555,193" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd:DataColumn">[DT_AvendraInput_CSV.Columns("Column1")]</InArgument>
       </InvokeMethod.TargetObject>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <InArgument x:TypeArguments="x:Int32">2</InArgument>
     </InvokeMethod>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Writing Avendra Input CSV file&quot;]" />
