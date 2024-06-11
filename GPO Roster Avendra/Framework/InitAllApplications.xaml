@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,1614</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,1389</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="450,1549" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="548,1324" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_AvendraFilePath" />
       <Variable x:TypeArguments="x:String" Name="str_AvendraInputFilePath" />
@@ -117,65 +117,69 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Avendra login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Edge Workflows\Avendra login.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_Config]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate and download customer list.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Edge Workflows\Navigate and download customer list.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Out_AvendraCustomerFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AvendraFilePath" />
-        </InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create InputFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Avendra\Create InputFile.xaml">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="486,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Avendra login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Edge Workflows\Avendra login.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate and download customer list.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Edge Workflows\Navigate and download customer list.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraCustomerFilePath">[str_AvendraFilePath]</OutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Avendra Logout.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Edge Workflows\Avendra Logout.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create InputFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Avendra\Create InputFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AvendraFilePath" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_GoogleRunsMasterFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MasterFileGoogleRuns&quot;).ToString" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_AvendraInputPath">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AvendraInputFilePath" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CountriesToFilter&quot;).ToString" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraFilePathExcel">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_AvendraFilePath" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[str_AvendraFilePath]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_GoogleRunsMasterFilePath">[in_Config("MasterFileGoogleRuns").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_AvendraInputPath">[str_AvendraInputFilePath]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">[in_Config("CountriesToFilter").ToString]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraFilePathExcel">[out_AvendraFilePath]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Google Address API Workflows\Portal Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Google Address API Workflows\Portal Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate to upload page.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Google Address API Workflows\Navigate to upload page.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Navigate to upload page.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Google Address API Workflows\Navigate to upload page.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload the file.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Google Address API Workflows\Upload the file.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload the file.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Google Address API Workflows\Upload the file.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Upload_File_Path">[str_AvendraInputFilePath]</InArgument>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check status and Download file" DisplayName="Status_Check.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Google Address API Workflows\Status_Check.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check status and Download file" DisplayName="Status_Check.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Google Address API Workflows\Status_Check.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="In_FileName">[str_AvendraInputFilePath.Split("\")(str_AvendraInputFilePath.Split("\").Count-1)]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
@@ -187,7 +191,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_Login.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_Login.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[in_Config]</InOutArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Incorrect_Credentilas" />

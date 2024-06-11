@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Navigate_and_download_customer_list" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_DestinationPath" Type="InArgument(x:String)" />
-    <x:Property Name="Out_AvendraCustomerFilePath" Type="InArgument(x:String)" />
+    <x:Property Name="Out_AvendraCustomerFilePath" Type="OutArgument(x:String)" />
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,2599</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,2402</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_and_download_customer_list_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,7 +100,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_and_download_customer_list" sap:VirtualizedContainerService.HintSize="642,2534" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigate_and_download_customer_list" sap:VirtualizedContainerService.HintSize="642,2337" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFilePath" />
     </Sequence.Variables>
@@ -109,13 +109,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Pages - Supplier Dashboard" sap:VirtualizedContainerService.HintSize="580,1921" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="76a25332-e8b4-4746-982b-9045bcfab891" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Pages - Supplier Dashboard" sap:VirtualizedContainerService.HintSize="580,1724" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="76a25332-e8b4-4746-982b-9045bcfab891" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,1704" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,1507" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,7 +134,7 @@
                 </scg:List>
               </uix:NSelectItem.Items>
               <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="https://clp.aramark-avendragroup.com/customers/customer-list" CvTextArea="353, 348, 79, 21" CvTextArgument="Bot View" CvType="Text" DesignTimeRectangle="344, 335, 150, 49" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Bot View'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-dropdown&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='ng-tns-c15-7 ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix' aaname='' /&gt;" Guid="5bab31bb-250b-4c75-b63c-d6514997fd01" InformativeScreenshot="9cfc6563d0a752ef94c57da20a85c9d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Avendra.CLP.Web' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                <uix:TargetAnchorable BrowserURL="https://clp.aramark-avendragroup.com/customers/customer-list" CvTextArea="353, 348, 79, 21" CvTextArgument="Bot View" CvType="Text" DesignTimeRectangle="344, 335, 150, 49" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Bot View'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-dropdown&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='ng-tns-c15-7 ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix' aaname='' /&gt;" Guid="5bab31bb-250b-4c75-b63c-d6514997fd01" InformativeScreenshot="9cfc6563d0a752ef94c57da20a85c9d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Avendra.CLP.Web' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Visible" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
                     <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="506, 335, 79, 50" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='BUTTON' class='btn btn-outline-primary ml-1 ml-lg-2 ng-star-inserted' aaname='' /&gt;" SearchSteps="FuzzySelector" />
@@ -181,17 +181,6 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetLastDownloadedFile>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Avendra Downloaded successfully at-&quot;+DownloadedFilePath.ToString]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'SignOut'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76a25332-e8b4-4746-982b-9045bcfab891" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://clp.aramark-avendragroup.com/customers/customer-list" CvTextArea="1482, 161, 81, 25" CvTextArgument="SignOut" CvType="Text" DesignTimeRectangle="1088, 138, 71, 22" DesignTimeScaleFactor="1.5" FriendlyName="'Sign Out'" FullSelectorArgument="&lt;webctrl tag='U' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='U' type='' class='' aaname='Sign Out' check:innerText='Sign Out' /&gt;" Guid="26191a1d-3aa1-4172-89c6-a985c9456b1d" InformativeScreenshot="7fb1cde1af64dfb55caa81dda066c075.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Avendra.CLP.Web' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CvTextArea="1194, 161, 262, 25" CvTextArgument="uipath_svc@wasserstrom.com" CvType="Text" DesignTimeRectangle="830, 140, 223, 22" ElementType="Text" FriendlyName="'email'" FullSelectorArgument="&lt;webctrl aaname='uipath_svc@wasserstrom.com' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='uipath_svc@wasserstrom.com' tag='SPAN' type='' class='d-none d-lg-inline d-md-inline  d-sm-inline p-1 text-white' check:innerText='uipath_svc@wasserstrom.com' /&gt;" SearchSteps="FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

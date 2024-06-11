@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,4430</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>981,2210</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Avendra_login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -103,9 +103,11 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Avendra_login" sap:VirtualizedContainerService.HintSize="668,4365" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Avendra_login" sap:VirtualizedContainerService.HintSize="644,2145" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Bool_HomePage" />
       <Variable x:TypeArguments="x:Boolean" Name="Bool_LoginPage" />
@@ -118,33 +120,30 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;Avendra_Credential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="606,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Var_password]" Username="[Var_UserName]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Launching Browser and Loging into Avendra Portal&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Supplier Portal Login" sap:VirtualizedContainerService.HintSize="606,3890" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f6c599a-0a76-4da5-88ba-8de9e1381300" Version="V2">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;Avendra_Credential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="582,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Var_password]" Username="[Var_UserName]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Launching Browser and Loging into Avendra Portal&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Supplier Portal Login" sap:VirtualizedContainerService.HintSize="582,1670" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f6c599a-0a76-4da5-88ba-8de9e1381300" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,3673" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1453" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:UiElementExists DisplayName="Login page Element Exists " Exists="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="510,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+            <ui:UiElementExists DisplayName="Login page Element Exists " Exists="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="486,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="29f1beec-7d8f-4318-9e4f-972834e60a1b" InformativeScreenshot="91466393625530b800995e96b479aa95" Selector="&lt;webctrl parentid='supplier' tag='DIV' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="29f1beec-7d8f-4318-9e4f-972834e60a1b" InformativeScreenshot="91466393625530b800995e96b479aa95" Selector="&lt;webctrl parentid='supplier' tag='DIV' /&gt;" TimeoutMS="100000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:UiElementExists.Target>
             </ui:UiElementExists>
-            <If Condition="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="510,3411" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="486,1191" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,7 +151,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,2220" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,2300" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -254,7 +253,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InterruptibleWhile>
-                  <If Condition="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="434,413" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="434,493" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -266,7 +265,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -311,7 +310,14 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Home page available. Already logged into page&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Home page available. Already logged into page&quot;]">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:LogMessage>
                       </Sequence>
                     </If.Then>
                     <If.Else>

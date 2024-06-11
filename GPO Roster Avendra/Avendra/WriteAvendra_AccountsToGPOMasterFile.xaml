@@ -214,7 +214,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LookupDataTable>
-            <If Condition="[string.IsNullOrEmpty(DT_MasterGoogleRuns.Rows(rowIndex2).ToString) = true AND rowIndex &lt;&gt; -1 AND rowIndex &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="410,386" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[string.IsNullOrEmpty(DT_MasterGoogleRuns.Rows(rowIndex2).Item(&quot;Customer&quot;).ToString) = true AND rowIndex &lt;&gt; -1 AND rowIndex &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="410,386" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

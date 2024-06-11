@@ -428,25 +428,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Excel Workflows/Lookup_FinishedPendingEnrollment.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_PendinfEnrollmentProperty&Sequence_1",
-        "dt_bot&Sequence_1",
-        "StartReadCellAddress&Sequence_2",
-        "StopReadCellAddress&Sequence_2",
-        "List_ExcelSheets&Sequence_2",
-        "rowIndex&Sequence_3"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_DestinationPath",
-        "in_PendingEnrollmentPropertyPath",
-        "in_BotFilePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Framework/KillAllProcesses.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
@@ -487,14 +468,15 @@
       "Path": "Avendra/Create InputFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "List_Countries&Sequence_1",
-        "DT_AvendraInput_CSV&Sequence_1",
-        "colList&Sequence_1",
-        "firstRowValue&Sequence_20",
-        "Sheets&Sequence_1",
+        "CsvSheetName&Sequence_1",
         "DT_AvendraCustomer&Sequence_1",
         "Index&Sequence_1",
-        "StartEndexPendingEnrollment&Sequence_1"
+        "StartEndexPendingEnrollment&Sequence_1",
+        "DT_AvendraInput_CSV&Sequence_1",
+        "Sheets&Sequence_1",
+        "colList&Sequence_1",
+        "List_Countries&Sequence_1",
+        "firstRowValue&Sequence_20"
       ],
       "ArgumentsSectionElementsOrder": [
         "Out_AvendraFilePathExcel",
@@ -611,6 +593,19 @@
       "ArgumentsSectionElementsOrder": [
         "in_BotFilepath",
         "in_ActiveShipFilepath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Edge Workflows/Avendra Logout.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_LoginPage&Sequence_1",
+        "bool_MainPage&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
