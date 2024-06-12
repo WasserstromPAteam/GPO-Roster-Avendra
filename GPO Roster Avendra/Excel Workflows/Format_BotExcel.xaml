@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Format_BotExcel" this:Format_BotExcel.in_BotFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052224\bot.xlsx" this:Format_BotExcel.in_MasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Format_BotExcel.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052224\Pending Enrollment Properties-2024-05-22-11-38-17.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Format_BotExcel" this:Format_BotExcel.in_BotFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061224\bot - Copy.xlsx" this:Format_BotExcel.in_MasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Format_BotExcel.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061224\Avendra Customers 2024-06-12 - Copy.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_BotFilepath" Type="InArgument(x:String)" />
     <x:Property Name="in_MasterFilePath" Type="InArgument(x:String)" />
@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,2711</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>728,2810</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Format_BotExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Format_BotExcel" sap:VirtualizedContainerService.HintSize="738,2646" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Format_BotExcel" sap:VirtualizedContainerService.HintSize="738,2625" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_PendingEnrollment" />
@@ -141,7 +141,7 @@
         <InArgument x:TypeArguments="x:String">[in_AvendraFilePath.Split("\")(in_BotFilepath.Split("\").Count-1)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="676,1235" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="676,1275" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -184,7 +184,7 @@
                                 </InArgument>
                               </ui:ExcelReadRange.Range>
                             </ui:ExcelReadRange>
-                            <ui:ExcelWriteCell Cell="H2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="bot" Text="[&quot;=XLOOKUP(B2,'[&quot;+fileName+&quot;]Avendra Customers'!$AJ:$AJ,'[&quot;+fileName+&quot;]Avendra Customers'!$B:$B,&quot;&quot;&quot;&quot;,0)&quot;]" />
+                            <ui:ExcelWriteCell Cell="H2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="bot" Text="[&quot;=XLOOKUP(B2,'[&quot;+fileName+&quot;]Sheet1'!$AJ:$AJ,'[&quot;+fileName+&quot;]Sheet1'!$B:$B,&quot;&quot;&quot;&quot;,0)&quot;]" />
                             <ui:ExcelWriteCell Cell="I2" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="bot" Text="[&quot;=XLOOKUP(D2,'[Master File Google Runs.xlsx]Sheet1'!$D:$D,'[Master File Google Runs.xlsx]Sheet1'!$F:$F,&quot;&quot;&quot;&quot;,0)&quot;]" />
                             <ui:ExcelAutoFillRange DisplayName="Auto Fill Range" FillRange="[&quot;I2:I&quot;+(dt_Bot.RowCount+1).ToString]" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelAutoFillRange_2" SheetName="bot" SourceRange="I2" />
                             <ui:ExcelAutoFillRange DisplayName="Auto Fill Range" FillRange="[&quot;H2:H&quot;+(dt_Bot.RowCount+1).ToString]" sap:VirtualizedContainerService.HintSize="388,88" sap2010:WorkflowViewState.IdRef="ExcelAutoFillRange_3" SheetName="bot" SourceRange="H2" />
@@ -298,25 +298,36 @@
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
     <ui:WriteRange AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="676,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="bot" StartingCell="A1" WorkbookPath="[in_BotFilepath]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RemoveDuplicate_HiltonNumber.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="676,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel Workflows\RemoveDuplicate_HiltonNumber.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_bot">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Bot" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_BotFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_BotFilepath" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AvendraFilePath" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="676,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,224" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="RemoveDuplicate_HiltonNumber.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel Workflows\RemoveDuplicate_HiltonNumber.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_bot">[dt_Bot]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_BotFilePath">[in_BotFilepath]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[in_AvendraFilePath]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:InvokeWorkflowFile>
+    </ui:CommentOut>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="676,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filtering Customer Column in bot.xlsx to check if Customers data available or not&quot;]" />
     <ui:FilterDataTable DataTable="[dt_Bot]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="676,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_BotCustomerCol]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>

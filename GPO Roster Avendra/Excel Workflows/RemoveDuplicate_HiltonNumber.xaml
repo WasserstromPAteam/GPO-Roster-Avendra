@@ -140,7 +140,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_AvendraCustomer]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Account Name" LookupValue="[in_dt_bot.rows(index).item(&quot;InputBusinessName&quot;).ToString]" TargetColumnName="Property: Inn Code">
+            <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_AvendraCustomer]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Account Name" LookupValue="[in_dt_bot.rows(index).item(&quot;InputBusinessName&quot;).ToString]" TargetColumnName="Customer ID">
               <ui:LookupDataTable.CellValue>
                 <OutArgument x:TypeArguments="x:Object">[Var_CustomerID]</OutArgument>
               </ui:LookupDataTable.CellValue>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Add_BlankAcctoGPOMasterFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Add_BlankAcctoGPOMasterFile" this:Add_BlankAcctoGPOMasterFile.in_MasterGoogleRunsFile="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Add_BlankAcctoGPOMasterFile.in_BotFile="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061224\bot.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_MasterGoogleRunsFile" Type="InArgument(x:String)" />
     <x:Property Name="in_BotFile" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,4841</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>634,4700</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_BlankAcctoGPOMasterFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_BlankAcctoGPOMasterFile" sap:VirtualizedContainerService.HintSize="644,4736" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_BlankAcctoGPOMasterFile" sap:VirtualizedContainerService.HintSize="644,4595" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MasterGoogleRuns" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_BotFile" />
@@ -223,13 +223,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Master file to Get row count and add filtered data to id" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="582,2819" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_MasterGoogleRunsFile]">
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Master file to Get row count and add filtered data to id" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="582,2678" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_MasterGoogleRunsFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,2678" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,2497" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="Index_dt_Avendra" />
             </Sequence.Variables>
@@ -246,13 +246,13 @@
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No of rows in master file before adding data : &quot;+DT_MasterGoogleRuns.RowCount.ToString]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Index_dt_Avendra]" DataTable="[DT2_AvendraColumn]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,1698" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Index_dt_Avendra]" DataTable="[DT2_AvendraColumn]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,1517" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,1512" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,1331" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="AvendraIndex" />
                     </Sequence.Variables>
@@ -261,7 +261,6 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[AvendraIndex]" />
                     <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DT_MasterGoogleRuns]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="410,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Avendra" LookupValue="[CurrentRow.item(0).ToString]" RowIndex="[AvendraIndex]" TargetColumnName="Avendra">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
