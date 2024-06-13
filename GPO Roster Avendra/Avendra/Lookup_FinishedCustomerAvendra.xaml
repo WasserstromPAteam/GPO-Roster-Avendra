@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,3556</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>779,3657</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_FinishedPendingEnrollment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,7 +112,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final pending erollment fileusing Hilton value and returns columns I to U from bot to AM to AY in Pending enrollment file&#xA;" DisplayName="Lookup_FinishedPendingEnrollment" sap:VirtualizedContainerService.HintSize="789,3411" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final pending erollment fileusing Hilton value and returns columns I to U from bot to AM to AY in Pending enrollment file&#xA;" DisplayName="Lookup_FinishedPendingEnrollment" sap:VirtualizedContainerService.HintSize="789,3592" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Avendra" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_bot" />
@@ -123,6 +123,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="727,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Started Lookup finished pending enrollment file&quot;]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_bot]" DisplayName="Read Range Workbook bot" sap:VirtualizedContainerService.HintSize="727,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilePath]" />
     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope-Enrolled property file" sap:VirtualizedContainerService.HintSize="727,2259" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraPath]">
       <ui:ExcelApplicationScope.Body>
