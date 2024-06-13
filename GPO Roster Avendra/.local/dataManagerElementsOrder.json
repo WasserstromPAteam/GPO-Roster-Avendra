@@ -556,6 +556,7 @@
       "Path": "Avendra/Lookup_CustomerAvendra.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "rowIndex&Sequence_1",
         "DT_AvendraCustomers&Sequence_1",
         "DT_HospAccActive&Sequence_1"
       ],

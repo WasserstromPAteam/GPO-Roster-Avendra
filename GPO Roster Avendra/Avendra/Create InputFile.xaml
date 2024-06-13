@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_HSM_Input" this:Prepare_HSM_Input.in_DestinationPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061124" this:Prepare_HSM_Input.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061124\Customers.csv" this:Prepare_HSM_Input.in_GoogleRunsMasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Prepare_HSM_Input.in_CountriesToFilter="USA,CANADA,ARUBA,DOMINICAN REPUBLIC,BAHAMAS,JAMAICA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Prepare_HSM_Input" this:Prepare_HSM_Input.in_DestinationPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061124 1st one" this:Prepare_HSM_Input.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061124 1st one\Customers.csv" this:Prepare_HSM_Input.in_GoogleRunsMasterFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Master File Google Runs.xlsx" this:Prepare_HSM_Input.in_CountriesToFilter="USA,CANADA,ARUBA,DOMINICAN REPUBLIC,BAHAMAS,JAMAICA" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
     <x:Property Name="in_DestinationPath" Type="InArgument(x:String)" />
@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,7403</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1121,7945</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_HSM_Input_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -122,7 +122,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="693,7338" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="617,7800" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraCustomer" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -138,8 +138,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Avendra Customer File- &quot;+in_AvendraFilePath+&quot; For preapring Avendra Input file for Google API&quot;]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="631,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Avendra Customer File- &quot;+in_AvendraFilePath+&quot; For preapring Avendra Input file for Google API&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -164,7 +164,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Renaming Duplicate Column names in dt&quot;]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Renaming Duplicate Column names in dt&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,7 +172,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Renaming Duplicate Column name at 1st row in datatable" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="631,666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, DT_AvendraCustomer.Columns.Count)]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Renaming Duplicate Column name at 1st row in datatable" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="555,666" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Enumerable.Range(0, DT_AvendraCustomer.Columns.Count)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
@@ -248,7 +248,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="Removing 1st row. becasue the headers are already rename dw ith Unique Column names wrt 1st Row in above code" DataTable="[DT_AvendraCustomer]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="631,243" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0">
+    <ui:RemoveDataRow Row="{x:Null}" sap2010:Annotation.AnnotationText="Removing 1st row. becasue the headers are already rename dw ith Unique Column names wrt 1st Row in above code" DataTable="[DT_AvendraCustomer]" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="555,243" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1" RowIndex="0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -257,8 +257,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDataRow>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding column ZIPP and Full Address&quot;]" />
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ZIPP" DataTable="[DT_AvendraCustomer]" DisplayName="Add Data Column- ZIPP" sap:VirtualizedContainerService.HintSize="631,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding column ZIPP and Full Address&quot;]" />
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ZIPP" DataTable="[DT_AvendraCustomer]" DisplayName="Add Data Column- ZIPP" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -266,7 +266,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Full Address" DataTable="[DT_AvendraCustomer]" DisplayName="Add Data Column- Fulll Address" sap:VirtualizedContainerService.HintSize="631,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Full Address" DataTable="[DT_AvendraCustomer]" DisplayName="Add Data Column- Fulll Address" sap:VirtualizedContainerService.HintSize="555,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -274,7 +274,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <InvokeMethod sap2010:Annotation.AnnotationText="Assigning ZIPP Column position beside zip column. Plaese Check Paraeters in Property" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="631,193" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="SetOrdinal">
+    <InvokeMethod sap2010:Annotation.AnnotationText="Assigning ZIPP Column position beside zip column. Plaese Check Paraeters in Property" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="555,193" sap2010:WorkflowViewState.IdRef="InvokeMethod_3" MethodName="SetOrdinal">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd:DataColumn">[DT_AvendraCustomer.Columns("ZIPP")]</InArgument>
       </InvokeMethod.TargetObject>
@@ -285,8 +285,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <InArgument x:TypeArguments="x:Int32">[DT_AvendraCustomer.Columns("Zip").Ordinal]</InArgument>
     </InvokeMethod>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Creating Full address values for each row in Avendra Customer file&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Concating- wrinting Full address Cell for Each Row in DT_AvendraCustomer" DataTable="[DT_AvendraCustomer]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631,483" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Creating Full address values for each row in Avendra Customer file&quot;]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Concating- wrinting Full address Cell for Each Row in DT_AvendraCustomer" DataTable="[DT_AvendraCustomer]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,483" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -339,7 +339,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="631,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+    <Assign sap:VirtualizedContainerService.HintSize="555,82" sap2010:WorkflowViewState.IdRef="Assign_13">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Out_AvendraFilePathExcel]</OutArgument>
       </Assign.To>
@@ -347,7 +347,7 @@
         <InArgument x:TypeArguments="x:String">[in_DestinationPath+"\Avendra Customers "+Today.ToString("yyyy-MM-dd")+".xlsx"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="631,94" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="555,94" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
@@ -410,7 +410,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="write range to excel file with .xlsx extension" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="631,340" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[Out_AvendraFilePathExcel]">
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="write range to excel file with .xlsx extension" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,340" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[Out_AvendraFilePathExcel]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -434,13 +434,69 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WriteAvendra_AccountsToGPOMasterFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="631,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Avendra\WriteAvendra_AccountsToGPOMasterFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WriteAvendra_AccountsToGPOMasterFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Avendra\WriteAvendra_AccountsToGPOMasterFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_MasterGoogleRunsFile">[in_GoogleRunsMasterFilePath]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_AvendraCustomer">[DT_AvendraCustomer]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filter Customer status= Active Customer and account = empty" DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="631,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_AvendraInput_CSV]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Remove Client Containe 'Aramark' " DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="555,192" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[DT_AvendraCustomer]" SelectColumnsMode="Remove">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["Client"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">["Aramark"]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="Or" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["Client"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">["ARAMARK"]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:FilterDataTable>
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Remove  Marke Segment contains 'HPSI," DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="555,192" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[DT_AvendraCustomer]" SelectColumnsMode="Remove">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["Market Segment"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:String">["HPSI"]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:FilterDataTable>
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filter Customer status= Active Customer and account = empty" DataTable="[DT_AvendraCustomer]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="555,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_AvendraInput_CSV]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
@@ -474,14 +530,14 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding Extra column for Countries names in Uppercase to apply filter" ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631,228" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding Extra column for Countries names in Uppercase to apply filter" ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,228" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="assigning countries for Countries names in Uppercase to apply filter" DataTable="[DT_AvendraInput_CSV]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631,387" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="assigning countries for Countries names in Uppercase to apply filter" DataTable="[DT_AvendraInput_CSV]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="555,387" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -510,7 +566,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Assign sap2010:Annotation.AnnotationText="split Countires with comma to create in List form" sap:VirtualizedContainerService.HintSize="631,113" sap2010:WorkflowViewState.IdRef="Assign_11">
+    <Assign sap2010:Annotation.AnnotationText="split Countires with comma to create in List form" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[List_Countries]</OutArgument>
       </Assign.To>
@@ -523,7 +579,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap2010:Annotation.AnnotationText="Filter datatable with refrence of uppercase country names available in List" sap:VirtualizedContainerService.HintSize="631,113" sap2010:WorkflowViewState.IdRef="Assign_12">
+    <Assign sap2010:Annotation.AnnotationText="Filter datatable with refrence of uppercase country names available in List" sap:VirtualizedContainerService.HintSize="555,113" sap2010:WorkflowViewState.IdRef="Assign_12">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[DT_AvendraInput_CSV]</OutArgument>
       </Assign.To>
@@ -536,21 +592,21 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove Uppercase Cpuntry column. because filteration is completed. " ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="631,228" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" sap2010:Annotation.AnnotationText="Remove Uppercase Cpuntry column. because filteration is completed. " ColumnName="Country UpperCase" DataTable="[DT_AvendraInput_CSV]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="555,228" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RemoveDataColumn>
-    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding blank column1" ColumnName="Column1" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631,217" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="adding blank column1" ColumnName="Column1" DataTable="[DT_AvendraInput_CSV]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="555,217" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:AddDataColumn>
-    <InvokeMethod sap2010:Annotation.AnnotationText="change position blank column1 at 3rd position as per rule in design flow" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="631,193" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
+    <InvokeMethod sap2010:Annotation.AnnotationText="change position blank column1 at 3rd position as per rule in design flow" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="555,192" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
       <InvokeMethod.TargetObject>
         <InArgument x:TypeArguments="sd:DataColumn">[DT_AvendraInput_CSV.Columns("Column1")]</InArgument>
       </InvokeMethod.TargetObject>
@@ -561,8 +617,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <InArgument x:TypeArguments="x:Int32">2</InArgument>
     </InvokeMethod>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Writing Avendra Input CSV file&quot;]" />
-    <Assign sap:VirtualizedContainerService.HintSize="631,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Writing Avendra Input CSV file&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="555,81" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_AvendraInputPath]</OutArgument>
       </Assign.To>
@@ -570,8 +626,8 @@
         <InArgument x:TypeArguments="x:String">[in_DestinationPath+"\Avendra Input "+Now.ToString("MMddyy hh-mm-ss")+".csv"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:WriteCsvFile AddHeaders="False" DataTable="[DT_AvendraInput_CSV]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[out_AvendraInputPath]" sap:VirtualizedContainerService.HintSize="631,154" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="631,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:WriteCsvFile AddHeaders="False" DataTable="[DT_AvendraInput_CSV]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[out_AvendraInputPath]" sap:VirtualizedContainerService.HintSize="555,154" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="555,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,205" sap2010:WorkflowViewState.IdRef="Sequence_32">
           <sap:WorkflowViewStateService.ViewState>
@@ -661,7 +717,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Done, Avendra Input Prepared and Saved at Location &quot;+out_AvendraInputPath]" />
-    <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="631,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Done, Avendra Input Prepared and Saved at Location &quot;+out_AvendraInputPath]" />
+    <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="555,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
   </Sequence>
 </Activity>
