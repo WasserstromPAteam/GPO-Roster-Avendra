@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_GoogleAPIFileName&StateMachine_1",
         "str_AvendraFilePath&StateMachine_1",
         "Screenshot&StateMachine_1",
         "TransactionItem&StateMachine_1",
@@ -40,6 +41,7 @@
         "str_AvendraFilePath&Sequence_9"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_GoogleAPIFileName",
         "out_AvendraFilePath",
         "in_Config"
       ],
@@ -73,116 +75,6 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_PendingEnrollmentPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Check_MatchingFile.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_MatchingFile&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "Out_ProceedNext",
-        "in_MatchingFilePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Add Hospitality Accounts.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Str_HospitalityPG&Sequence_1",
-        "DT_HositalityPG&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_PriceGroupHopitality_Path"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/SAP_MultipleSelection.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [
-        "in_str_MultipleSelectionValues"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Format_SAPFile.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "firstRowValue&Sequence_3",
-        "colList&Sequence_1",
-        "DT_HospAccActive&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_HospitalAccActivePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Format_MatchingFile.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_MatchingFile&Sequence_1",
-        "Index&Sequence_1",
-        "DT_HospAccActive&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "Out_DT_MatchingFile",
-        "in_MatchingFilePath",
-        "in_HospitalAccActivePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Flag_AvendraCustomer.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [
-        "io_DT_AvendraCustomer"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Delete_Files.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [
-        "in_FolderPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/SAP_Login.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "bool_SAP_Login&Flowchart_1",
-        "bool_LoginCheck&Flowchart_1",
-        "int_SAP_Logon_Check&Flowchart_1",
-        "int_SAP_Logon_Check_Ref&Flowchart_1",
-        "str_Increment_Counter&Flowchart_1",
-        "str_Increment_Counter_Ref&Flowchart_1",
-        "bool_SAPserver_Exist&Flowchart_1",
-        "bool_LoginScreenElement_Exists&Flowchart_1",
-        "bool_SAPLogon_750&Flowchart_1",
-        "str_UserName&Flowchart_1",
-        "str_Password&Flowchart_1",
-        "var_SAPWindow_Maximise&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "io_Config",
-        "out_Incorrect_Credentilas"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -271,158 +163,9 @@
         "Bool_MatchingNotEmpty&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_GoogleAPIFileName",
         "in_AvendraFilePath",
         "in_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Data Manipulation.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_Matching&Sequence_1",
-        "DT_BotCsvInput&Sequence_1",
-        "DT_BotCsvDataBasic&Sequence_1",
-        "Index&Sequence_20"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_ZipFolderPath",
-        "in_DestinationPath",
-        "in_SAP_Tcode"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel workflows/Prepare_BotCsv.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_BotCsvBasic&Sequence_1",
-        "Index&Sequence_1",
-        "DT_FilteredDataFinal&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_DestinationPathBotFiles",
-        "Out_DT_BotCsvFile",
-        "in_BotCsvBasic"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/Upload File To SAP.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "bool_FedexScreenExist&Sequence_1",
-        "bool_Transfered&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_SAP_Tcode",
-        "in_BotInputPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel workflows/Lookup ZFEDEX File.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT_ZfedexMain&Sequence_1",
-        "Index&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_ZfedexFilePath",
-        "in_DT_BotCSVInputFile"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/SAP_LogoutORBack.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "bool_logutExist&Sequence_5",
-        "bool_var_ScriptFail_Exists&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_Operationtype"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/Tcode SQ01 and select variant.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "SAP_StatusBar&Sequence_1",
-        "bool_Download_Page&Sequence_1",
-        "Var_Query&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/SAP_ExcelFileExport.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "bool_ExportPage&Sequence_2",
-        "bool_ExportPopup&Sequence_2",
-        "download&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_DestinationPath",
-        "in_FileName"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Format_BotExcel.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_BotCustomerCol&Sequence_1",
-        "fileName&Sequence_1",
-        "dt_Bot&Sequence_1",
-        "dt_PendingEnrollment&Sequence_1",
-        "dt_Master&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_AvendraFilePath",
-        "out_CustomerColRowCount",
-        "in_BotFilepath",
-        "in_MasterFilePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/Tcode SQ01 and select variant_Activeshiptos.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "SAP_StatusBar&Sequence_1",
-        "bool_Download_Page&Sequence_1",
-        "Var_Query&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_botFilePath",
-        "in_Config"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "SAP Workflows/Execute_SHIPTOCOMPTO.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_Bot&Sequence_1",
-        "Var_CustomerNumbers&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_BotFilepath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -432,27 +175,6 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/Add_BlankAcctoGPOMasterFile.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "DT2_AvendraColumn&Sequence_1",
-        "Index_dt_Avendra&Sequence_2",
-        "AvendraIndex&Sequence_5",
-        "DT1_bot&Sequence_1",
-        "DT2_bot&Sequence_1",
-        "DT_MasterGoogleRuns&Sequence_1",
-        "DT_BotFile&Sequence_1",
-        "DT1_start5columns&Sequence_1",
-        "Dict_ColumnIndex&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_MasterGoogleRunsFile",
-        "in_BotFile"
-      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -506,23 +228,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Avendra/Lookup_FinishedCustomerAvendra.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_Avendra&Sequence_1",
-        "dt_bot&Sequence_1",
-        "List_ExcelSheets&Sequence_2",
-        "rowIndex&Sequence_3"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_BotFilePath",
-        "in_DestinationPath",
-        "in_AvendraPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Edge Workflows/Avendra login.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
@@ -548,52 +253,6 @@
         "in_config",
         "Out_AvendraCustomerFilePath",
         "in_DestinationPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Avendra/Lookup_CustomerAvendra.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "rowIndex&Sequence_1",
-        "DT_AvendraCustomers&Sequence_1",
-        "DT_HospAccActive&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_AvendraFilePath",
-        "in_HospitalAccActivePath",
-        "in_DT_MatchingFile"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Excel Workflows/RemoveDuplicate_HiltonNumber.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_AvendraCustomer&Sequence_1",
-        "Var_CustomerID&Sequence_2",
-        "IndexList&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_AvendraFilePath",
-        "in_dt_bot",
-        "in_BotFilePath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Avendra/Lookup_ActiveShipData.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "dt_Bot&Sequence_1",
-        "dt_ActiveShipTo&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_BotFilepath",
-        "in_ActiveShipFilepath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

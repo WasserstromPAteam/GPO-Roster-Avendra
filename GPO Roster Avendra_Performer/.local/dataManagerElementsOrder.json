@@ -110,6 +110,53 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_ActiveShipData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Bot&Sequence_1",
+        "dt_ActiveShipTo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath",
+        "in_ActiveShipFilepath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_CustomerAvendra.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_HospAccActive&Sequence_1",
+        "DT_AvendraCustomers&Sequence_1",
+        "rowIndex&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_HospitalAccActivePath",
+        "in_DT_MatchingFile",
+        "in_AvendraFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/Lookup_FinishedCustomerAvendra.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Avendra&Sequence_1",
+        "dt_bot&Sequence_1",
+        "List_ExcelSheets&Sequence_2",
+        "rowIndex&Sequence_3"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilePath",
+        "in_DestinationPath",
+        "in_AvendraPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
