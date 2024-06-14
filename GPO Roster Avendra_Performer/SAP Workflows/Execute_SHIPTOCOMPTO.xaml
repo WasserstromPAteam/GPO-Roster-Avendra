@@ -1,0 +1,261 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Execute_SHIPTOCOMPTO" this:Execute_SHIPTOCOMPTO.in_BotFilepath="C:\GitHubSai\GPO-Roster-Hilton\GPO Roster Hilton\Data\Input\bot.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_BotFilepath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>924,2305</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Execute_SHIPTOCOMPTO_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Excecutes multiple customer numbers to extract Activeship data&#xA;" DisplayName="Execute_SHIPTOCOMPTO" sap:VirtualizedContainerService.HintSize="550,2240" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
+      <Variable x:TypeArguments="x:String" Name="Var_CustomerNumbers" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Excecuting Shiptocompto initiated&quot;]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Read Range Workbook botf ile" sap:VirtualizedContainerService.HintSize="488,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
+    <Assign DisplayName="Assign Customer values in string" sap:VirtualizedContainerService.HintSize="488,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Var_CustomerNumbers]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[String.Join(",",dt_Bot.AsEnumerable.Select(Function(x)x(8).ToString))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Multiple'" sap:VirtualizedContainerService.HintSize="488,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7cfd002-869a-4362-9497-81f4fc1e3bdc" InformativeScreenshot="12c58165098de54f422d46856d2bbbf7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='usr/btn%_SP$00001_%_APP_%-VALU_PUSH' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:Click.Target>
+    </ui:Click>
+    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Multiple selection of Customers initiated&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_MultipleSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="488,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_MultipleSelection.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_str_MultipleSelectionValues">[system.text.RegularExpressions.Regex.Replace(Var_CustomerNumbers.replace(","," ").Trim, " {2,}", " ").Replace(" ",Environment.newline)]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Multiple selection of Customers Completed&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clearing Price Group Values&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,813" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence DisplayName="SAP_UploadData" sap:VirtualizedContainerService.HintSize="450,585" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Multiple'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e7cfd002-869a-4362-9497-81f4fc1e3bdc" InformativeScreenshot="12c58165098de54f422d46856d2bbbf7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*' /&gt;&lt;sap id='usr/btn%_SP$00004_%_APP_%-VALU_PUSH' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="click on delete btn to clear existing values in multiple slection opup" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Delete'" sap:VirtualizedContainerService.HintSize="388,149" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="311c7bfd-1a88-4f60-a47d-120bb6aea444" InformativeScreenshot="c930e17717e590053dda313bea60b94d" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;&lt;sap id='tbar[0]/btn[16]' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:Click.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:Click>
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="click on ok checkmark" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Copy (F8)'" sap:VirtualizedContainerService.HintSize="388,138" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d70bae17-e497-4e53-a998-f308c770784e" InformativeScreenshot="833c59a43f1492ab73bfdd9b5f4e9ec7" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;&lt;sap id='tbar[0]/btn[8]' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </ui:Click.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:Click>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

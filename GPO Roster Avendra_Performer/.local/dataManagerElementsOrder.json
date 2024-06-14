@@ -1,0 +1,115 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&StateMachine_1",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SendMail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "In_Screenshot",
+        "In_EmailSubject",
+        "In_EmailBody",
+        "in_Config",
+        "in_Exception"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SetTransactionStatus.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "QueueRetry&Sequence_17",
+        "ScreenshotPath&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BusinessException",
+        "in_TransactionField1",
+        "in_TransactionField2",
+        "in_TransactionID",
+        "in_SystemException",
+        "in_Config",
+        "in_TransactionItem",
+        "io_RetryNumber",
+        "io_TransactionNumber",
+        "io_ConsecutiveSystemExceptions"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Bool_MatchingNotEmpty&Sequence_1",
+        "DT_MatchingFile&Sequence_1",
+        "int_BotCustomersCount&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config",
+        "in_AvendraFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/KillAllProcesses.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

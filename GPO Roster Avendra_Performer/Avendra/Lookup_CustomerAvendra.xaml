@@ -1,0 +1,470 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_PendingEnrollment" this:Lookup_PendingEnrollment.in_HospitalAccActivePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061224\Hospitality Accounts Active 061224.xlsx" this:Lookup_PendingEnrollment.in_AvendraFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Avendra\061224\Avendra Customers 2024-06-12 - Copy.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_HospitalAccActivePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_DT_MatchingFile" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
+    <x:Property Name="in_AvendraFilePath" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1121,4641</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Lookup_PendingEnrollment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Lookup_Customer Avendra" sap:VirtualizedContainerService.HintSize="693,4496" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_HospAccActive" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraCustomers" />
+      <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Converting Input addrress column into uppercase for lookup datatable" DataTable="[in_DT_MatchingFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631,387" sap2010:WorkflowViewState.IdRef="ForEachRow_6">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_24">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[CurrentRow("InputAddress")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">[CurrentRow("InputAddress").ToString.ToUpper.Trim]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="631,281" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_15">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_AvendraCustomers]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="ReferenceRobot" DataTable="[DT_AvendraCustomers]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="631,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Hospitality account to get column A-M into Avendra Customer file&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="631,281" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_HospitalAccActivePath]">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_HospAccActive]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExcelApplicationScope>
+    <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="ADDING 13 COLUMN I.E COLUMN A-M INTO Avendra DT" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="631,719" sap2010:WorkflowViewState.IdRef="ForEach`1_1" MaxIterations="13" Values="[DT_HospAccActive.Columns]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="sd:DataColumn">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="currentItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,502" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,414" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch.Try>
+                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[currentItem.ToString]" DataTable="[DT_AvendraCustomers]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="550,424" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,309" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                        <TryCatch.Try>
+                          <Sequence sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[currentItem.ToString+&quot; column already exist in Avendra file. hence renaming as &quot;+currentItem.ToString+&quot;1&quot;]" />
+                            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[currentItem.ToString+&quot;1&quot;]" DataTable="[DT_AvendraCustomers]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+                          </Sequence>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:Exception">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="450,478" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[currentItem.ToString+&quot;1 column already exist in Avendra Customer file. hence renaming as &quot;+currentItem.ToString+&quot;1_1&quot;]" />
+                                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[currentItem.ToString+&quot;1_1&quot;]" DataTable="[DT_AvendraCustomers]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="388,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+                              </Sequence>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;performing lookup pedning enrollment with matching.xlsx to amtch Full address column getting All 13 columns data into pending ernroll ment file&quot;]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="performing lookup Avendra Customer with matching.xlsx to amtch Full address column getting All 13 columns data into Avendra file" DataTable="[DT_AvendraCustomers]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="631,1406" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="597,1178" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[in_DT_MatchingFile]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="555,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="InputAddress" LookupValue="[CurrentRow(&quot;Full Address&quot;).ToString.ToUpper.Trim]" RowIndex="[rowIndex]" />
+            <If Condition="[rowIndex&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="555,758" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="521,576" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,488" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+1)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+1).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+2)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+2).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+3)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+3).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+4)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+4).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+5)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+5).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+6)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+6).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+7)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+7).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+8)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+8).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+9)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+9).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+10)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+10).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+11)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+11).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+12)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+12).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_AvendraCustomers.Columns("ReferenceRobot").Ordinal+13)]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Object">[in_DT_MatchingFile.rows(rowIndex).item( in_DT_MatchingFile.Columns("Full Address").Ordinal+13).ToString]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="ReferenceRobot" DataTable="[DT_AvendraCustomers]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="631,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:WriteRange AddHeaders="True" DataTable="[DT_AvendraCustomers]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="631,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_AvendraFilePath]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="631,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Avendra Customers with matching finished. and data written into &quot;+in_AvendraFilePath]" />
+  </Sequence>
+</Activity>
