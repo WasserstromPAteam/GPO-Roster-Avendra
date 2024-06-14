@@ -1,7 +1,7 @@
 {
-  "name": "GPO Roster Avendra",
+  "name": "GPO Roster Avendra_Dispatcher",
   "projectId": "b51d62c8-efce-4f5d-aea1-6823951dd3fd",
-  "description": "Robotic Enterprise Framework",
+  "description": "Dispatcher o Create avendra input file and upload google api portal",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.22.3]",
