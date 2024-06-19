@@ -3,11 +3,12 @@
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_AvendraFilePath" Type="OutArgument(x:String)" />
     <x:Property Name="out_GoogleAPIFileName" Type="OutArgument(x:String)" />
+    <x:Property Name="out_AvendraInputRowsCount" Type="OutArgument(x:Int32)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1121,1552</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>972,1552</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -139,12 +140,27 @@
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Create InputFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Avendra\Create InputFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[str_AvendraFilePath]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_GoogleRunsMasterFilePath">[in_Config("MasterFileGoogleRuns").ToString]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_AvendraInputPath">[str_AvendraInputFilePath]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">[in_Config("CountriesToFilter").ToString]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraFilePathExcel">[out_AvendraFilePath]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AvendraFilePath" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_GoogleRunsMasterFilePath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;MasterFileGoogleRuns&quot;).ToString" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_AvendraInputPath">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_AvendraInputFilePath" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;CountriesToFilter&quot;).ToString" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraFilePathExcel">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="out_AvendraFilePath" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="Out_AvendraInputRowsCount">
+          <VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="out_AvendraInputRowsCount" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Portal Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Google Address API Workflows\Portal Login.xaml">

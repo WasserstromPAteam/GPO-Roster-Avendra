@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>972,864</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1166,864</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -165,9 +165,21 @@
               </Assign>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Process workflow" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Framework\Process.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[str_AvendraFilePath]</InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_GoogleAPIFileName">[str_GoogleAPIFileName]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                    <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_AvendraFilePath" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_GoogleAPIFileName">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_GoogleAPIFileName" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_AvendraInputRowsCount">
+                    <VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Int_AvendraInputRowsCount" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="Out_PostponedTime">
+                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_PostponedTime" />
+                  </OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -261,9 +273,9 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+            <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="732,1666" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
-                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="686,1674" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="686,1521" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -271,13 +283,13 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch.Try>
-                    <Sequence sap:VirtualizedContainerService.HintSize="648,1446" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                    <Sequence sap:VirtualizedContainerService.HintSize="648,1293" sap2010:WorkflowViewState.IdRef="Sequence_38">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[SystemException Is Nothing]" sap:VirtualizedContainerService.HintSize="586,1182" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If Condition="[SystemException Is Nothing]" sap:VirtualizedContainerService.HintSize="586,1029" sap2010:WorkflowViewState.IdRef="If_15">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="552,847" sap2010:WorkflowViewState.IdRef="Sequence_36">
                             <sap:WorkflowViewStateService.ViewState>
@@ -301,7 +313,7 @@
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" AuthScopesInvalid="False" Body="[&quot;Hello,&#xD;&#xA;&#xD;&#xA;Dispatcher has Successfully  uploaded Avendra Input File to Google API Portal. &#xD;&#xA;The file name is- &quot;+str_GoogleAPIFileName]" Cc="[Config(&quot;CcEmail&quot;).ToString.Split(&quot;;&quot;)]" DisplayName="Send Mail" From="[Config(&quot;UipathUser&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,351" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="Dispatcher Success-GPO Roster Avendra" To="[Config(&quot;SuccessEmail&quot;).ToString.Split(&quot;;&quot;)]">
+                                    <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" AuthScopesInvalid="False" Body="[&quot;Hello,&#xD;&#xA;&#xD;&#xA;Dispatcher has Successfully  uploaded Avendra Input File to Google API Portal. &#xD;&#xA;The file name is- &quot;+str_GoogleAPIFileName+&quot;., &#xD;&#xA;Performer Will Trigger in &quot;+str_PostponedTime+&quot; Minutes from now.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;ThankYou!&quot;]" Cc="[Config(&quot;CcEmail&quot;).ToString.Split(&quot;;&quot;)]" DisplayName="Send Mail" From="[Config(&quot;UipathUser&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,351" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="False" IsDraft="False" Subject="Dispatcher Success-GPO Roster Avendra" To="[Config(&quot;SuccessEmail&quot;).ToString.Split(&quot;;&quot;)]">
                                       <umam:SendMail.Attachments>
                                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
                                       </umam:SendMail.Attachments>
@@ -640,6 +652,7 @@
                   <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_AvendraFilePath">[str_AvendraFilePath]</OutArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="out_GoogleAPIFileName">[str_GoogleAPIFileName]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_AvendraInputRowsCount">[Int_AvendraInputRowsCount]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -735,6 +748,8 @@
       <Variable x:TypeArguments="x:String" Name="str_AvendraFilePath" />
       <Variable x:TypeArguments="x:String" Name="Screenshot" />
       <Variable x:TypeArguments="x:String" Name="str_GoogleAPIFileName" />
+      <Variable x:TypeArguments="x:Int32" Name="Int_AvendraInputRowsCount" />
+      <Variable x:TypeArguments="x:String" Name="str_PostponedTime" />
     </StateMachine.Variables>
   </StateMachine>
 </Activity>

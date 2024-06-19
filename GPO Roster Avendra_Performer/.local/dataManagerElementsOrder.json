@@ -157,6 +157,175 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Prepare_BotCsv.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_BotCsvBasic&Sequence_1",
+        "Index&Sequence_1",
+        "DT_FilteredDataFinal&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPathBotFiles",
+        "Out_DT_BotCsvFile",
+        "in_BotCsvBasic"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Data Manipulation.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_BotCsvInput&Sequence_1",
+        "DT_BotCsvDataBasic&Sequence_1",
+        "DT_Matching&Sequence_1",
+        "Index&Sequence_20"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ZipFolderPath",
+        "in_DestinationPath",
+        "in_SAP_Tcode"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Upload File To SAP.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_FedexScreenExist&Sequence_1",
+        "bool_Transfered&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_SAP_Tcode",
+        "in_BotInputPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Flag_AvendraCustomer.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "io_DT_AvendraCustomer"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Format_BotExcel.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_AvendraCustomers&Sequence_1",
+        "dt_Bot&Sequence_1",
+        "dt_Master&Sequence_1",
+        "fileName&Sequence_1",
+        "dt_BotCustomerCol&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath",
+        "in_MasterFilePath",
+        "out_CustomerColRowCount",
+        "in_AvendraFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Download_Processed Output.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ExtractDataTable1&Sequence_1",
+        "bool_FileCompleted&Sequence_1",
+        "NewFilePath&Sequence_1",
+        "Timer11&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_rowIndex",
+        "in_Status",
+        "in_DestinationPath",
+        "in_Config",
+        "In_FileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Check_MatchingFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MatchingFile&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_MatchingFilePath",
+        "Out_ProceedNext"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Tcode SQ01 and select variant.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_Download_Page&Sequence_1",
+        "Var_Query&Sequence_1",
+        "SAP_StatusBar&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Add Hospitality Accounts.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_HositalityPG&Sequence_1",
+        "Str_HospitalityPG&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_PriceGroupHopitality_Path"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_ExcelFileExport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_ExportPage&Sequence_2",
+        "bool_ExportPopup&Sequence_2",
+        "download&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPath",
+        "in_FileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Status_Check.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_RecordsExist&Sequence_1",
+        "ExtractDataTable1&Sequence_1",
+        "str_status&Sequence_1",
+        "bool_FileFound&Sequence_1",
+        "RowIndex&Sequence_1",
+        "Counter&Sequence_17"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "In_FileName",
+        "in_DestinationPath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

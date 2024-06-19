@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_PostponedTime&StateMachine_1",
+        "Int_AvendraInputRowsCount&StateMachine_1",
         "str_GoogleAPIFileName&StateMachine_1",
         "str_AvendraFilePath&StateMachine_1",
         "Screenshot&StateMachine_1",
@@ -41,6 +43,7 @@
         "str_AvendraFilePath&Sequence_9"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_AvendraInputRowsCount",
         "out_GoogleAPIFileName",
         "out_AvendraFilePath",
         "in_Config"
@@ -158,11 +161,11 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "int_BotCustomersCount&Sequence_1",
-        "DT_MatchingFile&Sequence_1",
-        "Bool_MatchingNotEmpty&Sequence_1"
+        "PostponeTime_Minutes&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "Out_PostponedTime",
+        "in_AvendraInputRowsCount",
         "in_GoogleAPIFileName",
         "in_AvendraFilePath",
         "in_Config"
@@ -201,6 +204,7 @@
         "firstRowValue&Sequence_20"
       ],
       "ArgumentsSectionElementsOrder": [
+        "Out_AvendraInputRowsCount",
         "Out_AvendraFilePathExcel",
         "in_CountriesToFilter",
         "out_AvendraInputPath",

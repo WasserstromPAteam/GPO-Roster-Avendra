@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,2402</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1166,2688</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_and_download_customer_list_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -100,7 +100,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_and_download_customer_list" sap:VirtualizedContainerService.HintSize="642,2337" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigate_and_download_customer_list" sap:VirtualizedContainerService.HintSize="650,2623" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFilePath" />
     </Sequence.Variables>
@@ -109,41 +109,57 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Pages - Supplier Dashboard" sap:VirtualizedContainerService.HintSize="580,1724" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="76a25332-e8b4-4746-982b-9045bcfab891" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Pages - Supplier Dashboard" sap:VirtualizedContainerService.HintSize="588,2010" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="76a25332-e8b4-4746-982b-9045bcfab891" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="546,1507" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="554,1793" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigating to Customer Page&quot;]" />
-            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="484,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_config(&quot;Avendra_URL_Customer&quot;).ToString]" Version="V3" />
-            <uix:NSelectItem DisplayName="Select Item 'Bot View'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Bot View" ScopeIdentifier="76a25332-e8b4-4746-982b-9045bcfab891" Version="V3">
-              <uix:NSelectItem.Items>
-                <scg:List x:TypeArguments="x:String" Capacity="5">
-                  <x:String>Active Customers View</x:String>
-                  <x:String>All Active and De-Enrolled Customers View</x:String>
-                  <x:String>De-Enrolled Customers View</x:String>
-                  <x:String>eCommerce Customers View</x:String>
-                  <x:String>Bot View</x:String>
-                </scg:List>
-              </uix:NSelectItem.Items>
-              <uix:NSelectItem.Target>
-                <uix:TargetAnchorable BrowserURL="https://clp.aramark-avendragroup.com/customers/customer-list" CvTextArea="353, 348, 79, 21" CvTextArgument="Bot View" CvType="Text" DesignTimeRectangle="344, 335, 150, 49" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Bot View'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-dropdown&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='ng-tns-c15-7 ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix' aaname='' /&gt;" Guid="5bab31bb-250b-4c75-b63c-d6514997fd01" InformativeScreenshot="9cfc6563d0a752ef94c57da20a85c9d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Avendra.CLP.Web' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Visible" WaitForReadyArgument="Complete">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="506, 335, 79, 50" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='BUTTON' class='btn btn-outline-primary ml-1 ml-lg-2 ng-star-inserted' aaname='' /&gt;" SearchSteps="FuzzySelector" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NSelectItem.Target>
-            </uix:NSelectItem>
-            <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[DownloadedFilePath]" sap:VirtualizedContainerService.HintSize="484,707" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp,part,tmp.crdownload,tmp.partial,download,cache,bak,swp,~">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigating to Customer Page&quot;]" />
+            <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="492,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[in_config(&quot;Avendra_URL_Customer&quot;).ToString]" Version="V3" />
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,443" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="5" RetryInterval="00:00:15">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NSelectItem DisplayName="Select Item 'Bot View'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="Bot View" ScopeIdentifier="76a25332-e8b4-4746-982b-9045bcfab891" Version="V3">
+                      <uix:NSelectItem.Items>
+                        <scg:List x:TypeArguments="x:String" Capacity="5">
+                          <x:String>Active Customers View</x:String>
+                          <x:String>All Active and De-Enrolled Customers View</x:String>
+                          <x:String>De-Enrolled Customers View</x:String>
+                          <x:String>eCommerce Customers View</x:String>
+                          <x:String>Bot View</x:String>
+                        </scg:List>
+                      </uix:NSelectItem.Items>
+                      <uix:NSelectItem.Target>
+                        <uix:TargetAnchorable BrowserURL="https://clp.aramark-avendragroup.com/customers/customer-list" CvTextArea="353, 348, 79, 21" CvTextArgument="Bot View" CvType="Text" DesignTimeRectangle="344, 335, 150, 49" DesignTimeScaleFactor="1.5" ElementType="InputBox" FriendlyName="'Bot View'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-dropdown&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='DIV' class='ng-tns-c15-7 ui-dropdown ui-widget ui-state-default ui-corner-all ui-helper-clearfix' aaname='' /&gt;" Guid="5bab31bb-250b-4c75-b63c-d6514997fd01" InformativeScreenshot="9cfc6563d0a752ef94c57da20a85c9d8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Avendra.CLP.Web' /&gt;" SearchSteps="FuzzySelector" Version="V2" WaitForReadyArgument="Complete">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="506, 335, 79, 50" ElementType="Button" FriendlyName="'BUTTON'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;app-customer-list&amp;gt;div&amp;gt;app-datatable&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p-table&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='BUTTON' class='btn btn-outline-primary ml-1 ml-lg-2 ng-star-inserted' aaname='' /&gt;" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NSelectItem.Target>
+                    </uix:NSelectItem>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[DownloadedFilePath]" sap:VirtualizedContainerService.HintSize="492,707" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" IgnoreFiles="crdownload,tmp,part,tmp.crdownload,tmp.partial,download,cache,bak,swp,~">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction>
                   <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,451" sap2010:WorkflowViewState.IdRef="Sequence_3">
