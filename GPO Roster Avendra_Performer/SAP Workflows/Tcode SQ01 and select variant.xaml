@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,5932</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1133,5994</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Tcode_SQ01_and_select_variant_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -114,7 +114,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Tcode_SQ01_and_select_variant" sap:VirtualizedContainerService.HintSize="554,5867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Tcode_SQ01_and_select_variant" sap:VirtualizedContainerService.HintSize="554,5929" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_Download_Page" />
       <Variable x:TypeArguments="x:String" Name="Var_Query" />
@@ -126,7 +126,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Landing into SQ01 Page&quot;]" />
-    <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="492,160" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Config(&quot;Tcode_SQ01&quot;).ToString]">
+    <ucas:CallTransaction sap2010:Annotation.AnnotationText="Execute Tcode in SAP" DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="492,191" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Config(&quot;Tcode_SQ01&quot;).ToString]">
       <ucas:CallTransaction.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd935e48-31fe-431f-a577-5bea65b6a2c5" InformativeScreenshot="bb87b36cbefe27b7baca62a2b2ee86e3" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -*' /&gt;">
           <ui:Target.TimeoutMS>
@@ -137,8 +137,13 @@
           </ui:Target.WaitForReady>
         </ui:Target>
       </ucas:CallTransaction.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ucas:CallTransaction>
-    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Menubar  mbar'" sap:VirtualizedContainerService.HintSize="492,160" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Environment/Query areas">
+    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" sap2010:Annotation.AnnotationText="Selcting toolbar options" DisplayName="Click Toolbar Button 'Menubar  mbar'" sap:VirtualizedContainerService.HintSize="492,191" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Environment/Query areas">
       <ucas:ClickToolbarButton.Items>
         <scg:List x:TypeArguments="x:String" Capacity="50">
           <x:String>Query/Delete...</x:String>
@@ -203,6 +208,11 @@
           </ui:Target.WaitForReady>
         </ui:Target>
       </ucas:ClickToolbarButton.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ucas:ClickToolbarButton>
     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'RadioButton Standard'" sap:VirtualizedContainerService.HintSize="492,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>

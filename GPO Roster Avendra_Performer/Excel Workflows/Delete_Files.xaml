@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,1337</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1133,1288</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Delete_Files_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -90,14 +90,14 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Delete_Files" sap:VirtualizedContainerService.HintSize="568,1272" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Delete_Files" sap:VirtualizedContainerService.HintSize="568,1223" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="506,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Deleting Files at Destination folder&quot;]" />
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[in_FolderPath]" sap:VirtualizedContainerService.HintSize="506,980" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[in_FolderPath]" sap:VirtualizedContainerService.HintSize="506,931" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="True" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -106,13 +106,18 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,722" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="472,673" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentFile.Name.ToString.ToUpper = &quot;COMBINEDFILES.ZIP&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;BOT.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;ERROR.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;HUMAN.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;MATCHING.CSV&quot; OR CurrentFile.Name.ToString.ToUpper.Contains(&quot;HOSPITALITY ACCOUNTS ACTIVE&quot;) OR CurrentFile.Name.ToString.ToUpper.Contains(&quot;AVENDRA INPUT&quot;)]" sap:VirtualizedContainerService.HintSize="410,611" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap2010:Annotation.AnnotationText="dete the files if the file name is mentioned below conditions" Condition="[CurrentFile.Name.ToString.ToUpper = &quot;COMBINEDFILES.ZIP&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;BOT.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;ERROR.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;HUMAN.CSV&quot; OR CurrentFile.Name.ToString.ToUpper = &quot;MATCHING.CSV&quot; OR CurrentFile.Name.ToString.ToUpper.Contains(&quot;HOSPITALITY ACCOUNTS ACTIVE&quot;) OR CurrentFile.Name.ToString.ToUpper.Contains(&quot;AVENDRA INPUT&quot;)]" sap:VirtualizedContainerService.HintSize="410,562" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,349" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>

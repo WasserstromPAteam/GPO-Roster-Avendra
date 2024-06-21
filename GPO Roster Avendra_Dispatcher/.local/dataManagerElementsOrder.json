@@ -68,21 +68,6 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Sequence.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "Conts&Sequence_1",
-        "Sheets&Sequence_1",
-        "DT_AvendraCustomer&Sequence_1",
-        "dt_bot&Sequence_1"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "in_PendingEnrollmentPath"
-      ],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Google Address API Workflows/Portal Login.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
@@ -271,6 +256,26 @@
       "ArgumentsSectionElementsOrder": [
         "in_config"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Read_Email.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "EmailList&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/PortalLogout.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

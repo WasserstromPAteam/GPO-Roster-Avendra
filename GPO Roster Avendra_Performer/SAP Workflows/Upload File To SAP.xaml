@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>976,3548</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1133,3579</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Upload_File_To_SAP_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Upload_File_To_SAP" sap:VirtualizedContainerService.HintSize="472,3483" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Upload_File_To_SAP" sap:VirtualizedContainerService.HintSize="472,3514" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_FedexScreenExist" />
       <Variable x:TypeArguments="x:Boolean" Name="bool_Transfered" />
@@ -116,7 +116,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Executing SAP Tcode &quot;+in_SAP_Tcode]" />
-    <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="410,160" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_SAP_Tcode]">
+    <ucas:CallTransaction sap2010:Annotation.AnnotationText="Execute Tcode in SAP" DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="410,191" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_SAP_Tcode]">
       <ucas:CallTransaction.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="74428e14-4c43-4562-a2fa-3b34d826a5ac" InformativeScreenshot="df895f26e55689c71ecf7005cc32ef97" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access*' /&gt;">
           <ui:Target.TimeoutMS>
@@ -127,6 +127,11 @@
           </ui:Target.WaitForReady>
         </ui:Target>
       </ucas:CallTransaction.Target>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ucas:CallTransaction>
     <ui:UiElementExists DisplayName="Element Exists 'Titlebar Fedex'" Exists="[bool_FedexScreenExist]" sap:VirtualizedContainerService.HintSize="410,107" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
@@ -140,7 +145,7 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If sap2010:Annotation.AnnotationText="check weather file has been processed by SAP ompletely " Condition="[bool_FedexScreenExist]" sap:VirtualizedContainerService.HintSize="410,620" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="check weather file has been processed by SAP completely " Condition="[bool_FedexScreenExist]" sap:VirtualizedContainerService.HintSize="410,620" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

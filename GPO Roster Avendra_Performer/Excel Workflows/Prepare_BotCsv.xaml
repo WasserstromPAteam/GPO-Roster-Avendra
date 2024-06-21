@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1164,5472</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1133,5483</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_BotCsv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,13 +105,13 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="710,5407" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="710,5418" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Prepare_BotCsv" sap:VirtualizedContainerService.HintSize="648,5296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Prepare_BotCsv" sap:VirtualizedContainerService.HintSize="648,5307" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="DT_BotCsvBasic" />
         <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -131,7 +131,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_BotCsvBasic]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="getting only Customer and Formattedaddress column" DataTable="[DT_BotCsvBasic]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="586,192" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_BotCsvBasic]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="getting only Customer and Formattedaddress column in ouput dt" DataTable="[DT_BotCsvBasic]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="586,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_BotCsvBasic]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />

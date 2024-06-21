@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_to_upload_page" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="871.3333333333334,1054" sap2010:WorkflowViewState.IdRef="Navigate_to_upload_page_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Navigate_to_upload_page" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1133,1043" sap2010:WorkflowViewState.IdRef="Navigate_to_upload_page_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -80,26 +80,26 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Navigate_to_upload_page" sap:VirtualizedContainerService.HintSize="546,989.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Navigate_to_upload_page" sap:VirtualizedContainerService.HintSize="546,978" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Navigating to upload page&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: WebSphere Commerce Accelerator - sapaddressbot" sap:VirtualizedContainerService.HintSize="484,694" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V2" WindowResize="Maximize">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Navigating to upload page&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: WebSphere Commerce Accelerator - sapaddressbot" sap:VirtualizedContainerService.HintSize="484,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,469" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Wasserstrom'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Wasserstrom'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/webapp/wcs/tools/servlet/ToolsUIMenu" CvTextArea="423, 234, 121, 18" CvTextArgument="Wasserstrom" CvType="Text" DesignTimeRectangle="425, 232, 119, 23" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Wasserstrom'" FullSelectorArgument="&lt;webctrl parentid='menu4' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='menu4' tag='A' type='' class='' aaname='Wasserstrom' check:innerText='Wasserstrom' /&gt;" Guid="34137d00-b1a4-400c-a275-5a02807cb490" InformativeScreenshot="9125bc1fe3ebb88600dfc746eb28eb41.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -110,7 +110,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom File Uploads'" sap:VirtualizedContainerService.HintSize="388,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Custom File Uploads'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3924f901-56ab-4d8b-94d6-af4f6c1f44a6" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/wcs/tools/common/blank.html" CvTextArea="441, 329, 203, 24" CvTextArgument="Custom File Uploads" CvType="Text" DesignTimeRectangle="418, 327, 240, 25" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'Custom File Uploads'" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='3' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='' tag='A' aaname='Custom File Uploads  ' check:innerText='Custom File Uploads' /&gt;" Guid="4a2d940c-f3ca-4805-acc6-dd633c68d696" InformativeScreenshot="7cd97a94175e4dae88ee7a22e4914c38.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='MerchantCenter_sapaddressbot' title='WebSphere Commerce Accelerator - sapaddressbot' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>

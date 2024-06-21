@@ -83,6 +83,7 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Dt_Avendra&Sequence_1",
         "Bool_MatchingNotEmpty&Sequence_1",
         "DT_MatchingFile&Sequence_1",
         "int_BotCustomersCount&Sequence_1"
@@ -134,6 +135,7 @@
         "rowIndex&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_DtAvendraCustomers",
         "in_HospitalAccActivePath",
         "in_DT_MatchingFile",
         "in_AvendraFilePath"
@@ -145,12 +147,14 @@
       "Path": "Avendra/Lookup_FinishedCustomerAvendra.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_FilteredFinishedAvendra&Sequence_1",
         "dt_Avendra&Sequence_1",
         "dt_bot&Sequence_1",
         "List_ExcelSheets&Sequence_2",
         "rowIndex&Sequence_3"
       ],
       "ArgumentsSectionElementsOrder": [
+        "In_CountriesToFilter",
         "in_BotFilePath",
         "in_DestinationPath",
         "in_AvendraPath"
@@ -323,6 +327,118 @@
         "In_FileName",
         "in_DestinationPath",
         "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Avendra/FilterForFinishedFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "List_Countries&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_CountriesToFilter",
+        "out_Dt_FilteredAvendraCustomers",
+        "in_DT_AvendraCustomers"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_SAP_Login&Flowchart_1",
+        "bool_LoginCheck&Flowchart_1",
+        "int_SAP_Logon_Check&Flowchart_1",
+        "int_SAP_Logon_Check_Ref&Flowchart_1",
+        "str_Increment_Counter&Flowchart_1",
+        "str_Increment_Counter_Ref&Flowchart_1",
+        "bool_SAPserver_Exist&Flowchart_1",
+        "bool_LoginScreenElement_Exists&Flowchart_1",
+        "bool_SAPLogon_750&Flowchart_1",
+        "str_UserName&Flowchart_1",
+        "str_Password&Flowchart_1",
+        "var_SAPWindow_Maximise&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_Config",
+        "out_Incorrect_Credentilas"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Portal Login.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Var_Username&Sequence_2",
+        "Var_password&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Google Address API Workflows/Navigate to upload page.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Delete_Files.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_FolderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_LogoutORBack.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_logutExist&Sequence_5",
+        "bool_var_ScriptFail_Exists&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Operationtype"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup ZFEDEX File.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_ZfedexMain&Sequence_1",
+        "Index&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ZfedexFilePath",
+        "in_DT_BotCSVInputFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Format_MatchingFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MatchingFile&Sequence_1",
+        "Index&Sequence_1",
+        "DT_HospAccActive&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_MatchingFilePath",
+        "in_HospitalAccActivePath",
+        "Out_DT_MatchingFile"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

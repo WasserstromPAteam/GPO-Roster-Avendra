@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1166,7897</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>607,8109</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_HSM_Input_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,7 +123,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="617,7832" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="617,8044" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraCustomer" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -140,7 +140,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Avendra Customer File- &quot;+in_AvendraFilePath+&quot; For preapring Avendra Input file for Google API&quot;]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,572" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Avendra customers file which was downloaded from portal" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="555,603" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraFilePath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -164,6 +164,11 @@
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Renaming Duplicate Column names in dt&quot;]">
       <sap:WorkflowViewStateService.ViewState>
@@ -636,6 +641,7 @@
       </Assign.Value>
     </Assign>
     <ui:WriteCsvFile AddHeaders="False" DataTable="[DT_AvendraInput_CSV]" Delimitator="Comma" DisplayName="Write CSV" FilePath="[out_AvendraInputPath]" sap:VirtualizedContainerService.HintSize="555,154" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No of rows in 'Avendra Input.csv' file is &quot;+DT_AvendraInput_CSV.RowCount.ToString]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Done, Avendra Input Prepared and Saved at Location &quot;+out_AvendraInputPath]" />
     <ui:KillProcess Process="{x:Null}" AppliesTo="OnlyCurrentUser" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="555,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel" />
   </Sequence>
