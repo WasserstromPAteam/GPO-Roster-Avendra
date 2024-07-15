@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,2330</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2351.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_ActiveShipData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Reads bot and active ship data. Joins the data using Customer number and writes down to bot file&#xA;" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="648,2265" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Reads bot and active ship data. Joins the data using Customer number and writes down to bot file&#xA;" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="648,2286.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ActiveShipTo" />
@@ -118,10 +118,10 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Active ship data initiated to bot.xlsx&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="586,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Active ship data initiated to bot.xlsx&quot;]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Read Range Workbook bot file" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_ActiveShipTo]" DisplayName="Read Range Workbook Active shipto file" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[in_ActiveShipFilepath]" />
-    <ui:FilterDataTable DataTable="[dt_ActiveShipTo]" DisplayName="Filter active ship Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="586,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_ActiveShipTo]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[dt_ActiveShipTo]" DisplayName="Filter active ship Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="586,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_ActiveShipTo]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -142,10 +142,11 @@
           <InArgument x:TypeArguments="x:String">["Column10"]</InArgument>
           <InArgument x:TypeArguments="x:String">["Column11"]</InArgument>
           <InArgument x:TypeArguments="x:String">["Column12"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Column30"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign sap2010:Annotation.AnnotationText="Converting Datatbel cell format into String" sap:VirtualizedContainerService.HintSize="586,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Converting Datatbel cell format into String" sap:VirtualizedContainerService.HintSize="586,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_Bot]</OutArgument>
       </Assign.To>
@@ -173,8 +174,8 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="9" DataTable="[dt_Bot]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="removing zeros in column 8 . which is not needed" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,657" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="9" DataTable="[dt_Bot]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,191.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="removing zeros in column 8 . which is not needed" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,660.6666666666666" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>

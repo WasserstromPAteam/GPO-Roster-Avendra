@@ -442,6 +442,19 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Execute_SHIPTOCOMPTO.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Bot&Sequence_1",
+        "Var_CustomerNumbers&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_BotFilepath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
