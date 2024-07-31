@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1102,3362</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,3486</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -102,22 +102,23 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Portal_Login" sap:VirtualizedContainerService.HintSize="1112,3297" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Portal_Login" sap:VirtualizedContainerService.HintSize="1112,3421" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;logging into portal&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="1050,3005" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="1050,3129" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2788" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,2912" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Var_Username" />
               <Variable x:TypeArguments="ss:SecureString" Name="Var_password" />
@@ -128,17 +129,35 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening in IE Mode&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Settings and'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="1805, 65, 60, 45" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings and'" FullSelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Settings and more (Alt+F)' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Settings and more (Alt+F)' role='push button' automationid='' check:text='Settings and more (Alt+F)' /&gt;" Guid="b2170bce-b6bd-4185-b421-ee3f07cbb959" InformativeScreenshot="63959360499ada80509fad92e9bc2752.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='WebSphere Commerce Accelerator Logon - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target CvElementArea="160, 63, 1303, 46" CvType="InputBox" DesignTimeRectangle="357, 68, 978, 39" ElementType="InputBox" FriendlyName="'https://twcecmwebs01:80…'" FullSelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
-              </uix:NClick.Target>
-            </uix:NClick>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(alt)]f[u(alt)][u(hk)]" Version="V3" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="954,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Settings and'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="1805, 65, 60, 45" DesignTimeScaleFactor="1.5" ElementType="Button" FriendlyName="'Settings and'" FullSelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Settings and more (Alt+F)' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Settings and more (Alt+F)' role='push button' automationid='' check:text='Settings and more (Alt+F)' /&gt;" Guid="b2170bce-b6bd-4185-b421-ee3f07cbb959" InformativeScreenshot="63959360499ada80509fad92e9bc2752.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='WebSphere Commerce Accelerator Logon - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvElementArea="160, 63, 1303, 46" CvType="InputBox" DesignTimeRectangle="357, 68, 978, 39" ElementType="InputBox" FriendlyName="'https://twcecmwebs01:80…'" FullSelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Address and search bar' role='editable text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='WebSphere Commerce Accelerator Logon - Microsoft Edge - Work' role='pane' /&gt;&lt;ctrl name='App bar' role='tool bar' /&gt;&lt;ctrl name='Address and search bar' role='editable text' automationid='' /&gt;" SearchSteps="Selector, FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'New tab'" sap:VirtualizedContainerService.HintSize="954,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CvTextArea="63, 675, 263, 19" CvTextArgument="Reload in Internet Explorer mode" CvType="Text" DesignTimeRectangle="0, 660, 515, 48" DesignTimeScaleFactor="1.5" FriendlyName="'Reload in'" FullSelectorArgument="&lt;ctrl name='Settings and more' role='menu bar' /&gt;&lt;ctrl name='Settings and more' role='popup menu' /&gt;&lt;ctrl name='Reload in Internet Explorer mode' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Settings and more' role='menu bar' /&gt;&lt;ctrl name='Settings and more' role='popup menu' /&gt;&lt;ctrl name='Reload in Internet Explorer mode' role='menu item' automationid='' check:text='Reload in Internet Explorer mode' /&gt;" Guid="03dcec4f-890b-47cb-99ed-ee9ca354b3fb" InformativeScreenshot="94ed44a98098b71022d37661fc2d2a49.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
