@@ -455,6 +455,21 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/Tcode SQ01 and select variant_Activeshiptos.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_Download_Page&Sequence_1",
+        "Var_Query&Sequence_1",
+        "SAP_StatusBar&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_botFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }

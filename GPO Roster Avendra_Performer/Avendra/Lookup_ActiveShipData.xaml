@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2351.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2436.6666666666665</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_ActiveShipData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,7 +107,7 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Reads bot and active ship data. Joins the data using Customer number and writes down to bot file&#xA;" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="648,2286.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Reads bot and active ship data. Joins the data using Customer number and writes down to bot file&#xA;" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="648,2372" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ActiveShipTo" />
@@ -175,27 +175,27 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
     <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="9" DataTable="[dt_Bot]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,191.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="removing zeros in column 8 . which is not needed" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,660.6666666666666" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="removing zeros in column 8 . which is not needed" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,746" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,440" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,525.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(8).ToString = &quot;0&quot; OR string.IsNullOrEmpty(CurrentRow(8).ToString) = true]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[CurrentRow(8).ToString = &quot;0&quot; OR string.IsNullOrEmpty(CurrentRow(8).ToString) = true]" sap:VirtualizedContainerService.HintSize="510,438" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Object">[CurrentRow(8)]</OutArgument>
                     </Assign.To>
@@ -206,7 +206,13 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4" />
+                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
               </If.Else>
             </If>
           </Sequence>

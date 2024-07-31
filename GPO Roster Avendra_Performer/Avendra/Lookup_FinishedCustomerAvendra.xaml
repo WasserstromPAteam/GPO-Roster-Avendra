@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_FinishedPendingEnrollment" this:Lookup_FinishedPendingEnrollment.in_BotFilePath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\bot.xlsx" this:Lookup_FinishedPendingEnrollment.in_DestinationPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324" this:Lookup_FinishedPendingEnrollment.in_AvendraPath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\Pending Enrollment Properties 2024-05-23.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_FinishedPendingEnrollment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_BotFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_DestinationPath" Type="InArgument(x:String)" />
@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3267.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3705.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_FinishedPendingEnrollment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,7 +113,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final Avendra Customer file using Avendra value and returns columns I to U from bot to AM to AY in Avendra Customers file&#xA;" DisplayName="Lookup_FinishedAvendraCustomers" sap:VirtualizedContainerService.HintSize="788.6666666666666,3202.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final Avendra Customer file using Avendra value and returns columns I to U from bot to AM to AY in Avendra Customers file&#xA;" DisplayName="Lookup_FinishedAvendraCustomers" sap:VirtualizedContainerService.HintSize="788.6666666666666,3640.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Avendra" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_bot" />
@@ -126,13 +126,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_bot]" DisplayName="Read Range Workbook bot" sap:VirtualizedContainerService.HintSize="726.6666666666666,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilePath]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope-Enrolled property file" sap:VirtualizedContainerService.HintSize="726.6666666666666,2302.6666666666665" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraPath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope-Enrolled property file" sap:VirtualizedContainerService.HintSize="726.6666666666666,2740.6666666666665" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692.6666666666666,2192.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692.6666666666666,2630.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="List_ExcelSheets" />
             </Sequence.Variables>
@@ -143,13 +143,22 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets in Enrolled Property" sap:VirtualizedContainerService.HintSize="630.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[List_ExcelSheets]" />
             <ui:ExcelReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_Avendra]" DisplayName="Readenrolled property sheet WITH CORRECT RANGE" sap:VirtualizedContainerService.HintSize="630.6666666666666,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[List_ExcelSheets(0).ToString]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Avendra]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="630.6666666666666,1405.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Column49" DataTable="[dt_Avendra]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="630.6666666666666,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+            <Assign sap:VirtualizedContainerService.HintSize="630.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[dt_Avendra.Rows(0).item("Column49")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">["Telephone 1 "]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Avendra]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="630.6666666666666,1486.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="596.6666666666666,1215.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="596.6666666666666,1296.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                     </Sequence.Variables>
@@ -165,7 +174,7 @@
                         </InArgument>
                       </ui:LookupDataTable.LookupColumnIndex>
                     </ui:LookupDataTable>
-                    <If Condition="[string.IsNullOrEmpty(row.item(&quot;Column36&quot;).ToString) and rowIndex&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="554.6666666666666,787.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[string.IsNullOrEmpty(row.item(&quot;Column36&quot;).ToString) and rowIndex&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="554.6666666666666,868.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -306,7 +315,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
