@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1166,2688</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>940,2688</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Navigate_and_download_customer_list_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -201,7 +201,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFKSURBVDhPlZA/LwRBGMYnyO3O7F3FNxB/CgmRqPgCClSn4sLtzEp0Ep1me5XdGSIhChrXXnQSiai0JAqFqEgurhSrcJ7ZexshZ+eXPJl3nvd9ZneGFSWoJ5NUuuMpPcqlfqCtG5WaHkT4EWqR5UA1LnFprhHuQG/kFgfhUwRfoWeoTXYxfJmu2y8Llc5jPYcytmnK1O4N3bsFJXaPw3bsYVhX8oH/ENIc+VLfs7UT3+4DZaa6B+iLfKAXPExnMfwlIj1NVg68S+izEh0OkfUHcTyA37zD4A3qvlKUjnsbeyP27jwyc/Az6Iymf8OVXsZAh4f6CWs7r6X+gJpCmRk86CLqzJemRpGfoHlFIatbIfUSW90NqJ0jQrOAXtM+NFldvPr+GAXf8Q7brNrop1YxeGi2EH6x9ybLDaH0cTk8mKCtO16UDFPpAGPflTR60Aav8jIAAAAASUVORK5CYII=" InformativeScreenshot="809a51f6b5ee7ef2e9a575655a451dc8.jpg" Selector="&lt;html app='msedge.exe' title='Pages - Supplier Dashboard' /&gt;" Title="Pages - Supplier Dashboard" />
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAFKSURBVDhPlZA/LwRBGMYnyO3O7F3FNxB/CgmRqPgCClSn4sLtzEp0Ep1me5XdGSIhChrXXnQSiai0JAqFqEgurhSrcJ7ZexshZ+eXPJl3nvd9ZneGFSWoJ5NUuuMpPcqlfqCtG5WaHkT4EWqR5UA1LnFprhHuQG/kFgfhUwRfoWeoTXYxfJmu2y8Llc5jPYcytmnK1O4N3bsFJXaPw3bsYVhX8oH/ENIc+VLfs7UT3+4DZaa6B+iLfKAXPExnMfwlIj1NVg68S+izEh0OkfUHcTyA37zD4A3qvlKUjnsbeyP27jwyc/Az6Iymf8OVXsZAh4f6CWs7r6X+gJpCmRk86CLqzJemRpGfoHlFIatbIfUSW90NqJ0jQrOAXtM+NFldvPr+GAXf8Q7brNrop1YxeGi2EH6x9ybLDaH0cTk8mKCtO16UDFPpAGPflTR60Aav8jIAAAAASUVORK5CYII=" InformativeScreenshot="809a51f6b5ee7ef2e9a575655a451dc8.jpg" Selector="&lt;html app='msedge.exe' url='*aramark*' /&gt;" Title="Pages - Supplier Dashboard" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
     <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[in_DestinationPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="580,159" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadedFilePath.ToString]" />
