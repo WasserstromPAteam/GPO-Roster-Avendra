@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>658,5162</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>940,5756</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Avendra_login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,7 +108,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Avendra_login" sap:VirtualizedContainerService.HintSize="668,5097" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Avendra_login" sap:VirtualizedContainerService.HintSize="668,5691" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Bool_HomePage" />
       <Variable x:TypeArguments="x:Boolean" Name="Bool_LoginPage" />
@@ -153,13 +153,13 @@
     </ui:MultipleAssign>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;Avendra_Credential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="606,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Var_password]" Username="[Var_UserName]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="606,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Launching Browser and Loging into Avendra Portal&quot;]" />
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Launch avendra portal in edge" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Supplier Portal Login" sap:VirtualizedContainerService.HintSize="606,4404" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f6c599a-0a76-4da5-88ba-8de9e1381300" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Launch avendra portal in edge" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Supplier Portal Login" sap:VirtualizedContainerService.HintSize="606,4998" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="8f6c599a-0a76-4da5-88ba-8de9e1381300" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,4156" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,4750" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -179,7 +179,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:UiElementExists>
-            <If Condition="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="510,3863" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Bool_LoginPage]" sap:VirtualizedContainerService.HintSize="510,4457" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,7 +187,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,2672" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,3266" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -246,16 +246,38 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NClick>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Credentials entered&quot;]" />
-                  <ui:UiElementExists DisplayName="Element Exists 'H2'" Exists="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                  <ui:UiElementExists DisplayName="Element Exists 'Sign Out'" Exists="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                     <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0035b2d2-9b7b-4f4f-823c-5e92c1db870a" InformativeScreenshot="cbf16eaf9a61b85d2a435bd44ad7907e" Selector="&lt;html app='msedge.exe' title='*Supplier*' /&gt;&lt;webctrl tag='HEADER' /&gt;" TimeoutMS="5000">
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0035b2d2-9b7b-4f4f-823c-5e92c1db870a" InformativeScreenshot="cbf16eaf9a61b85d2a435bd44ad7907e" Selector="&lt;webctrl aaname='Sign Out' parentid='av-welcome-links' tag='A' /&gt;" TimeoutMS="5000">
                         <ui:Target.WaitForReady>
                           <InArgument x:TypeArguments="ui:WaitForReady" />
                         </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <If Condition="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="434,644" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Login Successfull&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;waiting for homepage loading&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[Var_CurrentTime]</OutArgument>
                     </Assign.To>
@@ -263,10 +285,9 @@
                       <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;waiting for homepage loading&quot;]" />
-                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[(datetime.Now&lt;Var_CurrentTime.AddMinutes(2))]" DisplayName="While" sap:VirtualizedContainerService.HintSize="434,423" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                  <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[(datetime.Now&lt;Var_CurrentTime.AddMinutes(2))]" DisplayName="While" sap:VirtualizedContainerService.HintSize="434,515" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
                     <ui:InterruptibleWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,379" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -299,15 +320,41 @@
                             </Sequence>
                           </If.Else>
                         </If>
-                        <ui:UiElementExists DisplayName="Element Exists 'H2'" Exists="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                        <ui:UiElementExists DisplayName="Element Exists 'Sign Out'" Exists="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="334,107" sap2010:WorkflowViewState.IdRef="UiElementExists_6">
                           <ui:UiElementExists.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0035b2d2-9b7b-4f4f-823c-5e92c1db870a" InformativeScreenshot="cbf16eaf9a61b85d2a435bd44ad7907e" Selector="&lt;html app='msedge.exe' title='Pages - Supplier' /&gt;&lt;webctrl tag='HEADER' /&gt;" TimeoutMS="5000">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0035b2d2-9b7b-4f4f-823c-5e92c1db870a" InformativeScreenshot="cbf16eaf9a61b85d2a435bd44ad7907e" Selector="&lt;webctrl aaname='Sign Out' parentid='av-welcome-links' tag='A' /&gt;" TimeoutMS="5000">
                               <ui:Target.WaitForReady>
                                 <InArgument x:TypeArguments="ui:WaitForReady" />
                               </ui:Target.WaitForReady>
                             </ui:Target>
                           </ui:UiElementExists.Target>
                         </ui:UiElementExists>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:UiElementExists DisplayName="Element Exists 'H2'" Exists="[Bool_HomePage]" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0035b2d2-9b7b-4f4f-823c-5e92c1db870a" InformativeScreenshot="cbf16eaf9a61b85d2a435bd44ad7907e" Selector="&lt;html app='msedge.exe' title='Pages - Supplier' /&gt;&lt;webctrl tag='HEADER' /&gt;" TimeoutMS="5000">
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:UiElementExists.Target>
+                              </ui:UiElementExists>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
                       </Sequence>
                     </ui:InterruptibleWhile.Body>
                     <sap:WorkflowViewStateService.ViewState>
@@ -403,7 +450,7 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAACYCAMAAAAvHNATAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURf///xA1iBo+jZKjye/x99nf7Ku41cLL4XuPvlBsqChKlGZ+sztZnaMp9MIAAARiSURBVHhe7ZrbkuogEEVj7lH//3sngVY2mmjvRjI8sJ7inKk6q2DT3cRpLoVSxViqGEsVY6liLFWMpYqxVDGWKsZSxViqGEsVY6liLFnF2lkeDOQUuw6dPBnIKNYOTZEr1k5Ns8izgWxi19WrucoHA7nEtvVqmlY+Gcgl5rx6+WAhk9i4eTWDfLKQR8x7NZN8tJBFrPNezSifLeQQm8WrNLGbaDVNQuHPILaI1UpRYvderFYSOtLPxa6DSG0UtGJr4wbKWbFWCphQjtijgAnFiD0LmFBKxqBQeAoRu0Kh8JQhFh9IRxktKT6QjiKmi5cD6ShB7C34GwVMsO/Bd8i/WviNGAbfTfvCv9+SIPjjXR42/vteGUbDZmqv8rRxk18w8AsxWKOpvbTyuJFQYX8gBgEbthsunIOECvsDsRCw3oUdDkLCxTJdDAJ2dz/AFmB/R5AsBjO+RB17gP1YpopBwB5JhyVMGBVTxcLyPBsjFjJ7+hPFQot0B9KB9cLeLdPE2hAwH3wHDmbwY440sXAAMUyYfnPtTxILMY8mL0y/OWQpYmHW8ZX1AXbL3lrJUsTCRr6UKwyZtZIliIUde90vDJm1j9vFwkaGSiHgnG0tGHaxw42Mqoh5L81iYVV2Dh72ceO5tIqFHhmfSE+0l7ZzaRUL+d7t07iXthprFAuNen8WxHNpu/YaxcIdbT/bOGHY+qVN7KAXAXi7NMXfJLY/VERgv9w7Hl8xiYUEHS5G9FLKUv0tYhCg4/jga09LxbCIhfx8SE9U/Q2jv0EMquen8xaljF8yg1hIz8fjFqWMXzJeDFbic3+O+hJ9MGkxyM63ko61jD6YtBictm9NMHrNyJZ/VgwW7HuisWSwHZMVg+6s6DS4meSQQYrh7jw3p73f5q4bV7p5Xu6wkPjrZP5JMVgwP+8s84hJcvRTdxMLPJncZnJiWM67S3t7l3oydK6Y4GBGbSYnhmm+dcdWnr5b1w3Gf2ozKbGo/31mGOfFefi/PvIwm0mJvX5Ruk8/zQscAGxNRJmlxBQLtkbrtbyhmf6SyYjhvLDLMO/Wd9jNXt0AGDEcF97pu8P/FMzeXiccQYhhTXpj+lwLQtWYlGaEGN77Y/rx6w6FGCjvTHoxfB0X4crVV+7PIOiOpl7soFbotFba53aqzPRi+7ViZKr5andfbt2kGbTVYrvRn9Snn0YtthP9wfhOToVWDL/uEDptSTKhFXuL/pBvFx1aMRySN/Iu14pS7KWIZU2XRykW76S2raSgFIt20vCKhEcnFn07lH8bN3RisJMDV+rN6MTCTp4RL4dKLFRXy0tLGyqxZ588JfYeldhjYDnRSycmM57tuxcjGjEpFueUiQcaMT+vn7peOjEXsZO9VGJbxM7MvUMhtlWx8+rXA4XYWsWUd8FfohCbz+tDgEKsO6tvRyjEMt7RPqAQO7tQeBRi/0MVY6liLFWMpYqxVDGWKsZSxViqGEsVY6liLFWMpYqxFCp2ufwBj/BcnIFC9IcAAAAASUVORK5CYII=" InformativeScreenshot="26cdac8670b0e49ea8bf9c257280836a.jpg" Selector="&lt;html app='msedge.exe' url='Suppliers.aramark-avendragroup.com' /&gt;" Title="Supplier Portal Login" Url="[in_config(&quot;Avendra_URL&quot;).ToString]" />
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAACYCAMAAAAvHNATAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAnUExURf///xA1iBo+jZKjye/x99nf7Ku41cLL4XuPvlBsqChKlGZ+sztZnaMp9MIAAARiSURBVHhe7ZrbkuogEEVj7lH//3sngVY2mmjvRjI8sJ7inKk6q2DT3cRpLoVSxViqGEsVY6liLFWMpYqxVDGWKsZSxViqGEsVY6liLFnF2lkeDOQUuw6dPBnIKNYOTZEr1k5Ns8izgWxi19WrucoHA7nEtvVqmlY+Gcgl5rx6+WAhk9i4eTWDfLKQR8x7NZN8tJBFrPNezSifLeQQm8WrNLGbaDVNQuHPILaI1UpRYvderFYSOtLPxa6DSG0UtGJr4wbKWbFWCphQjtijgAnFiD0LmFBKxqBQeAoRu0Kh8JQhFh9IRxktKT6QjiKmi5cD6ShB7C34GwVMsO/Bd8i/WviNGAbfTfvCv9+SIPjjXR42/vteGUbDZmqv8rRxk18w8AsxWKOpvbTyuJFQYX8gBgEbthsunIOECvsDsRCw3oUdDkLCxTJdDAJ2dz/AFmB/R5AsBjO+RB17gP1YpopBwB5JhyVMGBVTxcLyPBsjFjJ7+hPFQot0B9KB9cLeLdPE2hAwH3wHDmbwY440sXAAMUyYfnPtTxILMY8mL0y/OWQpYmHW8ZX1AXbL3lrJUsTCRr6UKwyZtZIliIUde90vDJm1j9vFwkaGSiHgnG0tGHaxw42Mqoh5L81iYVV2Dh72ceO5tIqFHhmfSE+0l7ZzaRUL+d7t07iXthprFAuNen8WxHNpu/YaxcIdbT/bOGHY+qVN7KAXAXi7NMXfJLY/VERgv9w7Hl8xiYUEHS5G9FLKUv0tYhCg4/jga09LxbCIhfx8SE9U/Q2jv0EMquen8xaljF8yg1hIz8fjFqWMXzJeDFbic3+O+hJ9MGkxyM63ko61jD6YtBictm9NMHrNyJZ/VgwW7HuisWSwHZMVg+6s6DS4meSQQYrh7jw3p73f5q4bV7p5Xu6wkPjrZP5JMVgwP+8s84hJcvRTdxMLPJncZnJiWM67S3t7l3oydK6Y4GBGbSYnhmm+dcdWnr5b1w3Gf2ozKbGo/31mGOfFefi/PvIwm0mJvX5Ruk8/zQscAGxNRJmlxBQLtkbrtbyhmf6SyYjhvLDLMO/Wd9jNXt0AGDEcF97pu8P/FMzeXiccQYhhTXpj+lwLQtWYlGaEGN77Y/rx6w6FGCjvTHoxfB0X4crVV+7PIOiOpl7soFbotFba53aqzPRi+7ViZKr5andfbt2kGbTVYrvRn9Snn0YtthP9wfhOToVWDL/uEDptSTKhFXuL/pBvFx1aMRySN/Iu14pS7KWIZU2XRykW76S2raSgFIt20vCKhEcnFn07lH8bN3RisJMDV+rN6MTCTp4RL4dKLFRXy0tLGyqxZ588JfYeldhjYDnRSycmM57tuxcjGjEpFueUiQcaMT+vn7peOjEXsZO9VGJbxM7MvUMhtlWx8+rXA4XYWsWUd8FfohCbz+tDgEKsO6tvRyjEMt7RPqAQO7tQeBRi/0MVY6liLFWMpYqxVDGWKsZSxViqGEsVY6liLFWMpYqxFCp2ufwBj/BcnIFC9IcAAAAASUVORK5CYII=" InformativeScreenshot="26cdac8670b0e49ea8bf9c257280836a.jpg" Selector="&lt;html app='msedge.exe' url='*avendra*' /&gt;" Title="Supplier Portal Login" Url="[in_config(&quot;Avendra_URL&quot;).ToString]" />
       </uix:NApplicationCard.TargetApp>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
