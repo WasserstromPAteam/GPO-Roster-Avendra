@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>960,2297</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,2193</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GET_EmailAttachment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -125,7 +125,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GET_EmailAttachment" sap:VirtualizedContainerService.HintSize="624,2192" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GET_EmailAttachment" sap:VirtualizedContainerService.HintSize="664,2128" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="umm:Office365Message[]" Name="EmailList" />
     </Sequence.Variables>
@@ -134,8 +134,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Emails in inbox of &quot;+in_Config(&quot;UipathUser&quot;).ToString]" />
-    <uma:Office365ApplicationScope Account="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" ApplicationId="[in_Config(&quot;ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;SecretID&quot;).ToString]" AuthenticationType="InteractiveToken" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="562,252" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuth2Username="[in_Config(&quot;UipathUser&quot;).ToString]" OAuthApplication="UiPath" TenantId="[in_Config(&quot;TenantID&quot;).ToString]" UseConnectionService="False">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="602,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Emails in inbox of &quot;+in_Config(&quot;UipathUser&quot;).ToString]" />
+    <uma:Office365ApplicationScope Account="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" SecurePassword="{x:Null}" Timeout="{x:Null}" Username="{x:Null}" ApplicationId="[in_Config(&quot;ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;SecretID&quot;).ToString]" AuthenticationType="InteractiveToken" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="602,285" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuth2Username="[in_Config(&quot;UipathUser&quot;).ToString]" OAuthApplication="UiPath" TenantId="[in_Config(&quot;TenantID&quot;).ToString]" UseConnectionService="False">
       <uma:Office365ApplicationScope.AuthenticationScopes>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
           <InArgument x:TypeArguments="x:String">Mail.Read</InArgument>
@@ -149,38 +149,38 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="umac:IClientServices" Name="ParentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umam:GetMail ContinueOnError="{x:Null}" EmailId="{x:Null}" Top="{x:Null}" Account="[in_Config(&quot;UipathUser&quot;).ToString]" AuthScopesInvalid="False" DisplayName="Get Mail" GetAsHTML="False" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="GetMail_1" MailFolder="Inbox" MarkAsRead="True" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Query="[&quot;contains(from/EmailAddress/Address,&quot;+&quot;'&quot;+in_Config(&quot;SenderID&quot;).ToString+&quot;'&quot;+&quot;)&quot;+&quot; AND contains(subject,&quot;+&quot;'&quot;+in_Config(&quot;EmailSubject&quot;).ToString.Trim+&quot;'&quot;+&quot;)&quot;]" Results="[EmailList]" />
+            <umam:GetMail ContinueOnError="{x:Null}" EmailId="{x:Null}" Top="{x:Null}" Account="[in_Config(&quot;UipathUser&quot;).ToString]" AuthScopesInvalid="False" DisplayName="Get Mail" GetAsHTML="False" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="GetMail_1" MailFolder="Inbox" MarkAsRead="True" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Query="[&quot;contains(from/EmailAddress/Address,&quot;+&quot;'&quot;+in_Config(&quot;SenderID&quot;).ToString+&quot;'&quot;+&quot;)&quot;+&quot; AND contains(subject,&quot;+&quot;'&quot;+in_Config(&quot;EmailSubject&quot;).ToString.Trim+&quot;'&quot;+&quot;)&quot;]" Results="[EmailList]" />
           </Sequence>
         </ActivityAction>
       </uma:Office365ApplicationScope.Body>
     </uma:Office365ApplicationScope>
-    <If Condition="[EmailList.Count &gt; 0]" DisplayName="If - Checking for email present" sap:VirtualizedContainerService.HintSize="562,1608" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[EmailList.Count &gt; 0]" DisplayName="If - Checking for email present" sap:VirtualizedContainerService.HintSize="602,1582" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="528,1067" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="568,1047" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="486,979" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[EmailList]">
+          <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="506,959" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[EmailList]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="umm:Office365Message">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="Item" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,793" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,772" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[item.Subject.ToUpper.ToString.Contains(in_Config(&quot;EmailSubject&quot;).ToString.ToUpper.Trim)]" sap:VirtualizedContainerService.HintSize="410,705" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[item.Subject.ToUpper.ToString.Contains(in_Config(&quot;EmailSubject&quot;).ToString.ToUpper.Trim)]" sap:VirtualizedContainerService.HintSize="410,684" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +188,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +199,7 @@
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -216,14 +216,14 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,374" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Unread Email not found from sender &quot;+in_Config(&quot;SenderID&quot;).ToString+&quot; With Subject line as &quot;+in_Config(&quot;EmailSubject&quot;).ToString]" />
-          <Throw Exception="[new BusinessRuleException(&quot;Email Not Found-Unread Email not found from sender &quot;+in_Config(&quot;SenderID&quot;).ToString+&quot; With Subject line as &quot;+in_Config(&quot;EmailSubject&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Unread Email not found from sender &quot;+in_Config(&quot;SenderID&quot;).ToString+&quot; With Subject line as &quot;+in_Config(&quot;EmailSubject&quot;).ToString]" />
+          <Throw Exception="[new BusinessRuleException(&quot;Email Not Found-Unread Email not found from sender &quot;+in_Config(&quot;SenderID&quot;).ToString+&quot; With Subject line as &quot;+in_Config(&quot;EmailSubject&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
         </Sequence>
       </If.Else>
     </If>
