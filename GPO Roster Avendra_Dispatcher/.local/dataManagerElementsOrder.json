@@ -12,6 +12,12 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "ApplicationID&Sequence_58",
+        "ExceptionEmailList&Sequence_58",
+        "CCEmailList&Sequence_58",
+        "FromEmail&Sequence_58",
+        "SecretID&Sequence_58",
+        "TenantID&Sequence_58",
         "str_PostponedTime&StateMachine_1",
         "Int_AvendraInputRowsCount&StateMachine_1",
         "str_GoogleAPIFileName&StateMachine_1",
@@ -29,6 +35,7 @@
         "ConsecutiveSystemExceptions&StateMachine_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_EmailTrigger",
         "in_OrchestratorQueueName",
         "in_OrchestratorQueueFolder"
       ],
@@ -55,9 +62,9 @@
       "Path": "Framework/InitAllSettings.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_SettingsAndConstants&Sequence_5",
-        "dt_Assets&Sequence_6",
-        "AssetValue&Sequence_11"
+        "dt_SettingsAndConstants&Sequence_13",
+        "dt_Assets&Sequence_14",
+        "AssetValue&Sequence_15"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_ConfigFile",

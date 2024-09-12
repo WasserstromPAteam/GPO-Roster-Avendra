@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3705.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3576</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_FinishedPendingEnrollment_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,7 +113,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final Avendra Customer file using Avendra value and returns columns I to U from bot to AM to AY in Avendra Customers file&#xA;" DisplayName="Lookup_FinishedAvendraCustomers" sap:VirtualizedContainerService.HintSize="788.6666666666666,3640.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Perform lookup between bot file and final Avendra Customer file using Avendra value and returns columns I to U from bot to AM to AY in Avendra Customers file&#xA;" DisplayName="Lookup_FinishedAvendraCustomers" sap:VirtualizedContainerService.HintSize="828.6666666666666,3511.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Avendra" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_bot" />
@@ -125,14 +125,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_bot]" DisplayName="Read Range Workbook bot" sap:VirtualizedContainerService.HintSize="726.6666666666666,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilePath]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope-Enrolled property file" sap:VirtualizedContainerService.HintSize="726.6666666666666,2740.6666666666665" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraPath]">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_bot]" DisplayName="Read Range Workbook bot" sap:VirtualizedContainerService.HintSize="766.6666666666666,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilePath]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope-Enrolled property file" sap:VirtualizedContainerService.HintSize="766.6666666666666,2704.6666666666665" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_AvendraPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692.6666666666666,2630.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="732.6666666666666,2562.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(x:String)" Name="List_ExcelSheets" />
             </Sequence.Variables>
@@ -141,10 +141,10 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets in Enrolled Property" sap:VirtualizedContainerService.HintSize="630.6666666666666,25.333333333333332" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[List_ExcelSheets]" />
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_Avendra]" DisplayName="Readenrolled property sheet WITH CORRECT RANGE" sap:VirtualizedContainerService.HintSize="630.6666666666666,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[List_ExcelSheets(0).ToString]" />
-            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Column49" DataTable="[dt_Avendra]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="630.6666666666666,191.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-            <Assign sap:VirtualizedContainerService.HintSize="630.6666666666666,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <ui:ExcelGetWorkbookSheets DisplayName="Get Workbook Sheets in Enrolled Property" sap:VirtualizedContainerService.HintSize="670.6666666666666,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelGetWorkbookSheets_1" Sheets="[List_ExcelSheets]" />
+            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_Avendra]" DisplayName="Readenrolled property sheet WITH CORRECT RANGE" sap:VirtualizedContainerService.HintSize="670.6666666666666,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="[List_ExcelSheets(0).ToString]" />
+            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Column49" DataTable="[dt_Avendra]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="670.6666666666666,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+            <Assign sap:VirtualizedContainerService.HintSize="670.6666666666666,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Object">[dt_Avendra.Rows(0).item("Column49")]</OutArgument>
               </Assign.To>
@@ -152,13 +152,13 @@
                 <InArgument x:TypeArguments="x:Object">["Telephone 1 "]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Avendra]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="630.6666666666666,1486.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Avendra]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="670.6666666666666,1514.6666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="596.6666666666666,1296.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="636.6666666666666,1314.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
                     </Sequence.Variables>
@@ -167,14 +167,14 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_bot]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="554.6666666666666,300.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupValue="[row.item(1).ToString]" RowIndex="[rowIndex]">
+                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnName="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_bot]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="574.6666666666666,332.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupValue="[row.item(1).ToString]" RowIndex="[rowIndex]">
                       <ui:LookupDataTable.LookupColumnIndex>
                         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
                           <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="7" />
                         </InArgument>
                       </ui:LookupDataTable.LookupColumnIndex>
                     </ui:LookupDataTable>
-                    <If Condition="[string.IsNullOrEmpty(row.item(&quot;Column36&quot;).ToString) and rowIndex&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="554.6666666666666,868.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[string.IsNullOrEmpty(row.item(&quot;Column36&quot;).ToString) and rowIndex&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="574.6666666666666,894" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,13 +182,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="520.6666666666666,603.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="540.6666666666666,626.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,516" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.6666666666667,538.6666666666666" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -315,7 +315,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -334,14 +334,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_Avendra]" DisplayName="Write Range Avendra customer" sap:VirtualizedContainerService.HintSize="630.6666666666666,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="[List_ExcelSheets(0).ToString]" StartingCell="A1" />
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Avendra]" DisplayName="Readenrolled property sheet" sap:VirtualizedContainerService.HintSize="630.6666666666666,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="[List_ExcelSheets(0).ToString]" />
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Flag_AvendraCustomers.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="630.6666666666666,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel Workflows\Flag_AvendraCustomer.xaml">
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_Avendra]" DisplayName="Write Range Avendra customer" sap:VirtualizedContainerService.HintSize="670.6666666666666,120" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="[List_ExcelSheets(0).ToString]" StartingCell="A1" />
+            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Avendra]" DisplayName="Readenrolled property sheet" sap:VirtualizedContainerService.HintSize="670.6666666666666,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="[List_ExcelSheets(0).ToString]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Flag_AvendraCustomers.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="670.6666666666666,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Excel Workflows\Flag_AvendraCustomer.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DT_AvendraCustomer">[dt_Avendra]</InOutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt_Avendra]" DisplayName="Write Range Avendra Cstomers" sap:VirtualizedContainerService.HintSize="630.6666666666666,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="[List_ExcelSheets(0).ToString]" StartingCell="A1" />
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[dt_Avendra]" DisplayName="Write Range Avendra Cstomers" sap:VirtualizedContainerService.HintSize="670.6666666666666,110.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="[List_ExcelSheets(0).ToString]" StartingCell="A1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
@@ -352,7 +352,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FilterForFinishedFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="727,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Avendra\FilterForFinishedFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FilterForFinishedFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="766.6666666666666,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Avendra\FilterForFinishedFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
         <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_AvendraCustomers">[dt_Avendra]</InArgument>
@@ -360,8 +360,8 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">[In_CountriesToFilter]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_FilteredFinishedAvendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="727,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_DestinationPath+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="727,94" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_FilteredFinishedAvendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="766.6666666666666,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_DestinationPath+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="766.6666666666666,102.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_1">
       <ueab:ExcelProcessScopeX.Body>
         <ActivityAction x:TypeArguments="ui:IExcelProcess">
           <ActivityAction.Argument>
@@ -423,6 +423,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:WriteRange AddHeaders="True" DataTable="[dt_FilteredFinishedAvendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="727,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_DestinationPath+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
+    <ui:WriteRange AddHeaders="True" DataTable="[dt_FilteredFinishedAvendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="766.6666666666666,138.66666666666666" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_DestinationPath+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
   </Sequence>
 </Activity>

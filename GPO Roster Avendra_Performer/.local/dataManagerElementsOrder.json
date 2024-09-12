@@ -12,6 +12,12 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "TenantID&Sequence_39",
+        "SecretID&Sequence_39",
+        "FromEmail&Sequence_39",
+        "CCEmailList&Sequence_39",
+        "ExceptionEmailList&Sequence_39",
+        "ApplicationID&Sequence_39",
         "Screenshot&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
@@ -83,6 +89,9 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "AvendraLastRowIndex&Sequence_1",
+        "str_SOldToValues&Sequence_1",
+        "str_Customers&Sequence_1",
         "Dt_Avendra&Sequence_1",
         "Bool_MatchingNotEmpty&Sequence_1",
         "DT_MatchingFile&Sequence_1",
@@ -154,6 +163,7 @@
         "rowIndex&Sequence_3"
       ],
       "ArgumentsSectionElementsOrder": [
+        "argument1",
         "In_CountriesToFilter",
         "in_BotFilePath",
         "in_DestinationPath",
@@ -467,6 +477,106 @@
       "ArgumentsSectionElementsOrder": [
         "in_Config",
         "in_botFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Read Finished Avendra Customer File.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Dt_ColCustomerColSoldTo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "Out_AvendraFileLastrowIndex",
+        "in_FinishedAvendraFile",
+        "out_Customers",
+        "Out_SoldToValues"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_SoldToMatch.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_Name2FileName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_finishedAvendraFile",
+        "in_AvendraLastrowIndex",
+        "in_Name2SoldToMatchFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Lookup_SoldToOrderHist and ShipToOrder.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Int_ShipToRowIndex&Sequence_21",
+        "FinishedAvendraSheet1&Sequence_1",
+        "dt_SoldToOrder&Sequence_1",
+        "dt_FinishedEnrollment&Sequence_1",
+        "dt_ShipToOrder&Sequence_1",
+        "SoldtoSheetName&Sequence_1",
+        "ShipToOrderSheetName&Sequence_1",
+        "startRowNo&Sequence_1",
+        "LastRowNo&Sequence_1",
+        "Int_SoldToRowIndex&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_SoldtoOrder",
+        "in_Customer",
+        "in_FinishedAvendraPath",
+        "in_SoldtoOrderPath",
+        "in_ShipToOrderPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_Execute_VA05_SPSH.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_ExportExist&Sequence_1",
+        "Str_SAP_StatusText&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Tcode_VA05",
+        "In_PartnerFunction",
+        "in_MultipleSelectionValues_Values"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SAP_ExcelFileExport_TextwithTabs.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_ExportPage&Sequence_2",
+        "bool_ExportPopup&Sequence_2",
+        "download&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_DestinationPath",
+        "in_FileName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_SettingsAndConstants&Sequence_12",
+        "dt_Assets&Sequence_13",
+        "AssetValue&Sequence_14"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

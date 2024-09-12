@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,4684</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,7629.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -46,6 +46,7 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,14 +108,23 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="588,4579.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="608,7524.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Bool_MatchingNotEmpty" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MatchingFile" />
       <Variable x:TypeArguments="x:Int32" Name="int_BotCustomersCount" />
       <Variable x:TypeArguments="sd:DataTable" Name="Dt_Avendra" />
+      <Variable x:TypeArguments="x:String" Name="str_Customers" />
+      <Variable x:TypeArguments="x:String" Name="str_SOldToValues" />
+      <Variable x:TypeArguments="x:String" Name="AvendraLastRowIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -122,8 +132,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="526,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check status and Download file" DisplayName="Status_Check.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,146" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Google Address API Workflows\Status_Check.xaml">
+    <ui:LogMessage DisplayName="Log Message Process Start 1" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Check status and Download file" DisplayName="Status_Check.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,178" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Google Address API Workflows\Status_Check.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="In_FileName">[in_TransactionItem.SpecificContent("GoogleFileName").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
@@ -135,29 +145,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel Workflows\Data Manipulation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Data Manipulation.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Excel Workflows\Data Manipulation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_ZipFolderPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\combinedFiles.zip"]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_SAP_Tcode">[in_Config("SAP_Tcode").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check_MatchingFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel Workflows\Check_MatchingFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Check_MatchingFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Excel Workflows\Check_MatchingFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_MatchingFilePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\matching.xlsx"]</InArgument>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_ProceedNext">[Bool_MatchingNotEmpty]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If sap2010:Annotation.AnnotationText="if matching file has  rows then process will end" Condition="[Bool_MatchingNotEmpty=True]" sap:VirtualizedContainerService.HintSize="526,99.33333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="if matching file has  rows then process will end" Condition="[Bool_MatchingNotEmpty=True]" sap:VirtualizedContainerService.HintSize="546,510" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -166,22 +176,22 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,202.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New BusinessRuleException(&quot;Matching File is Empty&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[New BusinessRuleException(&quot;Matching File is Empty&quot;)]" sap:VirtualizedContainerService.HintSize="354,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_Operationtype">Back</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Tcode SQ01 and select variant.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP Workflows\Tcode SQ01 and select variant.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Tcode SQ01 and select variant.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAP Workflows\Tcode SQ01 and select variant.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
@@ -192,7 +202,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_FileName">["Hospitality Accounts Active "+Today.ToString("MMddyy")+".xlsx"]</InArgument>
@@ -204,7 +214,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_SAPFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Excel Workflows\Format_SAPFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_SAPFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Excel Workflows\Format_SAPFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_HospitalAccActivePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Hospitality Accounts Active "+Today.ToString("MMddyy")+".xlsx"]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
@@ -215,32 +225,24 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_MatchingFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excel Workflows\Format_MatchingFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_MatchingFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Excel Workflows\Format_MatchingFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_MatchingFilePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\matching.xlsx"]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_HospitalAccActivePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Hospitality Accounts Active "+Today.ToString("MMddyy")+".xlsx"]</InArgument>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="Out_DT_MatchingFile">[DT_MatchingFile]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_CustomerAvendra.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Avendra\Lookup_CustomerAvendra.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_CustomerAvendra.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Avendra\Lookup_CustomerAvendra.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_HospitalAccActivePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;\Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_MatchingFile">
-          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="DT_MatchingFile" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_HospitalAccActivePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Hospitality Accounts Active "+Today.ToString("MMddyy")+".xlsx"]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_MatchingFile">[DT_MatchingFile]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
-        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_AvendraFilePath" />
-        </InArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtAvendraCustomers">
-          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Dt_Avendra" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[in_AvendraFilePath]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DtAvendraCustomers">[Dt_Avendra]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="526,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;CR Features begins&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_BotExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel Workflows\Format_BotExcel.xaml">
+    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;CR Features begins&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Format_BotExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Excel Workflows\Format_BotExcel.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_BotFilepath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\bot.xlsx"]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_MasterFilePath">[in_Config("MasterFileGoogleRuns").ToString]</InArgument>
@@ -248,22 +250,28 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_AvendraFilePath">[in_AvendraFilePath]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[int_BotCustomersCount &lt;= 0]" sap:VirtualizedContainerService.HintSize="526,2142" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[int_BotCustomersCount &lt;= 0]" sap:VirtualizedContainerService.HintSize="546,2076" sap2010:WorkflowViewState.IdRef="If_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="492,949.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,912" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Customer count in bot file is 0 , hence skiping All rest of the steps. saving file as Finished Avendra Customers&quot;]" />
-          <Sequence DisplayName="Save as Finished file in Text Format Cells" sap:VirtualizedContainerService.HintSize="450,677.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
+          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="450,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Customer count in bot file is 0 , hence skiping All rest of the steps. saving file as Finished Avendra Customers&quot;]" />
+          <Sequence DisplayName="Save as Finished file in Text Format Cells" sap:VirtualizedContainerService.HintSize="450,647.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FilterForFinishedFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Avendra\FilterForFinishedFile.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="FilterForFinishedFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="Avendra\FilterForFinishedFile.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                 <InArgument x:TypeArguments="sd:DataTable" x:Key="in_DT_AvendraCustomers">[dt_Avendra]</InArgument>
@@ -271,8 +279,8 @@
                 <InArgument x:TypeArguments="x:String" x:Key="in_CountriesToFilter">[in_Config("CountriesToFilter").ToString.Trim]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <ui:WriteRange AddHeaders="True" DataTable="[Dt_Avendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
-            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="388,99.33333333333333" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+            <ui:WriteRange AddHeaders="True" DataTable="[Dt_Avendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
+            <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" sap2010:Annotation.AnnotationText="Creating Excel sheet with Text Format Cells" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="388,102.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
               <ueab:ExcelProcessScopeX.Body>
                 <ActivityAction x:TypeArguments="ui:IExcelProcess">
                   <ActivityAction.Argument>
@@ -334,42 +342,42 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ueab:ExcelProcessScopeX>
-            <ui:WriteRange AddHeaders="True" DataTable="[Dt_Avendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
+            <ui:WriteRange AddHeaders="True" DataTable="[Dt_Avendra]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,138.66666666666666" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;DestinationPath&quot;).ToString+&quot;\&quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;\Finished Avendra Customers &quot;+Today.ToString(&quot;yyyy-MM-dd&quot;)+&quot;.xlsx&quot;]" />
           </Sequence>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,1008.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,992" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Customer count in bot file is greater than 0 , Continue the process for all steps&quot;]" />
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
+          <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="354,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Customer count in bot file is greater than 0 , Continue the process for all steps&quot;]" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_Operationtype">Back</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Tcode SQ01 and select variant_Activeshiptos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="SAP Workflows\Tcode SQ01 and select variant_Activeshiptos.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Tcode SQ01 and select variant_Activeshiptos.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="SAP Workflows\Tcode SQ01 and select variant_Activeshiptos.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_botFilePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\bot.xlsx"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_FileName">ActiveShipTo09b.xlsx</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_ActiveShipData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Avendra\Lookup_ActiveShipData.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_ActiveShipData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Avendra\Lookup_ActiveShipData.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_BotFilepath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\bot.xlsx"]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_ActiveShipFilepath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\ActiveShipto09b.xlsx"]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_FinishedCustomerAvendra.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Avendra\Lookup_FinishedCustomerAvendra.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Lookup_FinishedCustomerAvendra.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Avendra\Lookup_FinishedCustomerAvendra.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:String" x:Key="in_BotFilePath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\bot.xlsx"]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
@@ -380,11 +388,217 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_BlankAcctoGPOMasterFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="526,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Excel Workflows\Add_BlankAcctoGPOMasterFile.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Add_BlankAcctoGPOMasterFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Excel Workflows\Add_BlankAcctoGPOMasterFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_MasterGoogleRunsFile">[in_Config("MasterFileGoogleRuns").ToString]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_BotFile">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\bot.xlsx"]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message 5" sap:VirtualizedContainerService.HintSize="546,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;CR2 Features begins&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Read Finished Avendra Customer File.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="Excel Workflows\Read Finished Avendra Customer File.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Customers">[str_Customers]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_SoldToValues">[str_SOldToValues]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FinishedAvendraFile">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Finished Avendra Customers "+Today.ToString("yyyy-MM-dd")+".xlsx"]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_AvendraFileLastrowIndex">[AvendraLastRowIndex]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <If Condition="[not (str_SOldToValues is Nothing)]" DisplayName="If SoldToValues are not null" sap:VirtualizedContainerService.HintSize="546,1447.3333333333333" sap2010:WorkflowViewState.IdRef="If_4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then export Soldto file" sap:VirtualizedContainerService.HintSize="416,1020" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Operationtype">Back</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SQ01_executeWithoutVarient.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="SAP Workflows\SQ01_executeWithoutVarient.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SoldToValues">[str_SOldToValues]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FileName">Name2 SoldTo Match.xlsx</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel Workflows\Lookup_SoldToMatch.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="Excel Workflows\Lookup_SoldToMatch.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Name2SoldToMatchFile">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Name2 SoldTo Match.xlsx"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_AvendraLastrowIndex">[AvendraLastRowIndex]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_finishedAvendraFile">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Finished Avendra Customers "+Today.ToString("yyyy-MM-dd")+".xlsx"]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Operationtype">Back</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_Execute_VA05_SPSH.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_Execute_VA05_SPSH.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Tcode_VA05">[in_Config("Tcode_VA05").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="In_PartnerFunction">[in_Config("VA05_PartnerFunction_SoldTo").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MultipleSelectionValues_Values">[str_SOldToValues]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport_TextwithTabs.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport_TextwithTabs.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FileName">SoldTo Order Hist.xls</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else skip exporting Soldto file" sap:VirtualizedContainerService.HintSize="416,255.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message 6" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Str_Sold_to_values is null hence skipping lookup of the same&quot;]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:LogMessage>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[not (str_Customers is Nothing)]" DisplayName="If Customer values are not null" sap:VirtualizedContainerService.HintSize="546,858" sap2010:WorkflowViewState.IdRef="If_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Then export ShipTo file" sap:VirtualizedContainerService.HintSize="416,430.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_LogoutORBack.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,57.333333333333336" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_LogoutORBack.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Operationtype">Back</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_Execute_VA05_SPSH.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,147.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_Execute_VA05_SPSH.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Tcode_VA05">[in_Config("Tcode_VA05").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="In_PartnerFunction">[in_Config("VA05_PartnerFunction_ShipTo").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_MultipleSelectionValues_Values">[str_Customers]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_ExcelFileExport_TextwithTabs.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="354,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_ExcelFileExport_TextwithTabs.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DestinationPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FileName">Ship To Order Hist.xls</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else skip exporting ship to file" sap:VirtualizedContainerService.HintSize="416,255.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message 7" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Str_Customer is null hence skipping lookup of shipto_hist and Sold to_hist&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Excel Workflows\Lookup_SoldToOrderHist and ShipToOrder.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,138" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="Excel Workflows\Lookup_SoldToOrderHist and ShipToOrder.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SoldtoOrderPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\SoldTo Order Hist.xls"]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ShipToOrderPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Ship To Order Hist.xls"]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FinishedAvendraPath">[in_Config("DestinationPath").ToString+"\"+Today.ToString("MMddyy")+"\Finished Avendra Customers "+Today.ToString("yyyy-MM-dd")+".xlsx"]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Customer">[str_Customers]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_SoldtoOrder">[str_SOldToValues]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
