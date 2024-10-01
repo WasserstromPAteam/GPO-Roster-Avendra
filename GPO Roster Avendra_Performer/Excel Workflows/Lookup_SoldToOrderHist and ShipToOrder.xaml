@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_SoldToOrderHist" this:Lookup_SoldToOrderHist.in_SoldtoOrderPath="C:\Users\saiprasad\Desktop\SoldTo.xls" this:Lookup_SoldToOrderHist.in_ShipToOrderPath="C:\Users\saiprasad\Desktop\ShipTo.xls" this:Lookup_SoldToOrderHist.in_FinishedAvendraPath="C:\Users\saiprasad\Desktop\Finished Avendra Customers 2024-09-04.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_SoldToOrderHist" this:Lookup_SoldToOrderHist.in_SoldtoOrderPath="C:\Users\saiprasad\Desktop\SoldTo.xls" this:Lookup_SoldToOrderHist.in_ShipToOrderPath="C:\Users\saiprasad\Desktop\ShipTo.xls" this:Lookup_SoldToOrderHist.in_FinishedAvendraPath="C:\Users\saiprasad\Desktop\Finished Avendra Customers 2024-09-04.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ueabf="clr-namespace:UiPath.Excel.Activities.Business.Filter;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SoldtoOrderPath" Type="InArgument(x:String)" />
     <x:Property Name="in_ShipToOrderPath" Type="InArgument(x:String)" />
@@ -9,7 +9,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3667.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3199.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_SoldToOrderHist_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -50,6 +50,8 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -116,7 +118,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Match Sold toPT column from SoltToOrderHist.xlsx file with soldtoClumn in Finished Avendra file. If match found Write YES in Column AP else leave it blank.&#xA;&#xA;2. Match Ship toPa column D from ShipToOrderHist.xlsx file with Customer col AL in Finished Avendra file. If match found return Colmn E from Ship To Order Hist.xls in column AL of Finished Avendra File else leave it blank.&#xA;&#xA;3. Change Format of column AL as Date type in finishsed pending file&#xA;&#xA;" DisplayName="Lookup_SoldToOrderHist" sap:VirtualizedContainerService.HintSize="693.3333333333334,3602.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Match Sold toPT column from SoltToOrderHist.xlsx file with soldtoClumn in Finished Avendra file. If match found Write YES in Column AP else leave it blank.&#xA;&#xA;2. Match Ship toPa column D from ShipToOrderHist.xlsx file with Customer col AL in Finished Avendra file. If match found return Colmn E from Ship To Order Hist.xls in column AL of Finished Avendra File else leave it blank.&#xA;&#xA;3. Change Format of column AL as Date type in finishsed pending file&#xA;&#xA;" DisplayName="Lookup_SoldToOrderHist" sap:VirtualizedContainerService.HintSize="710,3134.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_SoldToOrder" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_FinishedEnrollment" />
@@ -133,7 +135,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="631.3333333333334,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Initiated lookup shipto and sold to file feature&quot;]">
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="648,57.333333333333336" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Initiated lookup shipto and sold to file feature&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -141,8 +143,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="631.3333333333334,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Finished Avendra file&quot;]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Finished Avendra file" sap:VirtualizedContainerService.HintSize="631.3333333333334,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[in_FinishedAvendraPath]">
+    <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="648,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Finished Avendra file&quot;]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope Finished Avendra file" sap:VirtualizedContainerService.HintSize="648,57.333333333333336" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[in_FinishedAvendraPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -166,10 +168,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <If Condition="[string.IsNullOrEmpty(in_SoldtoOrder)]" DisplayName="If SoldTo value is null" sap:VirtualizedContainerService.HintSize="631.3333333333334,797.3333333333334" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[string.IsNullOrEmpty(in_SoldtoOrder)]" DisplayName="If SoldTo value is null" sap:VirtualizedContainerService.HintSize="648,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -291,10 +293,10 @@
         </Sequence>
       </If.Else>
     </If>
-    <If Condition="[string.IsNullOrEmpty(in_Customer)]" DisplayName="If customer value is null" sap:VirtualizedContainerService.HintSize="631.3333333333334,969.3333333333334" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[string.IsNullOrEmpty(in_Customer)]" DisplayName="If customer value is null" sap:VirtualizedContainerService.HintSize="648,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -440,33 +442,77 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_FinishedEnrollment]" DisplayName="Write Range Finished Pending Enrollment" sap:VirtualizedContainerService.HintSize="631.3333333333334,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[FinishedAvendraSheet1]" WorkbookPath="[in_FinishedAvendraPath]" />
-    <ui:LogMessage DisplayName="Log Message 9" sap:VirtualizedContainerService.HintSize="631.3333333333334,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Changing Column format of AN from string to Date&quot;]" />
-    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Modern Excel Scope Finished Avendra" sap:VirtualizedContainerService.HintSize="631.3333333333334,802.6666666666666" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
-      <ueab:ExcelProcessScopeX.Body>
-        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_FinishedEnrollment]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="648,751.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="597.3333333333334,643.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_12">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="592,551.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_24">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File - Finished Avendra" sap:VirtualizedContainerService.HintSize="535.3333333333334,555.3333333333334" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[in_FinishedAvendraPath]">
+            <If Condition="[not (row.item(&quot;PG&quot;).ToString.Equals(&quot;G9&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;Q5&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;R1&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;14&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;DY&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;IR&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;JB&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;JE&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;GC&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;TA&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;T1&quot;) Or row.item(&quot;PG&quot;).ToString.Equals(&quot;L6&quot;) or row.item(&quot;PG&quot;).ToString.Equals(&quot;JQ&quot;) or string.IsNullOrEmpty(row.item(&quot;PG&quot;).ToString))]" sap:VirtualizedContainerService.HintSize="530,463.3333333333333" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign_Flag" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Object">[row.item("Flag")]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Object">["PG not in list"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_FinishedEnrollment]" DisplayName="Write Range Finished Pending Enrollment" sap:VirtualizedContainerService.HintSize="648,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="[FinishedAvendraSheet1]" WorkbookPath="[in_FinishedAvendraPath]" />
+    <ui:LogMessage DisplayName="Log Message 9" sap:VirtualizedContainerService.HintSize="648,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Changing Column format of AN from string to Date&quot;]" />
+    <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Modern Excel Scope Finished Avendra" sap:VirtualizedContainerService.HintSize="648,1235.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_2">
+      <ueab:ExcelProcessScopeX.Body>
+        <ActivityAction x:TypeArguments="ui:IExcelProcess">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="614,1116" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File - Finished Avendra" sap:VirtualizedContainerService.HintSize="552,1028" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[in_FinishedAvendraPath]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="501.3333333333333,252" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,724.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:FormatRangeX DisplayName="Format Column AL" sap:VirtualizedContainerService.HintSize="439.3333333333333,164" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Excel.Sheet(FinishedAvendraSheet1).Range(&quot;AL:AL&quot;)]">
+                    <ueab:FormatRangeX DisplayName="Format Column AL" sap:VirtualizedContainerService.HintSize="456,57.333333333333336" sap2010:WorkflowViewState.IdRef="FormatRangeX_1" Range="[Excel.Sheet(FinishedAvendraSheet1).Range(&quot;AL:AL&quot;)]">
                       <ueab:FormatRangeX.Alignment>
                         <ui:AlignmentOptions HorizontalAlignment="xlHAlignGeneral" VerticalAlignment="xlVAlignBottom" WrapText="False" />
                       </ueab:FormatRangeX.Alignment>
@@ -476,7 +522,128 @@
                       <ueab:FormatRangeX.Format>
                         <ueab:DateFormat Type="Short" />
                       </ueab:FormatRangeX.Format>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ueab:FormatRangeX>
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,579.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch.Try>
+                        <Sequence sap:VirtualizedContainerService.HintSize="496,912.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:Int32" Name="firstrow" />
+                            <Variable x:TypeArguments="x:Int32" Name="lastrow" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ueab:FilterX ClearFilter="False" ColumnName="Flag" DisplayName="Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,204" sap2010:WorkflowViewState.IdRef="FilterX_1" Range="[Excel.Sheet(FinishedAvendraSheet1)]">
+                            <ueab:FilterX.FilterArgument>
+                              <ueabf:FilterArgument Mode="Basic">
+                                <ueabf:FilterArgument.AdvancedFiltersArgument>
+                                  <ueabf:AdvancedFilterArgument LogicalOperator="Or">
+                                    <ueabf:AdvancedFilterArgument.Condition1>
+                                      <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="NOTCONTAINS" />
+                                    </ueabf:AdvancedFilterArgument.Condition1>
+                                    <ueabf:AdvancedFilterArgument.Condition2>
+                                      <ueabf:AdvancedFilterCondition Value="{x:Null}" Operator="EMPTY" />
+                                    </ueabf:AdvancedFilterArgument.Condition2>
+                                  </ueabf:AdvancedFilterArgument>
+                                </ueabf:FilterArgument.AdvancedFiltersArgument>
+                                <ueabf:FilterArgument.BasicFiltersArgument>
+                                  <ueabf:BasicFilterArgument>
+                                    <ueabf:BasicFilterArgument.BasicFilters>
+                                      <scg:List x:TypeArguments="InArgument(x:String)" Capacity="1">
+                                        <InArgument x:TypeArguments="x:String">PG not in list</InArgument>
+                                      </scg:List>
+                                    </ueabf:BasicFilterArgument.BasicFilters>
+                                  </ueabf:BasicFilterArgument>
+                                </ueabf:FilterArgument.BasicFiltersArgument>
+                              </ueabf:FilterArgument>
+                            </ueab:FilterX.FilterArgument>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ueab:FilterX>
+                          <ueab:FindFirstLastDataRowX BlankRowsToSkip="1" ColumnName="Flag" ConfigureLastRowAs="LastPopulatedRow" DisplayName="Find First/Last Data Row" FirstRowIndex="[firstrow]" FirstRowOffset="0" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,349.3333333333333" sap2010:WorkflowViewState.IdRef="FindFirstLastDataRowX_1" LastRowIndex="[lastrow]" LastRowOffset="0" Range="[excel.Sheet(FinishedAvendraSheet1)]" VisibleRowsOnly="True">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ueab:FindFirstLastDataRowX>
+                          <ui:ExcelSetRangeColor Color="[System.Drawing.Color.Yellow]" DisplayName="Set Range Red Color" sap:VirtualizedContainerService.HintSize="434,223.33333333333334" sap2010:WorkflowViewState.IdRef="ExcelSetRangeColor_2" Range="[&quot;A&quot;+firstrow.ToString+&quot;:BA&quot;+lastrow.ToString]" SheetName="[FinishedAvendraSheet1]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ExcelSetRangeColor>
+                          <ueab:FilterX FilterArgument="{x:Null}" ClearFilter="True" ColumnName="Flag" DisplayName="Remove Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="434,48" sap2010:WorkflowViewState.IdRef="FilterX_2" Range="[Excel.sheet(FinishedAvendraSheet1)]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ueab:FilterX>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,384.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence sap:VirtualizedContainerService.HintSize="416,312.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ueab:FilterX FilterArgument="{x:Null}" ClearFilter="True" ColumnName="Flag" DisplayName="Remove Filter" HasHeaders="True" sap:VirtualizedContainerService.HintSize="354,57.333333333333336" sap2010:WorkflowViewState.IdRef="FilterX_3" Range="[Excel.sheet(FinishedAvendraSheet1)]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ueab:FilterX>
+                              <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="354,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Colour not applied for vendor sheet: &quot;+FinishedAvendraSheet1]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:LogMessage>
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelApplicationCard.Body>
@@ -497,6 +664,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ueab:ExcelProcessScopeX>
-    <ui:LogMessage DisplayName="Log Message 9" sap:VirtualizedContainerService.HintSize="631.3333333333334,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Column format conversion completed&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 9" sap:VirtualizedContainerService.HintSize="648,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Column format conversion completed&quot;]" />
   </Sequence>
 </Activity>

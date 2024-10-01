@@ -514,6 +514,8 @@
       "Path": "Excel Workflows/Lookup_SoldToOrderHist and ShipToOrder.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "lastrow&Sequence_27",
+        "firstrow&Sequence_27",
         "Int_ShipToRowIndex&Sequence_21",
         "FinishedAvendraSheet1&Sequence_1",
         "dt_SoldToOrder&Sequence_1",
