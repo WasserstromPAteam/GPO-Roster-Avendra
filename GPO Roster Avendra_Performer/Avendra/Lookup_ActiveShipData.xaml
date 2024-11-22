@@ -2,11 +2,15 @@
   <x:Members>
     <x:Property Name="in_BotFilepath" Type="InArgument(x:String)" />
     <x:Property Name="in_ActiveShipFilepath" Type="InArgument(x:String)" />
+    <x:Property Name="in_HospitalityAccPath" Type="InArgument(x:String)" />
   </x:Members>
+  <this:Lookup_ActiveShipData.in_HospitalityAccPath>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Lookup_ActiveShipData.in_HospitalityAccPath>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,2436.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>846,5313.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_ActiveShipData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -107,21 +111,51 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Reads bot and active ship data. Joins the data using Customer number and writes down to bot file&#xA;" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="648,2372" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Reads the below files&#xA;1. Bot.xlsx&#xA;2. Activeship to data.xlsx&#xA;3. Hospitality account.xlsx&#xA;&#xA;Joins bot and Active shipto data by matching customer number into bot file&#xA;Joins bot and Hosipitality account data by matching Full address into bot file" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="784,5168.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ActiveShipTo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="DT_HospAccActive" />
+      <Variable x:TypeArguments="x:Int32" Name="Index" />
+      <Variable x:TypeArguments="x:Int32" Name="index_3" />
+      <Variable x:TypeArguments="x:Int32" Name="index_2" />
+      <Variable x:TypeArguments="x:Int32" Name="index_1" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="586,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Active ship data initiated to bot.xlsx&quot;]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Read Range Workbook bot file" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_ActiveShipTo]" DisplayName="Read Range Workbook Active shipto file" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[in_ActiveShipFilepath]" />
-    <ui:FilterDataTable DataTable="[dt_ActiveShipTo]" DisplayName="Filter active ship Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="586,164" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_ActiveShipTo]" SelectColumnsMode="Keep">
+    <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill excel Process" sap:VirtualizedContainerService.HintSize="722,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:KillProcess>
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Hospitality Account active File, bot file and Activeshipto files&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Read Range Workbook bot file" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_ActiveShipTo]" DisplayName="Read Range Workbook Active shipto file" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1" WorkbookPath="[in_ActiveShipFilepath]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_HospAccActive]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Sheet1" WorkbookPath="[in_HospitalityAccPath]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ReadRange>
+    <ui:LogMessage DisplayName="Log Message -2" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Removing unwanted columns from activeshipto file using filter data table&quot;]" />
+    <ui:FilterDataTable DataTable="[dt_ActiveShipTo]" DisplayName="Filter active ship Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="722,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_ActiveShipTo]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -145,8 +179,14 @@
           <InArgument x:TypeArguments="x:String">["Column30"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <Assign sap2010:Annotation.AnnotationText="Converting Datatbel cell format into String" sap:VirtualizedContainerService.HintSize="586,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap2010:Annotation.AnnotationText="Converting Datatable cell format into String" DisplayName="Assign - Dt_Bot" sap:VirtualizedContainerService.HintSize="722,148.66666666666666" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[dt_Bot]</OutArgument>
       </Assign.To>
@@ -157,10 +197,12 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:JoinDataTables DataTable1="[dt_Bot]" DataTable2="[dt_ActiveShipTo]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="586,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_Bot]">
+    <ui:JoinDataTables DataTable1="[dt_Bot]" DataTable2="[dt_ActiveShipTo]" DisplayName="Join bot and active shipto Data Tables" sap:VirtualizedContainerService.HintSize="722,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_Bot]">
       <ui:JoinDataTables.Arguments>
         <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
           <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -174,28 +216,129 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
         </scg:List>
       </ui:JoinDataTables.Arguments>
     </ui:JoinDataTables>
-    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="9" DataTable="[dt_Bot]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,191.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_1" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="removing zeros in column 8 . which is not needed" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,746" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="9" DataTable="[dt_Bot]" DisplayName="Remove Unnecessary Data Column 9" sap:VirtualizedContainerService.HintSize="722,223.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RemoveDataColumn>
+    <ui:LogMessage DisplayName="Log Message -3" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Joining bot file and activeshipto file completed&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:LogMessage DisplayName="Log Message -4" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding Full Address Column for Extracting Full address from formated Address in bot file&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Full Address" DataTable="[dt_Bot]" DisplayName="Add Data Column - Full address" sap:VirtualizedContainerService.HintSize="722,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:AddDataColumn>
+    <ui:LogMessage DisplayName="Log Message - 5" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Removing unwanted columns from Hospitality account file using filter data table&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:FilterDataTable DataTable="[DT_HospAccActive]" DisplayName="Filter  Hospitality account Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="722,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[DT_HospAccActive]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="16">
+          <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[1]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[2]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[3]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[4]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[5]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[6]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[7]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[8]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[9]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[10]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[11]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[12]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[31]</InArgument>
+          <InArgument x:TypeArguments="x:Int32">[40]</InArgument>
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:FilterDataTable>
+    <ui:LogMessage DisplayName="Log Message - 6" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Full Address = Full Address and Copy Col A-M into MAtching File&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <ui:ForEachRow ColumnNames="{x:Null}" sap2010:Annotation.AnnotationText="lookup Full address from macting filr to Hospitality Acccount file and Copied starting 13 Columns data to Amtching File dt if Lookup matches" CurrentIndex="[index_1]" DataTable="[dt_Bot]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="722,1745.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,525.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="688,1500" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CurrentRow(8).ToString = &quot;0&quot; OR string.IsNullOrEmpty(CurrentRow(8).ToString) = true]" sap:VirtualizedContainerService.HintSize="510,438" sap2010:WorkflowViewState.IdRef="If_1">
+            <Assign DisplayName="Assign - Full address from formatted address" sap:VirtualizedContainerService.HintSize="626,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[CurrentRow("Full Address")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[(CurrentRow("FormatedAddress").ToString.Substring(0,CurrentRow("FormatedAddress").ToString.IndexOf(CurrentRow("FormatedAddress").ToString.Split(",")(CurrentRow("FormatedAddress").ToString.Split(",").Count-1))).Trim).Trim]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign - Format Full address" sap:VirtualizedContainerService.HintSize="626,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[CurrentRow("Full Address")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[CurrentRow("Full Address").ToString.Substring(0,CurrentRow("Full Address").ToString.Length-1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[CurrentRow(8).ToString = &quot;0&quot; OR string.IsNullOrEmpty(CurrentRow(8).ToString) = true]" DisplayName="If to check the values in column 8" sap:VirtualizedContainerService.HintSize="626,57.333333333333336" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign - Null to column 8" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Object">[CurrentRow(8)]</OutArgument>
                     </Assign.To>
@@ -206,7 +349,72 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" sap2010:Annotation.AnnotationText="lookup MAthcing file full address into hopitaliyt account file" DataTable="[DT_HospAccActive]" DisplayName="Lookup Hospitality account Data Table" sap:VirtualizedContainerService.HintSize="626,378" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Full Address" LookupValue="[CurrentRow(&quot;Full Address&quot;).ToString.ToUpper]" RowIndex="[index]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LookupDataTable>
+            <If Condition="[index&gt;-1]" DisplayName="If - check the row index" sap:VirtualizedContainerService.HintSize="626,742" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then - assign values to other columns" sap:VirtualizedContainerService.HintSize="592,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each column index" sap:VirtualizedContainerService.HintSize="530,386.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[{0,1,2,3,4,5,6,7,8,9,10,11,12,13}]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="x:Int32">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="currentItem" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign DisplayName="Assign - column value to hospitality to bot file" sap:VirtualizedContainerService.HintSize="434,108" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[CurrentRow(DT_Bot.Columns("Column1").Ordinal+1+currentItem)]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[DT_HospAccActive.Rows(Index).Item(currentItem).ToString]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:ForEach>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,13 +428,21 @@ Select dt_Bot.Clone().Rows.Add(row.ItemArray.Select(Function (x) If(IsNumeric(x.
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Write Range Workbook bot file" sap:VirtualizedContainerService.HintSize="586,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
-    <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Active ship data Completed and values returned in Bot file&quot;]" />
+    <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Full Address" DataTable="[DT_Bot]" DisplayName="Remove Full address Data Column" sap:VirtualizedContainerService.HintSize="722,223.33333333333334" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:RemoveDataColumn>
+    <ui:WriteRange AddHeaders="True" DataTable="[DT_Bot]" DisplayName="Write Range bot Workbook" sap:VirtualizedContainerService.HintSize="722,148" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="bot" StartingCell="A1" WorkbookPath="[in_BotFilePath]" />
+    <ui:LogMessage DisplayName="Log Message-7" sap:VirtualizedContainerService.HintSize="722,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Lookup Hospitality data Completed and values returned in Bot file&quot;]" />
   </Sequence>
 </Activity>

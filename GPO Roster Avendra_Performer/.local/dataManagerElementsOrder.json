@@ -125,10 +125,16 @@
       "Path": "Avendra/Lookup_ActiveShipData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_Bot&Sequence_1",
-        "dt_ActiveShipTo&Sequence_1"
+        "dt_Bot&Sequence_5",
+        "dt_ActiveShipTo&Sequence_5",
+        "DT_HospAccActive&Sequence_5",
+        "Index&Sequence_5",
+        "index_3&Sequence_5",
+        "index_2&Sequence_5",
+        "index_1&Sequence_5"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_HospitalityAccPath",
         "in_BotFilepath",
         "in_ActiveShipFilepath"
       ],
@@ -163,7 +169,6 @@
         "rowIndex&Sequence_3"
       ],
       "ArgumentsSectionElementsOrder": [
-        "argument1",
         "In_CountriesToFilter",
         "in_BotFilePath",
         "in_DestinationPath",
@@ -579,6 +584,72 @@
         "in_ConfigFile",
         "in_ConfigSheets",
         "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/Add_BlankAcctoGPOMasterFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "DT_MasterGoogleRuns&Sequence_1",
+        "DT_BotFile&Sequence_1",
+        "DT1_start5columns&Sequence_1",
+        "DT2_AvendraColumn&Sequence_1",
+        "Dict_ColumnIndex&Sequence_1",
+        "DT1_bot&Sequence_1",
+        "DT2_bot&Sequence_1",
+        "Index_dt_Avendra&Sequence_2",
+        "AvendraIndex&Sequence_5"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_MasterGoogleRunsFile",
+        "in_BotFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP Workflows/SQ01_executeWithoutVarient.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "bool_Download_Page&Sequence_1",
+        "Var_Query&Sequence_1",
+        "SAP_StatusBar&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_SoldToValues"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

@@ -12,17 +12,6 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ApplicationID&Sequence_58",
-        "ExceptionEmailList&Sequence_58",
-        "CCEmailList&Sequence_58",
-        "FromEmail&Sequence_58",
-        "SecretID&Sequence_58",
-        "TenantID&Sequence_58",
-        "str_PostponedTime&StateMachine_1",
-        "Int_AvendraInputRowsCount&StateMachine_1",
-        "str_GoogleAPIFileName&StateMachine_1",
-        "str_AvendraFilePath&StateMachine_1",
-        "Screenshot&StateMachine_1",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
         "BusinessException&StateMachine_1",
@@ -32,12 +21,23 @@
         "TransactionField2&StateMachine_1",
         "TransactionField1&StateMachine_1",
         "TransactionID&StateMachine_1",
-        "ConsecutiveSystemExceptions&StateMachine_1"
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "str_AvendraFilePath&StateMachine_1",
+        "Screenshot&StateMachine_1",
+        "str_GoogleAPIFileName&StateMachine_1",
+        "Int_AvendraInputRowsCount&StateMachine_1",
+        "str_PostponedTime&StateMachine_1",
+        "ApplicationID&Sequence_58",
+        "ExceptionEmailList&Sequence_58",
+        "CCEmailList&Sequence_58",
+        "FromEmail&Sequence_58",
+        "SecretID&Sequence_58",
+        "TenantID&Sequence_58"
       ],
       "ArgumentsSectionElementsOrder": [
-        "in_EmailTrigger",
         "in_OrchestratorQueueName",
-        "in_OrchestratorQueueFolder"
+        "in_OrchestratorQueueFolder",
+        "in_EmailTrigger"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -177,7 +177,9 @@
       "Path": "Framework/CloseAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -185,6 +187,9 @@
       "Path": "Avendra/Create InputFile.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Var_WB&Sequence_1",
+        "filteredDT&Sequence_1",
+        "requiredColumns&Sequence_1",
         "CsvSheetName&Sequence_1",
         "DT_AvendraCustomer&Sequence_1",
         "Index&Sequence_1",
@@ -283,6 +288,35 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel workflow/Remove unwanted column.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "dt_Avendra&Sequence_2",
+        "ColumnsToDelete&Sequence_1",
+        "List_Worksheets&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_AvendraCustomerFile"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/TakeScreenshot.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Screenshot&Sequence_1",
+        "ScreenshotFileInfo&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Folder",
+        "io_FilePath"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
