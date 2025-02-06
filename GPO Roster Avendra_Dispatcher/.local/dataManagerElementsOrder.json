@@ -201,6 +201,7 @@
         "firstRowValue&Sequence_20"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_Config",
         "Out_AvendraInputRowsCount",
         "Out_AvendraFilePathExcel",
         "in_CountriesToFilter",

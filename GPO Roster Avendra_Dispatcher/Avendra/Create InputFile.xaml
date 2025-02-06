@@ -8,11 +8,12 @@
     <x:Property Name="in_CountriesToFilter" Type="InArgument(x:String)" />
     <x:Property Name="Out_AvendraFilePathExcel" Type="OutArgument(x:String)" />
     <x:Property Name="Out_AvendraInputRowsCount" Type="OutArgument(x:Int32)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>846,1074.6666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874.6666666666666,9264.666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_HSM_Input_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,15 +127,15 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="552,1010" sap2010:WorkflowViewState.IdRef="Sequence_33">
+  <Sequence sap:VirtualizedContainerService.HintSize="884.6666666666666,9080" sap2010:WorkflowViewState.IdRef="Sequence_33">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="490,922" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="822.6666666666666,8992" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Reads the customer file downloaded from avendra portal. Renames the duplicate columns removes unwanted columns from the input. performs excel operations ad applies filter to create a input file to fed into the GPO portal and saves the intial file as avendra customer dd mm yy.xlsx " DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="784,8847.333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="Reads the customer file downloaded from avendra portal. Renames the duplicate columns removes unwanted columns from the input. performs excel operations ad applies filter to create a input file to fed into the GPO portal and saves the intial file as avendra customer dd mm yy.xlsx " DisplayName="Prepare_Avendra_Input" sap:VirtualizedContainerService.HintSize="784,8730" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="sd:DataTable" Name="DT_AvendraCustomer" />
             <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -306,20 +307,12 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:RemoveDataRow>
-          <Assign sap:VirtualizedContainerService.HintSize="722,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_17">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[requiredColumns]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">Client,Customer ID,Customer Name,Sub-Units,Enrollment Exception,Account Number,Not Servicing,Street,City,State,Zip,Country,Customer Supplier Status,Customer Status,Market Segment,Brand,Account Address,Account Name,Alt Location Code #1,Contact Name 1,Contact Name 2,eCommerce Setup Complete,eCommerce Start Date,eCommerce End Date,eCommerce Platform,eCommerce CompanyID,Account Name 1,Account Address 1,Account Address 2,Account Setup Date,Account Punchout User Name,eCommerce Catalog Number,eCommerce Catalog Name,eCommerce Catalog Type</InArgument>
-            </Assign.Value>
-          </Assign>
           <Assign sap:VirtualizedContainerService.HintSize="722,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_18">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[DT_AvendraCustomer]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[DT_AvendraCustomer.DefaultView.ToTable(False, requiredColumns.Split(","c).ToArray())]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable">[DT_AvendraCustomer.DefaultView.ToTable(False, in_Config("AvendraColumns").ToString.Split(","c).ToArray())]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding column ZIPP and Full Address&quot;]" />
@@ -835,10 +828,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,727.3333333333334" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="788.6666666666666,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -846,7 +839,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to&quot;)]" sap:VirtualizedContainerService.HintSize="450,655.3333333333334" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[exception.Message.ToLower.Contains(&quot;does not belong to&quot;)]" sap:VirtualizedContainerService.HintSize="334,184" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,379.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <sap:WorkflowViewStateService.ViewState>
