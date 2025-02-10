@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_ActiveShipData" this:Lookup_ActiveShipData.in_BotFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\bot.xlsx" this:Lookup_ActiveShipData.in_ActiveShipFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\ActiveShipTo09b.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Lookup_ActiveShipData" this:Lookup_ActiveShipData.in_BotFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\bot.xlsx" this:Lookup_ActiveShipData.in_ActiveShipFilepath="C:\Users\AnkushMyadam\Documents\MASTER DATA TEAM\GPO Portal\Hilton\052324\ActiveShipTo09b.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:e="clr-namespace:Excel_Libraries;assembly=Excel Libraries" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_BotFilepath" Type="InArgument(x:String)" />
     <x:Property Name="in_ActiveShipFilepath" Type="InArgument(x:String)" />
@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>846,5313.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,5448</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Lookup_ActiveShipData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -46,6 +46,12 @@
       <x:String>System.Reflection</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>Excel_Libraries</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -109,9 +115,15 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>Excel Libraries</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Reads the below files&#xA;1. Bot.xlsx&#xA;2. Activeship to data.xlsx&#xA;3. Hospitality account.xlsx&#xA;&#xA;Joins bot and Active shipto data by matching customer number into bot file&#xA;Joins bot and Hosipitality account data by matching Full address into bot file" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="784,5168.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Reads the below files&#xA;1. Bot.xlsx&#xA;2. Activeship to data.xlsx&#xA;3. Hospitality account.xlsx&#xA;&#xA;Joins bot and Active shipto data by matching customer number into bot file&#xA;Joins bot and Hosipitality account data by matching Full address into bot file" DisplayName="Lookup_ActiveShipData" sap:VirtualizedContainerService.HintSize="784,5383.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Bot" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ActiveShipTo" />
@@ -146,14 +158,14 @@
     </ui:LogMessage>
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Bot]" DisplayName="Read Range Workbook bot file" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="bot" WorkbookPath="[in_BotFilepath]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="False" DataTable="[dt_ActiveShipTo]" DisplayName="Read Range Workbook Active shipto file" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1" WorkbookPath="[in_ActiveShipFilepath]" />
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_HospAccActive]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="722,120" sap2010:WorkflowViewState.IdRef="ReadRange_5" SheetName="Sheet1" WorkbookPath="[in_HospitalityAccPath]">
+    <e:Read_Excel_as_Database ConnectionString="{x:Null}" DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalityAccPath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="722,334.6666666666667" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-    </ui:ReadRange>
+    </e:Read_Excel_as_Database>
     <ui:LogMessage DisplayName="Log Message -2" sap:VirtualizedContainerService.HintSize="722,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Removing unwanted columns from activeshipto file using filter data table&quot;]" />
     <ui:FilterDataTable DataTable="[dt_ActiveShipTo]" DisplayName="Filter active ship Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="722,196" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_ActiveShipTo]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>

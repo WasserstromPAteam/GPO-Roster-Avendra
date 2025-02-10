@@ -4,11 +4,13 @@
   "description": "Performing varoius Excel operations with Customers ",
   "main": "Main.xaml",
   "dependencies": {
+    "Excel.Libraries": "[1.0.1-alpha.3]",
+    "UiPath.Database.Activities": "[1.9.0]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.MicrosoftOffice365.Activities": "[2.4.3]",
-    "UiPath.System.Activities": "[23.10.6]",
+    "UiPath.System.Activities": "[24.10.3]",
     "UiPath.Testing.Activities": "[23.10.1]",
-    "UiPath.UIAutomation.Activities": "[23.10.11]"
+    "UiPath.UIAutomation.Activities": "[24.10.0]"
   },
   "webServices": [],
   "entitiesStores": [],
