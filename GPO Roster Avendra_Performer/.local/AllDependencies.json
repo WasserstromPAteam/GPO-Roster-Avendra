@@ -115,7 +115,7 @@
           }
         }
       },
-      "Excel.Libraries/1.0.1-alpha.3": {
+      "Excel.Libraries/1.0.2-alpha": {
         "type": "package",
         "dependencies": {
           "UiPath.Database.Activities": "1.9.0",
@@ -127,8 +127,8 @@
         },
         "runtime": {
           "lib/net8.0-windows7.0/Excel Libraries.dll": {},
-          "lib/net8.0-windows7.0/Excel Libraries_Expressions_4279136.dll": {},
-          "lib/net8.0-windows7.0/Excel Libraries_Expressions_45485984.dll": {}
+          "lib/net8.0-windows7.0/Excel Libraries_Expressions_19443632.dll": {},
+          "lib/net8.0-windows7.0/Excel Libraries_Expressions_22774183.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -5875,7 +5875,7 @@
           }
         }
       },
-      "Excel.Libraries/1.0.1-alpha.3": {
+      "Excel.Libraries/1.0.2-alpha": {
         "type": "package",
         "dependencies": {
           "UiPath.Database.Activities": "1.9.0",
@@ -5887,8 +5887,8 @@
         },
         "runtime": {
           "lib/net8.0-windows7.0/Excel Libraries.dll": {},
-          "lib/net8.0-windows7.0/Excel Libraries_Expressions_4279136.dll": {},
-          "lib/net8.0-windows7.0/Excel Libraries_Expressions_45485984.dll": {}
+          "lib/net8.0-windows7.0/Excel Libraries_Expressions_19443632.dll": {},
+          "lib/net8.0-windows7.0/Excel Libraries_Expressions_22774183.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -11503,10 +11503,10 @@
         "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
       ]
     },
-    "Excel.Libraries/1.0.1-alpha.3": {
-      "sha512": "mLHkeJbR2HXoj6AKRLsWROWcEY5QhygJhQJJHbXUOVybeOpy2NGZP4EfPoy3elKXqD2IzsfxwSVuD1tHUvH1lw==",
+    "Excel.Libraries/1.0.2-alpha": {
+      "sha512": "OsHJ58LUBBzzPZPoS090axuVoRG2MuA4fnu6Pjmjk5FUCRiNUFg+Kf1XT7DZWZDcPWRublHM4rj9cOTj0XA6EA==",
       "type": "package",
-      "path": "excel.libraries/1.0.1-alpha.3",
+      "path": "excel.libraries/1.0.2-alpha",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
@@ -11530,11 +11530,11 @@
         "content/project.json",
         "contentFiles/any/any/.objects/.metadata",
         "contentFiles/any/any/.objects/.type",
-        "excel.libraries.1.0.1-alpha.3.nupkg.sha512",
+        "excel.libraries.1.0.2-alpha.nupkg.sha512",
         "excel.libraries.nuspec",
         "lib/net8.0-windows7.0/Excel Libraries.dll",
-        "lib/net8.0-windows7.0/Excel Libraries_Expressions_4279136.dll",
-        "lib/net8.0-windows7.0/Excel Libraries_Expressions_45485984.dll"
+        "lib/net8.0-windows7.0/Excel Libraries_Expressions_19443632.dll",
+        "lib/net8.0-windows7.0/Excel Libraries_Expressions_22774183.dll"
       ]
     },
     "ExcelNumberFormat/1.0.10": {
@@ -21858,7 +21858,7 @@
   "projectFileDependencyGroups": {
     "": [],
     "net8.0-windows7.0": [
-      "Excel.Libraries >= 1.0.1-alpha.3 <= 1.0.1-alpha.3",
+      "Excel.Libraries >= 1.0.2-alpha <= 1.0.2-alpha",
       "UiPath.Database.Activities >= 1.9.0 <= 1.9.0",
       "UiPath.Excel.Activities >= 2.22.4 <= 2.22.4",
       "UiPath.MicrosoftOffice365.Activities >= 2.4.3 <= 2.4.3",
@@ -21884,7 +21884,7 @@
           "Excel.Libraries": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.1-alpha.3, 1.0.1-alpha.3]"
+            "version": "[1.0.2-alpha, 1.0.2-alpha]"
           },
           "UiPath.Database.Activities": {
             "include": "Runtime",

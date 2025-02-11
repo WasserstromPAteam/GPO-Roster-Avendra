@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>883.3333333333334,4474.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,4630.666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Format_MatchingFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Format_MatchingFile" sap:VirtualizedContainerService.HintSize="726.6666666666666,4370" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Format_MatchingFile" sap:VirtualizedContainerService.HintSize="726.6666666666666,4566" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MatchingFile" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -228,14 +228,7 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;reading Hospitality Account active File and Copieng the Headers A-M to paste in Matching file&quot;]" />
-    <e:Read_Excel_as_Database ConnectionString="{x:Null}" DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="664.6666666666666,86" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </e:Read_Excel_as_Database>
+    <e:Read_Excel_as_Database DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="664.6666666666666,282" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1" />
     <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="adding starting 13 columns i.e Col A-M into the Matching File Dt" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="664.6666666666666,720" sap2010:WorkflowViewState.IdRef="ForEach`1_2" MaxIterations="13" Values="[DT_HospAccActive.Columns]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataColumn">

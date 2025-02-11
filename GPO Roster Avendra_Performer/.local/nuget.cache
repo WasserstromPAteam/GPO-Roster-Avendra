@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "AjyciFom7NgW9fVU4nwKBIietB9Awjh9vOu/FFezSxudziZFPd566qNvIZawYxIddv0pWYWMTWk4yF+rBy91Ow==",
+  "dgSpecHash": "areUZdvMGryr4XdImTqxjF7WCAaqu66ZVGINKxQ6FT4WI1n2xjfhmXSun39nNZEs/6D5hA3IIZBdI/V4pTRf3A==",
   "success": true,
   "projectFilePath": "C:\\GitHubSai\\GPO-Roster-Avendra\\GPO Roster Avendra_Performer\\.local\\",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\saiprasad\\.nuget\\packages\\closedxml\\0.95.4\\closedxml.0.95.4.nupkg.sha512",
     "C:\\Users\\saiprasad\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\saiprasad\\.nuget\\packages\\documentformat.openxml\\2.12.1\\documentformat.openxml.2.12.1.nupkg.sha512",
-    "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\excel.libraries.1.0.1-alpha.3.nupkg.sha512",
+    "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\excel.libraries.1.0.2-alpha.nupkg.sha512",
     "C:\\Users\\saiprasad\\.nuget\\packages\\excelnumberformat\\1.0.10\\excelnumberformat.1.0.10.nupkg.sha512",
     "C:\\Users\\saiprasad\\.nuget\\packages\\markdig.signed\\0.31.0\\markdig.signed.0.31.0.nupkg.sha512",
     "C:\\Users\\saiprasad\\.nuget\\packages\\microsoft.applicationinsights\\2.21.0\\microsoft.applicationinsights.2.21.0.nupkg.sha512",

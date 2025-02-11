@@ -287,15 +287,15 @@
     {
       "Package": {
         "Id": "Excel.Libraries",
-        "Version": "1.0.1-alpha.3"
+        "Version": "1.0.2-alpha"
       },
       "Assemblies": [
         "C:\\Users\\saiprasad\\.nuget\\packages\\azure.core\\1.38.0\\lib/net6.0/Azure.Core.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\azure.identity\\1.11.4\\lib/netstandard2.0/Azure.Identity.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\csvhelper\\16.0.0\\lib/netstandard2.1/CsvHelper.dll",
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib/net8.0-windows7.0/Excel Libraries.dll",
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib/net8.0-windows7.0/Excel Libraries_Expressions_4279136.dll",
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib/net8.0-windows7.0/Excel Libraries_Expressions_45485984.dll",
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib/net8.0-windows7.0/Excel Libraries.dll",
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib/net8.0-windows7.0/Excel Libraries_Expressions_19443632.dll",
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib/net8.0-windows7.0/Excel Libraries_Expressions_22774183.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\markdig.signed\\0.31.0\\lib/net6.0/Markdig.Signed.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\microsoft.applicationinsights\\2.21.0\\lib/netstandard2.0/Microsoft.ApplicationInsights.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.0\\lib/netstandard2.0/Microsoft.AspNet.SignalR.Client.dll",
@@ -438,7 +438,7 @@
         "C:\\Users\\saiprasad\\.nuget\\packages\\uipath.vision\\3.13.2\\lib/net6.0-windows7.0/UiPath.Vision.Tesseract.dll",
         "C:\\Users\\saiprasad\\.nuget\\packages\\uipath.vision\\3.13.2\\lib/net6.0-windows7.0/UiPath.Vision.dll"
       ],
-      "Path": "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3"
+      "Path": "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha"
     }
   ],
   "Conflicts": [],
@@ -573,7 +573,7 @@
     },
     "Excel.Libraries": {
       "Id": "Excel.Libraries",
-      "Version": "1.0.1-alpha.3",
+      "Version": "1.0.2-alpha",
       "Dependencies": [
         {
           "Item1": "UiPath.Database.Activities",
@@ -5122,14 +5122,14 @@
     {
       "Package": {
         "Id": "Excel.Libraries",
-        "Version": "1.0.1-alpha.3"
+        "Version": "1.0.2-alpha"
       },
       "Assemblies": [
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib\\net8.0-windows7.0\\Excel Libraries.dll",
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib\\net8.0-windows7.0\\Excel Libraries_Expressions_4279136.dll",
-        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3\\lib\\net8.0-windows7.0\\Excel Libraries_Expressions_45485984.dll"
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib\\net8.0-windows7.0\\Excel Libraries.dll",
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib\\net8.0-windows7.0\\Excel Libraries_Expressions_19443632.dll",
+        "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha\\lib\\net8.0-windows7.0\\Excel Libraries_Expressions_22774183.dll"
       ],
-      "Path": "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.1-alpha.3"
+      "Path": "C:\\Users\\saiprasad\\.nuget\\packages\\excel.libraries\\1.0.2-alpha"
     },
     {
       "Package": {

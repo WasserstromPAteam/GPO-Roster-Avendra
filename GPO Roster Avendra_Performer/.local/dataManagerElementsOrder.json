@@ -659,12 +659,25 @@
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
         "DT_HospAccActive&Sequence_1",
-        "colList&Sequence_1",
-        "firstRowValue&Sequence_3"
+        "colList&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "in_HospitalAccActivePath"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "FileName&Sequence_1",
+        "Path&Sequence_1",
+        "ConnectionString&Sequence_1",
+        "dataTable&Sequence_1",
+        "ConnectingString&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="883.3333333333334,894.6666666666666" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:e="clr-namespace:Excel_Libraries;assembly=Excel Libraries" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="883.3333333333334,842" sap2010:WorkflowViewState.IdRef="Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:e="clr-namespace:Excel_Libraries;assembly=Excel Libraries" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -35,6 +35,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>Excel_Libraries</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,9 +98,13 @@
       <AssemblyReference>Excel Libraries</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="416,830" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test" sap:VirtualizedContainerService.HintSize="416,777.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="C:\GITHUBSAI\GPO-Roster-Hilton\GPO Roster Hilton_Performer\Data\Input\Hospitality Accounts Active.xls" Name="FileName" />
+      <Variable x:TypeArguments="x:String" Name="FileName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Hospitality Accounts Active.xlsx</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Default="C:\GITHUBSAI\GPO-Roster-Hilton\GPO Roster Hilton_Performer\Data\Input" Name="Path" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="ConnectionString" />
       <Variable x:TypeArguments="sd:DataTable" Name="dataTable">
@@ -117,7 +122,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <e:Read_Excel_as_Database ConnectionString="[ConnectingString]" DataTable="[dataTable]" DisplayName="Read Excel as Database" FileDirectory="C:\GITHUBSAI\GPO-Roster-Hilton\GPO Roster Hilton_Performer\Data\Input" FileName="Hospitality Accounts Active.xlsx" sap:VirtualizedContainerService.HintSize="354,334.6666666666667" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1" />
+    <e:Read_Excel_as_Database DataTable="[dataTable]" DisplayName="Read Excel as Database" FileDirectory="[Path]" FileName="[FileName]" sap:VirtualizedContainerService.HintSize="354,282" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1" />
     <ui:DatabaseConnect DisplayName="Connect to Database" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.Odbc" ConnectionString="[&quot;Dsn=Excel Files;dbq=&quot;+FileName+&quot;;defaultdir=&quot;+Path+&quot;;driverid=1046;maxbuffersize=2048;pagetimeout=5&quot;]" DatabaseConnection="[ConnectionString]" />
     <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" DataTable="[dataTable]" DisplayName="Run Query" ExistingDbConnection="[ConnectionString]" sap:VirtualizedContainerService.HintSize="354,148" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * from[Sheet1$]">
       <ui:ExecuteQuery.Parameters>

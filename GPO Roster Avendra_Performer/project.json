@@ -4,7 +4,7 @@
   "description": "Performing varoius Excel operations with Customers ",
   "main": "Main.xaml",
   "dependencies": {
-    "Excel.Libraries": "[1.0.1-alpha.3]",
+    "Excel.Libraries": "[1.0.2-alpha]",
     "UiPath.Database.Activities": "[1.9.0]",
     "UiPath.Excel.Activities": "[2.22.4]",
     "UiPath.MicrosoftOffice365.Activities": "[2.4.3]",
@@ -16,7 +16,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "23.10.7.0",
-  "projectVersion": "1.0.15",
+  "projectVersion": "1.0.16",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
