@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>981,1329</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,1264.6666666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>RemoveDuplicate_HiltonNumber_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +106,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RemoveDuplicate_HiltonNumber" sap:VirtualizedContainerService.HintSize="496,1264" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RemoveDuplicate_HiltonNumber" sap:VirtualizedContainerService.HintSize="512,1200" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(x:Int32)" Name="IndexList" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_AvendraCustomer" />
@@ -116,8 +116,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_AvendraCustomer]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_AvendraFilePath]" />
-    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_AvendraCustomer]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_AvendraFilePath]" />
+    <Assign sap:VirtualizedContainerService.HintSize="450,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:Int32)">[IndexList]</OutArgument>
       </Assign.To>
@@ -125,13 +125,13 @@
         <InArgument x:TypeArguments="scg:List(x:Int32)">[in_dt_bot.AsEnumerable().GroupBy(Function(row) row.Field(Of Object)("Column1")).Where(Function(g) g.Count() &gt; 1).SelectMany(Function(g) g.Select(Function(row) in_dt_bot.Rows.IndexOf(row))).ToList()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,722" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[IndexList]">
+    <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each index" sap:VirtualizedContainerService.HintSize="450,707.3333333333334" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[IndexList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Int32">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="index" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,536" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,559.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Object" Name="Var_CustomerID" />
             </Sequence.Variables>
@@ -140,12 +140,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_AvendraCustomer]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Account Name" LookupValue="[in_dt_bot.rows(index).item(&quot;InputBusinessName&quot;).ToString]" TargetColumnName="Customer ID">
+            <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" RowIndex="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_AvendraCustomer]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="354,332.6666666666667" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Account Name" LookupValue="[in_dt_bot.rows(index).item(&quot;InputBusinessName&quot;).ToString]" TargetColumnName="Customer ID">
               <ui:LookupDataTable.CellValue>
                 <OutArgument x:TypeArguments="x:Object">[Var_CustomerID]</OutArgument>
               </ui:LookupDataTable.CellValue>
             </ui:LookupDataTable>
-            <ui:WriteCell Cell="[&quot;H&quot;+(index+2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="bot" Text="[Var_CustomerID.ToString]" WorkbookPath="[in_BotFilePath]" />
+            <ui:WriteCell Cell="[&quot;H&quot;+(index+2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="354,138.66666666666666" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="bot" Text="[Var_CustomerID.ToString]" WorkbookPath="[in_BotFilePath]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
@@ -156,6 +156,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Done&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Done&quot;]" />
   </Sequence>
 </Activity>

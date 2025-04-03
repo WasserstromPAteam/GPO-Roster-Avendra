@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>873.3333333333334,3242.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>856,798.6666666666666</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_ExcelFileExport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -46,6 +46,7 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -108,17 +109,20 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_ExcelFileExport" sap:VirtualizedContainerService.HintSize="685.3333333333334,3178" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_ExcelFileExport" sap:VirtualizedContainerService.HintSize="518,734" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="623.3333333333334,3067.3333333333335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="456,646" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Sequence - to export Material List File" sap:VirtualizedContainerService.HintSize="584.6666666666666,2828.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Sequence - to export Material List File" sap:VirtualizedContainerService.HintSize="550.6666666666666,2754.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="bool_ExportPage" />
             <Variable x:TypeArguments="x:Boolean" Name="bool_ExportPopup" />
@@ -130,8 +134,8 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="522.6666666666666,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Exporting Ship to Complete file...&quot;]" />
-          <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="522.6666666666666,162" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Export/Spreadsheet">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488.6666666666667,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Exporting Ship to Complete file...&quot;]" />
+          <ucas:SelectMenuItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Select Menu Item 'GridView  SAPGUI.GridVi...'" sap:VirtualizedContainerService.HintSize="488.6666666666667,194" sap2010:WorkflowViewState.IdRef="SelectMenuItem_1" Item="Export/Spreadsheet">
             <ucas:SelectMenuItem.Items>
               <scg:List x:TypeArguments="x:String" Capacity="32">
                 <x:String>Details</x:String>
@@ -173,7 +177,7 @@
               </ui:Target>
             </ucas:SelectMenuItem.Target>
           </ucas:SelectMenuItem>
-          <ui:UiElementExists DisplayName="Element Exists 'saplogon.exe Ship'" Exists="[bool_ExportPopup]" sap:VirtualizedContainerService.HintSize="522.6666666666666,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+          <ui:UiElementExists DisplayName="Element Exists 'saplogon.exe Ship'" Exists="[bool_ExportPopup]" sap:VirtualizedContainerService.HintSize="488.6666666666667,139.33333333333334" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b3d8acb-ed11-4360-9cdf-5732761b03c3" InformativeScreenshot="ea9e6cbbc2ffe32f53882ba391f0d945" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Ship to Complete' idx='*' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -185,16 +189,16 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not bool_ExportPopup]" DisplayName="While" sap:VirtualizedContainerService.HintSize="522.6666666666666,464.6666666666667" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not bool_ExportPopup]" DisplayName="While" sap:VirtualizedContainerService.HintSize="488.6666666666667,490" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
             <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,326.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,342" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                <ui:UiElementExists DisplayName="Element Exists 'saplogon.exe Ship'" Exists="[bool_ExportPopup]" sap:VirtualizedContainerService.HintSize="334,107.33333333333333" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="354,124" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                <ui:UiElementExists DisplayName="Element Exists 'saplogon.exe Ship'" Exists="[bool_ExportPopup]" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
                   <ui:UiElementExists.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5b3d8acb-ed11-4360-9cdf-5732761b03c3" InformativeScreenshot="ea9e6cbbc2ffe32f53882ba391f0d945" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='Ship to Complete' idx='*' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -209,8 +213,8 @@
               </Sequence>
             </ui:InterruptibleWhile.Body>
           </ui:InterruptibleWhile>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="522.6666666666666,82" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_DestinationPath]" />
-          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Directory'" EmptyField="True" sap:VirtualizedContainerService.HintSize="522.6666666666666,157.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_DestinationPath]">
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="488.6666666666667,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[in_DestinationPath]" />
+          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Directory'" EmptyField="True" sap:VirtualizedContainerService.HintSize="488.6666666666667,189.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_DestinationPath]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bb92730e-e618-4170-9af5-976942d420eb" InformativeScreenshot="c291a0d164edd76ac43c866bad163fb7" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;&lt;sap id='usr/ctxtDY_PATH' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
@@ -219,7 +223,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField FileName'" EmptyField="True" sap:VirtualizedContainerService.HintSize="522.6666666666666,157.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_FileName+ &quot;[k(enter)]&quot;]">
+          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField FileName'" EmptyField="True" sap:VirtualizedContainerService.HintSize="488.6666666666667,189.33333333333334" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="[in_FileName+ &quot;[k(enter)]&quot;]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bb92730e-e618-4170-9af5-976942d420eb" InformativeScreenshot="c291a0d164edd76ac43c866bad163fb7" Selector="&lt;wnd app='saplogon.exe' cls='#32770' title='*' idx='*' /&gt;&lt;sap id='usr/ctxtDY_FILENAME' /&gt;" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
@@ -228,7 +232,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <TryCatch DisplayName="Try Catch- Downloading file" sap:VirtualizedContainerService.HintSize="522.6666666666666,712.6666666666666" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+          <TryCatch DisplayName="Try Catch- Downloading file" sap:VirtualizedContainerService.HintSize="488.6666666666667,751.3333333333334" sap2010:WorkflowViewState.IdRef="TryCatch_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -236,16 +240,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <TryCatch.Try>
-              <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" DisplayName="Wait for File export" DownloadFolder="[in_DestinationPath]" File="[download]" sap:VirtualizedContainerService.HintSize="484,474" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" Timeout="15">
+              <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" DisplayName="Wait for File export" DownloadFolder="[in_DestinationPath]" File="[download]" sap:VirtualizedContainerService.HintSize="450,480" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1" Timeout="15">
                 <ui:GetLastDownloadedFile.Body>
                   <ActivityAction>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="2000" DisplayName="Click 'Button  Generate'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click AlterIfDisabled="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DelayMS="2000" DisplayName="Click 'Button  Generate'" sap:VirtualizedContainerService.HintSize="354,130" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
                         <ui:Click.CursorPosition>
                           <ui:CursorPosition Position="Center">
                             <ui:CursorPosition.OffsetX>
@@ -276,7 +280,7 @@
               </ui:GetLastDownloadedFile>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="488,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454.6666666666667,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -287,14 +291,14 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;File exported&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;File exported&quot;]" />
                 </ActivityAction>
               </Catch>
             </TryCatch.Catches>
           </TryCatch>
-          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="522,90" sap2010:WorkflowViewState.IdRef="Delay_3" />
-          <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="522,133" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel.exe" />
-          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'Button  Back (F3)'" sap:VirtualizedContainerService.HintSize="522,107" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="488.6666666666667,124" sap2010:WorkflowViewState.IdRef="Delay_3" />
+          <ui:KillProcess AppliesTo="{x:Null}" Process="{x:Null}" ContinueOnError="True" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="488.6666666666667,168.66666666666666" sap2010:WorkflowViewState.IdRef="KillProcess_1" ProcessName="excel.exe" />
+          <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DisplayName="Click 'Button  Back (F3)'" sap:VirtualizedContainerService.HintSize="488.6666666666667,130" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -316,10 +320,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="588,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,451.3333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -327,7 +331,15 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Throw Exception="[new SystemException(&quot;TEchnical exception during Exporting Excel File&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            <Sequence sap:VirtualizedContainerService.HintSize="416,379.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[exception.Message+Environment.newline+exception.Source]" />
+              <Throw Exception="[new SystemException(&quot;Technical exception during Exporting Excel File&quot;+Environment.NewLine+exception.Message+Environment.newline+exception.Source)]" sap:VirtualizedContainerService.HintSize="354,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
+            </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>

@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>883.3333333333334,2216.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,2281.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Format_SAPFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,7 +121,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Format_SAPFile" sap:VirtualizedContainerService.HintSize="636.6666666666666,2152" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Format_SAPFile" sap:VirtualizedContainerService.HintSize="636.6666666666666,2216.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_HospAccActive" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(Of String)]" Name="colList" />
@@ -132,7 +132,30 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Hostpitaliy Account Active file for Creating Full Address Column&quot;]" />
-    <e:Read_Excel_as_Database DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="574.6666666666666,282" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="574.6666666666666,346.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <e:Read_Excel_as_Database DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </e:Read_Excel_as_Database>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="574.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding column ZIP and Full Address&quot;]" />
     <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Zip" DataTable="[DT_HospAccActive]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="574.6666666666666,223.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
       <sap:WorkflowViewStateService.ViewState>

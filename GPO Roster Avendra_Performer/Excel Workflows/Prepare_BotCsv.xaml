@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1133,5483</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,5002</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Prepare_BotCsv_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,13 +105,13 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="710,5418" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap:VirtualizedContainerService.HintSize="710,4937.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Prepare_BotCsv" sap:VirtualizedContainerService.HintSize="648,5307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence DisplayName="Prepare_BotCsv" sap:VirtualizedContainerService.HintSize="648,4849.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="DT_BotCsvBasic" />
         <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -122,8 +122,8 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;started Preparing Bot.xlsx input file ..&quot;]" />
-      <Assign sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;started Preparing Bot.xlsx input file ..&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="586,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">[DT_BotCsvBasic]</OutArgument>
         </Assign.To>
@@ -131,7 +131,7 @@
           <InArgument x:TypeArguments="sd:DataTable">[in_BotCsvBasic]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="getting only Customer and Formattedaddress column in ouput dt" DataTable="[DT_BotCsvBasic]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="586,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_BotCsvBasic]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="getting only Customer and Formattedaddress column in ouput dt" DataTable="[DT_BotCsvBasic]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="586,241.33333333333334" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_BotCsvBasic]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -149,7 +149,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <InvokeMethod sap2010:Annotation.AnnotationText="changes Customer column position to 1st position" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="586,178" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetOrdinal">
+      <InvokeMethod sap2010:Annotation.AnnotationText="changes Customer column position to 1st position" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="586,216" sap2010:WorkflowViewState.IdRef="InvokeMethod_1" MethodName="SetOrdinal">
         <InvokeMethod.TargetObject>
           <InArgument x:TypeArguments="sd:DataColumn">[DT_BotCsvBasic.Columns("Customer")]</InArgument>
         </InvokeMethod.TargetObject>
@@ -160,20 +160,20 @@
         </sap:WorkflowViewStateService.ViewState>
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </InvokeMethod>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;adding columns&quot;]" />
-      <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="adding no. of splits equal to no. of columns" CurrentIndex="[Index]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,491" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Split(DT_BotCsvBasic.Rows(0).Item(1).ToString,&quot;,&quot;)]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;adding columns&quot;]" />
+      <ui:ForEach x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="adding no. of splits equal to no. of columns" CurrentIndex="[Index]" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="586,480.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[Split(DT_BotCsvBasic.Rows(0).Item(1).ToString,&quot;,&quot;)]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,302" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Col&quot;+Index.ToString]" DataTable="[DT_BotCsvBasic]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+              <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="[&quot;Col&quot;+Index.ToString]" DataTable="[DT_BotCsvBasic]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="354,214" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
@@ -185,8 +185,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Spliting FormatedAddress column with comma, and writing in Other column..&quot;]" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Splitting formattedadreess cell values and writing in Other colums" DataTable="[DT_BotCsvBasic]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,692" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Spliting FormatedAddress column with comma, and writing in Other column..&quot;]" />
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Splitting formattedadreess cell values and writing in Other colums" DataTable="[DT_BotCsvBasic]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,705.3333333333334" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>

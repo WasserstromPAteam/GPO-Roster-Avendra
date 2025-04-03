@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>634,4700</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,4601.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Add_BlankAcctoGPOMasterFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,7 +98,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Add_BlankAcctoGPOMasterFile" sap:VirtualizedContainerService.HintSize="644,4595" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Add_BlankAcctoGPOMasterFile" sap:VirtualizedContainerService.HintSize="704,4536.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MasterGoogleRuns" />
       <Variable x:TypeArguments="sd:DataTable" Name="DT_BotFile" />
@@ -113,20 +113,20 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading bot.xlsx file- &quot;+ in_BotFile]" />
-    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Bot.xlsx file" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="582,312" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[in_BotFile]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading bot.xlsx file- &quot;+ in_BotFile]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Bot.xlsx file" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="642,343.3333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="[in_BotFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,171" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,170.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_BotFile]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="bot">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_BotFile]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="354,82.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="bot">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
@@ -142,8 +142,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filtering Bot Datatable to add blanks to Master File Google runs&quot;]" />
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="filter Customer =Blanks and Avendra = No Blank and get starting 5 column sdata only" DataTable="[DT_BotFile]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="582,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT1_start5columns]" SelectColumnsMode="Keep">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Filtering Bot Datatable to add blanks to Master File Google runs&quot;]" />
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="filter Customer =Blanks and Avendra = No Blank and get starting 5 column sdata only" DataTable="[DT_BotFile]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="642,238.66666666666666" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT1_start5columns]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -173,7 +173,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <ui:FilterDataTable sap2010:Annotation.AnnotationText="filter Customer =Blanks and AVendra = No Blank and get Hilton column data only" DataTable="[DT_BotFile]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="582,203" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DT2_AvendraColumn]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable sap2010:Annotation.AnnotationText="filter Customer =Blanks and AVendra = No Blank and get Hilton column data only" DataTable="[DT_BotFile]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="642,238.66666666666666" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[DT2_AvendraColumn]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -199,7 +199,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="582,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign sap:VirtualizedContainerService.HintSize="642,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[DT1_bot]</OutArgument>
       </Assign.To>
@@ -207,7 +207,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[DT1_start5columns.clone()]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="582,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="642,116.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[DT2_bot]</OutArgument>
       </Assign.To>
@@ -215,7 +215,7 @@
         <InArgument x:TypeArguments="sd:DataTable">[DT2_AvendraColumn.clone()]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Master File  Gooogle Runs- &quot;+in_MasterGoogleRunsFile]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="642,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Master File  Gooogle Runs- &quot;+in_MasterGoogleRunsFile]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,13 +223,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Master file to Get row count and add filtered data to id" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="582,2678" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_MasterGoogleRunsFile]">
+    <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Master file to Get row count and add filtered data to id" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="642,2727.3333333333335" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_MasterGoogleRunsFile]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,2497" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,2554.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Name="Index_dt_Avendra" />
             </Sequence.Variables>
@@ -238,21 +238,21 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_MasterGoogleRuns]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="486,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[DT_MasterGoogleRuns]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="546,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No of rows in master file before adding data : &quot;+DT_MasterGoogleRuns.RowCount.ToString]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Index_dt_Avendra]" DataTable="[DT2_AvendraColumn]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="486,1517" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546,175.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No of rows in master file before adding data : &quot;+DT_MasterGoogleRuns.RowCount.ToString]" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[Index_dt_Avendra]" DataTable="[DT2_AvendraColumn]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="546,1553.3333333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,1331" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,1354.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="AvendraIndex" />
                     </Sequence.Variables>
@@ -261,7 +261,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DT_MasterGoogleRuns]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="410,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Avendra" LookupValue="[CurrentRow.item(0).ToString]" RowIndex="[AvendraIndex]" TargetColumnName="Avendra">
+                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[DT_MasterGoogleRuns]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="450,329.3333333333333" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Avendra" LookupValue="[CurrentRow.item(0).ToString]" RowIndex="[AvendraIndex]" TargetColumnName="Avendra">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,7 +269,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LookupDataTable>
-                    <If Condition="[AvendraIndex&gt;-1]" sap:VirtualizedContainerService.HintSize="410,911" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[AvendraIndex&gt;-1]" sap:VirtualizedContainerService.HintSize="450,937.3333333333334" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -277,24 +277,24 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Hilton Number &quot;+CurrentRow.item(0).ToString+&quot; already exists in Master data&quot;]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Hilton Number &quot;+CurrentRow.item(0).ToString+&quot; already exists in Master data&quot;]" />
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,500" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,521.3333333333334" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[DT2_bot]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[DT1_start5columns.rows(Index_dt_Avendra).ItemArray]" DataTable="[DT1_bot]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[DT2_bot]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,221.33333333333334" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[DT1_start5columns.rows(Index_dt_Avendra).ItemArray]" DataTable="[DT1_bot]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="354,212" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                         </Sequence>
                       </If.Else>
                     </If>
@@ -308,15 +308,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <If Condition="[DT1_bot.RowCount&gt;0]" sap:VirtualizedContainerService.HintSize="486,548" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[DT1_bot.RowCount&gt;0]" sap:VirtualizedContainerService.HintSize="546,646" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,366" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,380" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelWriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="Wrting 5 column data at the end of the rows" DataTable="[DT1_bot]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,119" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="[&quot;A&quot;+(DT_MasterGoogleRuns.RowCount+2).ToString]">
+                  <ui:ExcelWriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="Wrting 5 column data at the end of the rows" DataTable="[DT1_bot]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="354,150.66666666666666" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="[&quot;A&quot;+(DT_MasterGoogleRuns.RowCount+2).ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -325,7 +325,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:ExcelWriteRange>
-                  <ui:ExcelWriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="writing only Avendra column data" DataTable="[DT2_bot]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,119" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="[Dict_ColumnIndex(DT_MasterGoogleRuns.Columns(&quot;Avendra&quot;).Ordinal).ToString+(DT_MasterGoogleRuns.RowCount+2).ToString]">
+                  <ui:ExcelWriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="writing only Avendra column data" DataTable="[DT2_bot]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="354,141.33333333333334" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="[Dict_ColumnIndex(DT_MasterGoogleRuns.Columns(&quot;Avendra&quot;).Ordinal).ToString+(DT_MasterGoogleRuns.RowCount+2).ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -337,7 +337,13 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
               </If.Else>
             </If>
           </Sequence>

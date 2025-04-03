@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>883.3333333333334,4630.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>883.3333333333334,4638</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Format_MatchingFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -115,7 +115,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Format_MatchingFile" sap:VirtualizedContainerService.HintSize="726.6666666666666,4566" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Format_MatchingFile" sap:VirtualizedContainerService.HintSize="726.6666666666666,4573.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_MatchingFile" />
       <Variable x:TypeArguments="x:Int32" Name="Index" />
@@ -128,58 +128,6 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading Matching.xlsx File for lookup of Hospitality Account file&quot;]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[DT_MatchingFile]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="664.6666666666666,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="matching" WorkbookPath="[in_MatchingFilePath]" />
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="664.6666666666666,57.333333333333336" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,166.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Reading Matching file" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="354,78.66666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_MatchingFilePath]">
-            <ui:ExcelApplicationScope.Body>
-              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,201.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:ExcelReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="Reding matching sheet" DataTable="[DT_MatchingFile]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="354,113.33333333333333" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="matching">
-                    <ui:ExcelReadRange.Range>
-                      <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
-                      </InArgument>
-                    </ui:ExcelReadRange.Range>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:ExcelReadRange>
-                </Sequence>
-              </ActivityAction>
-            </ui:ExcelApplicationScope.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:ExcelApplicationScope>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Adding Full Address Column for Extracting Full address from formated Address&quot;]" />
     <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" sap2010:Annotation.AnnotationText="add full address column to Dt" ColumnName="Full Address" DataTable="[DT_MatchingFile]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="664.6666666666666,254" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1">
       <sap:WorkflowViewStateService.ViewState>
@@ -228,7 +176,30 @@
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="664.6666666666666,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;reading Hospitality Account active File and Copieng the Headers A-M to paste in Matching file&quot;]" />
-    <e:Read_Excel_as_Database DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="664.6666666666666,282" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1" />
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="664.6666666666666,346.6666666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,136" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <e:Read_Excel_as_Database DataTable="[DT_HospAccActive]" DisplayName="Read Excel as Database" FileDirectory="[in_HospitalAccActivePath]" FileName="[&quot;Hospitality Accounts Active &quot;+Today.ToString(&quot;MMddyy&quot;)+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Read_Excel_as_Database_1" SheetName="Sheet1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </e:Read_Excel_as_Database>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
     <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="adding starting 13 columns i.e Col A-M into the Matching File Dt" DisplayName="For Each currentItem" sap:VirtualizedContainerService.HintSize="664.6666666666666,720" sap2010:WorkflowViewState.IdRef="ForEach`1_2" MaxIterations="13" Values="[DT_HospAccActive.Columns]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sd:DataColumn">

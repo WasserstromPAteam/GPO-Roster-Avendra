@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Portal_Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1102,3735</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1102,4259.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Portal_Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,8 @@
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -107,21 +109,21 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Loging into Google API i.e twc accelerator portal with provided credentials" DisplayName="Portal_Login" sap:VirtualizedContainerService.HintSize="1112,3670" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Loging into Google API i.e twc accelerator portal with provided credentials" DisplayName="Portal_Login" sap:VirtualizedContainerService.HintSize="1112,4194.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;logging into google api portal&quot;]" />
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Launching TWc accelerator portal" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="1050,3378" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V2" WindowResize="Maximize">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1050,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;logging into google api portal&quot;]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Launching TWc accelerator portal" AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="1050,3899.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,3107" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1016,3626.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="Var_Username" />
               <Variable x:TypeArguments="ss:SecureString" Name="Var_password" />
@@ -131,35 +133,72 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening in IE Mode&quot;]" />
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="954,475" sap2010:WorkflowViewState.IdRef="RetryScope_1">
-              <ui:RetryScope.ActivityBody>
-                <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,268" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Settings msedge" sap:VirtualizedContainerService.HintSize="354,180" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
-                      <uix:NClick.Target>
-                        <uix:TargetAnchorable CvElementArea="1853, 52, 24, 17" CvType="Icon" DesignTimeRectangle="1851, 50, 28, 21" DesignTimeScaleFactor="1" ElementType="Icon" Guid="baef8d8c-2d79-4f92-a062-9614d8fae64e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAVCAYAAABVAo5cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVEhLY0i6eOk/PfGohVTHoxZSHY9gCxMvXPwfuHbt/5gjR1HEw3bsBGNkMZAakFqQHmRxbBinhQ6dnf8ZGBj+8ysowMUi9uz9z8DICMYgNkwcpAakFqQHJoYLDx4L6R6ktMKjFlIdj1pIdUxnCy/9BwBeptALwkwlugAAAABJRU5ErkJggg==" InformativeScreenshot="bd318e236fefff87824bc16bd56c3e55.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Privacy error - Work - Microsoft​ Edge' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target CvElementArea="1895, 15, 20, 20" CvType="CloseButton" DesignTimeRectangle="1895, 15, 20, 19" ElementType="Button" Guid="553f7479-695c-47da-991c-23e944f71af2" SearchSteps="CV" TargetType="ComputerVisionBased" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NClick.Target>
-                    </uix:NClick>
-                  </Sequence>
-                </ActivityAction>
-              </ui:RetryScope.ActivityBody>
-              <ui:RetryScope.Condition>
-                <ActivityFunc x:TypeArguments="x:Boolean" />
-              </ui:RetryScope.Condition>
-            </ui:RetryScope>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reload in'" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening in IE Mode&quot;]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="954,800" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="458,528.6666666666666" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="1">
+                  <ui:RetryScope.ActivityBody>
+                    <ActivityAction>
+                      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,270" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Settings msedge" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable CvElementArea="1853, 52, 24, 17" CvType="Icon" DesignTimeRectangle="1851, 50, 28, 21" DesignTimeScaleFactor="1" ElementType="Icon" Guid="baef8d8c-2d79-4f92-a062-9614d8fae64e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAVCAYAAABVAo5cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB0SURBVEhLY0i6eOk/PfGohVTHoxZSHY9gCxMvXPwfuHbt/5gjR1HEw3bsBGNkMZAakFqQHmRxbBinhQ6dnf8ZGBj+8ysowMUi9uz9z8DICMYgNkwcpAakFqQHJoYLDx4L6R6ktMKjFlIdj1pIdUxnCy/9BwBeptALwkwlugAAAABJRU5ErkJggg==" InformativeScreenshot="bd318e236fefff87824bc16bd56c3e55.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Privacy error - Work - Microsoft​ Edge' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvElementArea="1895, 15, 20, 20" CvType="CloseButton" DesignTimeRectangle="1895, 15, 20, 19" ElementType="Button" Guid="553f7479-695c-47da-991c-23e944f71af2" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:RetryScope.ActivityBody>
+                  <ui:RetryScope.Condition>
+                    <ActivityFunc x:TypeArguments="x:Boolean" />
+                  </ui:RetryScope.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:RetryScope>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="462.6666666666667,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,139.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f" KeyModifiers="Alt" SpecialKey="False">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="7a122294-3e66-47ec-b7c3-5715f4f1fd74">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reload in'" sap:VirtualizedContainerService.HintSize="954,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable CvTextArea="42, 450, 176, 12" CvTextArgument="Reload in Internet Explorer mode" CvType="Text" DesignTimeRectangle="1, 440, 343, 32" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;ctrl name='Settings and more' role='menu bar' /&gt;&lt;ctrl name='Settings and more' role='popup menu' /&gt;&lt;ctrl name='Reload in Internet Explorer mode' role='menu item' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Settings and more' role='menu bar' /&gt;&lt;ctrl name='Settings and more' role='popup menu' /&gt;&lt;ctrl name='Reload in Internet Explorer mode' role='menu item' automationid='' check:text='Reload in Internet Explorer mode' /&gt;" Guid="18379404-6083-491e-be82-94fe1154025a" InformativeScreenshot="74262b6b6918f82800b6c724d528f14f.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_2' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -170,7 +209,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'More information'" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'More information'" sap:VirtualizedContainerService.HintSize="954,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="res://ieframe.dll/invalidcert.htm?SSLError=50331648#https://twcecmwebs01:8000/webapp/wcs/tools/servlet/ToolsLogon?XMLFile=common.mcLogon" DesignTimeRectangle="201, 554, 23, 23" DesignTimeScaleFactor="1.5" ElementType="Icon" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='1' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='actionIcon' tag='IMG' aaname='More information' /&gt;" Guid="1e14503a-fe05-4a51-8668-0dcc97f9aebb" InformativeScreenshot="21c50df7d5a56ae12021eaf39539503d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='This site isn’t secure' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -181,7 +220,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go on'" sap:VirtualizedContainerService.HintSize="954,189" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go on'" sap:VirtualizedContainerService.HintSize="954,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="res://ieframe.dll/invalidcert.htm?SSLError=50331648#https://twcecmwebs01:8000/webapp/wcs/tools/servlet/ToolsLogon?XMLFile=common.mcLogon" CvTextArea="233, 831, 491, 27" CvTextArgument="X Go on to the webpage (not recommended)" CvType="Text" DesignTimeRectangle="227, 827, 498, 32" DesignTimeScaleFactor="1.5" ElementType="Text" FullSelectorArgument="&lt;webctrl id='overridelink' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='overridelink' tag='A' type='' class='' aaname='Go on to the webpage (not recommended)' check:innerText='Go on to the webpage (not recommended)' /&gt;" Guid="c93dfeb9-4206-40b5-9c65-ff86798ff3c3" InformativeScreenshot="a6f58a5e9e078e6b51d1798e731ad46d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='This site isn’t secure' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -192,7 +231,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="954,139" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="954,139.33333333333334" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -207,9 +246,21 @@
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44c88afb-52e9-45bf-8464-7f0af0abf21c" InformativeScreenshot="bd84219ada8924797c2c7d7c5770c8d1" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='Security Warning' /&gt;&lt;wnd ctrlid='1' title='Yes' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
               </ui:Click.Target>
             </ui:Click>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Accelerator Credentials&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Var_password]" Username="[Var_Username]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Entering credentials&quot;]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'User name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Text="[Var_Username]" Version="V3">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="954,171.33333333333334" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="c50e3984-bf46-4693-868d-c1a6fc8c5ea4">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;Accelerator Credentials&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="954,176.66666666666666" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Var_password]" Username="[Var_Username]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="954,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Entering credentials&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'User name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="4f07afc1-fea5-4d43-89d5-6b22ba2394f8" Text="[Var_Username]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://twcecmwebs01:8000/webapp/wcs/tools/servlet/ToolsLogon?XMLFile=common.mcLogon" CvElementArea="56, 560, 220, 37" CvType="InputBox" DesignTimeRectangle="57, 563, 218, 33" DesignTimeScaleFactor="1.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tableCol='1' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' class='' tag='INPUT' aaname='User name' /&gt;" Guid="4ca22a38-ae92-4012-a0d0-d1c173b7a4d2" InformativeScreenshot="6918472a0af932bc9638d7ae8ece701b.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='WebSphere Commerce Accelerator Logon' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>

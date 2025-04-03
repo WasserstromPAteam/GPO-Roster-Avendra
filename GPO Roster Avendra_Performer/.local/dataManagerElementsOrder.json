@@ -680,6 +680,22 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Excel Workflows/RemoveDuplicate_HiltonNumber.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "IndexList&Sequence_1",
+        "dt_AvendraCustomer&Sequence_1",
+        "Var_CustomerID&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dt_bot",
+        "in_BotFilePath",
+        "in_AvendraFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
