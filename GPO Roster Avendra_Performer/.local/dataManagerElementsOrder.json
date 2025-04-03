@@ -52,7 +52,9 @@
     {
       "Path": "SendMail.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "bool_FileExist&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
         "In_Screenshot",
         "In_EmailSubject",

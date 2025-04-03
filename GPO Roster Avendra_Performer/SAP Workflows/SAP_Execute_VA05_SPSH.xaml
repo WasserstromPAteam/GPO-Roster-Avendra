@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>965,3660</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1076,3900</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_Execute_VA05_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -94,7 +94,7 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_Execute_VA05" sap:VirtualizedContainerService.HintSize="608,3595" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_Execute_VA05" sap:VirtualizedContainerService.HintSize="608,3835" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_ExportExist" />
       <Variable x:TypeArguments="x:String" Name="Str_SAP_StatusText" />
@@ -140,7 +140,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_MultipleSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_MultipleSelection.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_MultipleSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_MultipleSelection.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_MultipleSelectionValues">
           <Literal x:TypeArguments="x:String" Value="" />
@@ -182,7 +182,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_MultipleSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_MultipleSelection.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP Workflows\SAP_MultipleSelection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="546,204" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAP Workflows\SAP_MultipleSelection.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_str_MultipleSelectionValues">[in_MultipleSelectionValues_Values]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
@@ -249,6 +249,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
+    <Throw Exception="[new BusinessRuleException(&quot;No Data found for selection creteria in SAP VA05 Tcode&quot;)]" sap:VirtualizedContainerService.HintSize="546,122" sap2010:WorkflowViewState.IdRef="Throw_3" />
     <If Condition="[Str_SAP_StatusText.ToUpper.Contains(&quot;NO DOCUMENTS WERE FOUND&quot;)]" sap:VirtualizedContainerService.HintSize="546,1203" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,201" sap2010:WorkflowViewState.IdRef="Sequence_2">
