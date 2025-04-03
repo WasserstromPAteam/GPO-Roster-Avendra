@@ -20431,15 +20431,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saiprasad\\.nuget\\packages\\": {}
+    "C:\\Users\\AnkushMyadam\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "GPO Roster Avendra_Dispatcher",
       "projectName": "GPO Roster Avendra_Dispatcher",
-      "projectPath": "C:\\GitHubSai\\GPO-Roster-Avendra\\GPO Roster Avendra_Dispatcher\\.local",
-      "packagesPath": "C:\\Users\\saiprasad\\.nuget\\packages\\",
-      "outputPath": "C:\\GitHubSai\\GPO-Roster-Avendra\\GPO Roster Avendra_Dispatcher\\.local"
+      "projectPath": "C:\\GitHubAnkush\\GPO-Roster-Avendra\\GPO Roster Avendra_Dispatcher\\.local",
+      "packagesPath": "C:\\Users\\AnkushMyadam\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHubAnkush\\GPO-Roster-Avendra\\GPO Roster Avendra_Dispatcher\\.local"
     },
     "frameworks": {
       "net8.0-windows7.0": {
