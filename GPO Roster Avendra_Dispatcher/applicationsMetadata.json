@@ -1,0 +1,67 @@
+﻿{
+  "Version": "1.0",
+  "Metadata": [
+    {
+      "ApplicationType": "WindowsApplication",
+      "ExecutablePath": {
+        "Value": "excel.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": {
+        "Value": "Out_AvendraFilePathExcel",
+        "IsExpression": true
+      },
+      "Version": null
+    },
+    {
+      "ApplicationType": "Edge",
+      "ExecutablePath": {
+        "Value": "msedge.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_config(\"Avendra_URL\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Edge",
+      "ExecutablePath": {
+        "Value": "msedge.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "\"*avendra*\"",
+        "IsExpression": false
+      },
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Edge",
+      "ExecutablePath": {
+        "Value": "msedge.exe",
+        "IsExpression": false
+      },
+      "Url": null,
+      "Arguments": null,
+      "Version": null
+    },
+    {
+      "ApplicationType": "Edge",
+      "ExecutablePath": {
+        "Value": "msedge.exe",
+        "IsExpression": false
+      },
+      "Url": {
+        "Value": "in_Config(\"Portal URL\").ToString",
+        "IsExpression": true
+      },
+      "Arguments": null,
+      "Version": null
+    }
+  ]
+}

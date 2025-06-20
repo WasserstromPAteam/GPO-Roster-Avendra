@@ -1,0 +1,81 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "queue",
+      "value": {
+        "folderPath": {
+          "defaultValue": "UAT",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        },
+        "name": {
+          "defaultValue": "GPO Roster Avendra",
+          "isExpression": false,
+          "displayName": "Queue Name"
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "ApplicationID",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "ExceptionEmail_GPOAvendra",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "CcEmail_GPOAvendra",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "UipathUser",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "SecretID",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    },
+    {
+      "resource": "asset",
+      "value": {
+        "name": {
+          "defaultValue": "TenantID",
+          "isExpression": false
+        }
+      },
+      "metadata": {}
+    }
+  ]
+}
