@@ -115,7 +115,7 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Tcode_SQ01_and_select_variant" sap:VirtualizedContainerService.HintSize="554,5867" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Tcode_SQ01_and_select_variant" sap:VirtualizedContainerService.HintSize="895.9999999999999,4932.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="bool_Download_Page" />
       <Variable x:TypeArguments="x:String" Name="Var_Query" />
@@ -126,8 +126,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Landing into SQ01 Page&quot;]" />
-    <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="492,160" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Config(&quot;Tcode_SQ01&quot;).ToString]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Landing into SQ01 Page&quot;]" />
+    <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="492,194" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="[in_Config(&quot;Tcode_SQ01&quot;).ToString]">
       <ucas:CallTransaction.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="cd935e48-31fe-431f-a577-5bea65b6a2c5" InformativeScreenshot="bb87b36cbefe27b7baca62a2b2ee86e3" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -*' /&gt;">
           <ui:Target.TimeoutMS>
@@ -139,7 +139,7 @@
         </ui:Target>
       </ucas:CallTransaction.Target>
     </ucas:CallTransaction>
-    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Menubar  mbar'" sap:VirtualizedContainerService.HintSize="492,160" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Environment/Query areas">
+    <ucas:ClickToolbarButton ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" AlterIfDisabled="True" DisplayName="Click Toolbar Button 'Menubar  mbar'" sap:VirtualizedContainerService.HintSize="492,194" sap2010:WorkflowViewState.IdRef="ClickToolbarButton_2" Item="Environment/Query areas">
       <ucas:ClickToolbarButton.Items>
         <scg:List x:TypeArguments="x:String" Capacity="50">
           <x:String>Query/Delete...</x:String>
@@ -535,7 +535,7 @@
       </ui:TypeInto.Target>
     </ui:TypeInto>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;click  Execute&quot;]" />
-    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Execute (F8)'" sap:VirtualizedContainerService.HintSize="492,107" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button  Execute (F8)'" sap:VirtualizedContainerService.HintSize="492,139.33333333333334" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -557,7 +557,7 @@
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
-    <ui:UiElementExists DisplayName="Element Exists 'GridView  SAPGUI.GridVi...'" Exists="[bool_Download_Page]" sap:VirtualizedContainerService.HintSize="492,107" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <ui:UiElementExists DisplayName="Element Exists 'GridView  SAPGUI.GridVi...'" Exists="[bool_Download_Page]" sap:VirtualizedContainerService.HintSize="492,139.33333333333334" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8f89f367-4e99-46c9-91a7-8a3b808071c5" InformativeScreenshot="cded5c398d50dd18f185c56fcfdaf941" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Ship to Complete' /&gt;&lt;sap id='usr/cntlCONTAINER/shellcont/shell' /&gt;">
           <ui:Target.TimeoutMS>
@@ -569,9 +569,9 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not bool_Download_Page AND not SAP_StatusBar.ToUpper.Contains(&quot;NO DATA&quot;)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="492,767" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[not bool_Download_Page AND not SAP_StatusBar.ToUpper.Contains(&quot;NO DATA&quot;)]" DisplayName="While" sap:VirtualizedContainerService.HintSize="492,698.6666666666666" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,631" sap2010:WorkflowViewState.IdRef="Sequence_8">
+        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,550.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -590,7 +590,7 @@
               </ui:Target>
             </ui:UiElementExists.Target>
           </ui:UiElementExists>
-          <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" MessageType="{x:Null}" DisplayName="Read Status Bar 'StatusPane No'" sap:VirtualizedContainerService.HintSize="334,266" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[SAP_StatusBar]">
+          <ucas:ReadStatusbar ContinueOnError="{x:Null}" MessageData="{x:Null}" MessageId="{x:Null}" MessageNumber="{x:Null}" MessageType="{x:Null}" DisplayName="Read Status Bar 'StatusPane No'" sap:VirtualizedContainerService.HintSize="382,294" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[SAP_StatusBar]">
             <ucas:ReadStatusbar.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f98f449-508b-4dc0-9524-2c9e29117abe" InformativeScreenshot="1ed5bdfdb90bb10a3ecdf5d9c953b3b1" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Ship to Complete' /&gt;&lt;sap id='sbar/pane[0]' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -605,25 +605,25 @@
         </Sequence>
       </ui:InterruptibleWhile.Body>
     </ui:InterruptibleWhile>
-    <If Condition="[bool_Download_Page]" sap:VirtualizedContainerService.HintSize="492,589" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[bool_Download_Page]" sap:VirtualizedContainerService.HintSize="492,564.6666666666666" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;table exist..,Data available for download SAP ZTWCMASTER&quot;]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;table exist..,Data available for download SAP ZTWCMASTER&quot;]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,178" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="416,174.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[new BusinessRuleException(&quot;Unable to fetch data from SAP SQ01 -ZTWCMASTER&quot;)]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[new BusinessRuleException(&quot;Unable to fetch data from SAP SQ01 -ZTWCMASTER&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Else>
     </If>
